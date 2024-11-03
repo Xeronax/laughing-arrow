@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://cu4qfv71c1i70"]
+
+[ext_resource type="Script" path="res://ui/character_frame/character_frame.gd" id="1_e3w8j"]
+[ext_resource type="Texture2D" uid="uid://v4dqfsfxkjnp" path="res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Circle01.png" id="1_rshuj"]
+[ext_resource type="Texture2D" uid="uid://dupgo4uao7147" path="res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Circle02.png" id="2_bpfcq"]
+[ext_resource type="FontFile" uid="uid://c66f6mfqcyten" path="res://art/BerkshireSwash-Regular.ttf" id="3_xpfbi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xsqjc"]
+font = ExtResource("3_xpfbi")
+font_size = 50
+font_color = Color(0.570449, 0.194883, 0.126843, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p1vhk"]
+font = ExtResource("3_xpfbi")
+font_size = 40
+font_color = Color(0.81228, 0.309359, 0.360169, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1rao1"]
+font = ExtResource("3_xpfbi")
+font_size = 50
+font_color = Color(0.251765, 0.290798, 0.791079, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yue03"]
+font = ExtResource("3_xpfbi")
+font_size = 40
+font_color = Color(0.222677, 0.334882, 0.795021, 1)
+
+[node name="CharacterFrame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 376.0
+offset_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_e3w8j")
+
+[node name="Portrait" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 283.0
+offset_bottom = 283.0
+texture = ExtResource("1_rshuj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Portrait"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 41.0
+offset_right = 234.0
+offset_bottom = 248.0
+stretch_mode = 5
+
+[node name="APFrame" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 185.0
+offset_top = 3.0
+offset_right = 294.0
+offset_bottom = 112.0
+texture = ExtResource("2_bpfcq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="APLabel" type="Label" parent="APFrame"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 99.0
+offset_bottom = 93.0
+label_settings = SubResource("LabelSettings_xsqjc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="APFrame"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 4.0
+offset_right = 169.0
+offset_bottom = 49.0
+
+[node name="AP" type="Label" parent="APFrame"]
+layout_mode = 0
+offset_left = 98.0
+offset_right = 167.0
+offset_bottom = 51.0
+text = "AP"
+label_settings = SubResource("LabelSettings_p1vhk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MPFrame" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 236.0
+offset_top = 103.0
+offset_right = 345.0
+offset_bottom = 212.0
+texture = ExtResource("2_bpfcq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MPLabel" type="Label" parent="MPFrame"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 97.0
+offset_bottom = 93.0
+label_settings = SubResource("LabelSettings_1rao1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="MPFrame"]
+offset_left = 86.0
+offset_top = -7.0
+offset_right = 164.0
+offset_bottom = 38.0
+
+[node name="MP" type="Label" parent="MPFrame"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = -10.0
+offset_right = 160.0
+offset_bottom = 41.0
+text = "MP"
+label_settings = SubResource("LabelSettings_yue03")
+horizontal_alignment = 1
+vertical_alignment = 1

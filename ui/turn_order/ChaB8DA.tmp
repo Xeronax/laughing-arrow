@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjmtkb3hpj8gd"]
+
+[ext_resource type="Script" path="res://ui/turn_order/character_box.gd" id="1_gmcrw"]
+[ext_resource type="Texture2D" uid="uid://djsok1jun5fdd" path="res://art/Pxiel Art UI borders.png" id="2_ho480"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul1l5"]
+atlas = ExtResource("2_ho480")
+region = Rect2(17, 17, 94, 94)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqrlo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_342t5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdyxq"]
+bg_color = Color(0.94902, 0.94902, 0.94902, 0.811765)
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwisc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="PanelContainer"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 62.0
+offset_bottom = 62.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_gmcrw")
+
+[node name="Border" type="TextureRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ul1l5")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CharacterImage" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sqrlo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_342t5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xdyxq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwisc")

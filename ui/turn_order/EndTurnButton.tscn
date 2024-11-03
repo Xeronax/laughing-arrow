@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://8bl8ppgre6d8"]
+
+[ext_resource type="Texture2D" uid="uid://dao7ysmlwk23k" path="res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Arrow.png" id="1_l50up"]
+[ext_resource type="Script" path="res://ui/turn_order/end_turn_button.gd" id="1_pdxno"]
+[ext_resource type="Texture2D" uid="uid://codyompr0070o" path="res://art/Custom Border and Panels Menu All Part/Border All 1.png" id="2_fm1gy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl4qb"]
+atlas = ExtResource("2_fm1gy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okvn5"]
+bg_color = Color(0.32549, 0.32549, 0.32549, 0.847059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkqm2"]
+bg_color = Color(1, 1, 1, 0.690196)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljtlg"]
+bg_color = Color(0.745098, 0.745098, 0.745098, 0.92549)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lnixx"]
+
+[node name="EndTurnButton" type="AspectRatioContainer"]
+offset_right = 31.28
+offset_bottom = 28.105
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_pdxno")
+
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_bl4qb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(22.845, 20.175)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_l50up")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okvn5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hkqm2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ljtlg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lnixx")

@@ -1,0 +1,385 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1730649530
+global.gd::GDScript::-1::1730649530::0::1::::<>Node<>::
+layer_holder.gd::GDScript::-1::1730649530::0::1::::<>Node2D<>::
+main.gd::GDScript::-1::1730649530::0::1::::<>Node2D<>::
+Main.tscn::PackedScene::6674933747014725143::1730649028::0::1::::<><>::res://main.gd<>res://layer_holder.gd<>uid://k6f6m27c5usi::::res://ui/spells/spell_slot.tscn<>uid://ct5h0b6a8s7b4::::res://art/swamp_/swamp_.png<>uid://cu4qfv71c1i70::::res://ui/character_frame/CharacterFrame.tscn<>uid://diu8y3vpmuvuf::::res://utils/battle_manager/BattleManager.tscn<>uid://8bl8ppgre6d8::::res://ui/turn_order/EndTurnButton.tscn<>uid://c7c2xwv0ldlh2::::res://characters/player/Player.tscn<>uid://cuk33b723yb5n::::res://characters/necromancer/Necromancer.tscn<>uid://yb10bhp06gq0::::res://ui/turn_order/TurnList.tscn
+::res://art/::1730649530
+BerkshireSwash-Regular.ttf::FontFile::7013050813850771841::1730649529::1730649620::1::::<><>::
+icon.svg::CompressedTexture2D::4760478720731652130::1730649530::1730649622::1::::<><>::
+Necromancer_creativekind-Sheet.png::CompressedTexture2D::3521471204773554858::1730649530::1730649622::1::::<><>::
+Pxiel Art UI borders.png::CompressedTexture2D::7828989719670059389::1730649530::1730649622::1::::<><>::
+Training Dummy Sprite Sheet.png::CompressedTexture2D::7294382732697357360::1730649530::1730649622::1::::<><>::
+::res://art/Custom Border and Panels Menu All Part/::1730649529
+Border All 1.png::CompressedTexture2D::5763161174780997528::1730649529::1730649622::1::::<><>::
+Border All 2.png::CompressedTexture2D::7665991175068010786::1730649529::1730649622::1::::<><>::
+Border All 3.png::CompressedTexture2D::8781295856716730922::1730649529::1730649621::1::::<><>::
+Border All 4.png::CompressedTexture2D::6921643069381495170::1730649529::1730649621::1::::<><>::
+Border All 5.png::CompressedTexture2D::6886153517480341389::1730649529::1730649621::1::::<><>::
+Border All 6.png::CompressedTexture2D::6233047002072548679::1730649529::1730649621::1::::<><>::
+Border All 7.png::CompressedTexture2D::4086349613319127793::1730649529::1730649621::1::::<><>::
+Border All 8.png::CompressedTexture2D::2526339170668068573::1730649529::1730649621::1::::<><>::
+Border All 9.png::CompressedTexture2D::7805403122738352628::1730649529::1730649621::1::::<><>::
+Border All 10.png::CompressedTexture2D::2537885326155151147::1730649529::1730649621::1::::<><>::
+Border All 11.png::CompressedTexture2D::2838542587387833772::1730649529::1730649621::1::::<><>::
+Border All 12.png::CompressedTexture2D::3012032090739622595::1730649529::1730649621::1::::<><>::
+Border All 13.png::CompressedTexture2D::5515864065758301244::1730649529::1730649621::1::::<><>::
+Border All 14.png::CompressedTexture2D::3874659370726820311::1730649529::1730649621::1::::<><>::
+Border All 15.png::CompressedTexture2D::5312253852301251417::1730649529::1730649622::1::::<><>::
+Border All 16.png::CompressedTexture2D::2105122307551880123::1730649529::1730649622::1::::<><>::
+Deco All 1.png::CompressedTexture2D::5496995271596368361::1730649529::1730649622::1::::<><>::
+Deco All 2.png::CompressedTexture2D::2938487743301541170::1730649529::1730649622::1::::<><>::
+Deco All 3.png::CompressedTexture2D::2561692527817707117::1730649529::1730649622::1::::<><>::
+Deco All 4.png::CompressedTexture2D::5693228925989088407::1730649529::1730649622::1::::<><>::
+Deco All 5.png::CompressedTexture2D::8231564512647722688::1730649529::1730649622::1::::<><>::
+Deco All 6.png::CompressedTexture2D::2828488842496342656::1730649529::1730649622::1::::<><>::
+Deco All 7.png::CompressedTexture2D::6923861226982360083::1730649529::1730649622::1::::<><>::
+Deco All 8.png::CompressedTexture2D::1894001467741801952::1730649529::1730649622::1::::<><>::
+Deco All 9.png::CompressedTexture2D::360294882651579835::1730649529::1730649622::1::::<><>::
+Deco All 10.png::CompressedTexture2D::7177231515072007844::1730649529::1730649622::1::::<><>::
+Deco All 11.png::CompressedTexture2D::1957172632583781731::1730649529::1730649622::1::::<><>::
+Deco All 12.png::CompressedTexture2D::3426617054974719729::1730649529::1730649622::1::::<><>::
+Deco All 13.png::CompressedTexture2D::6915351607485318440::1730649529::1730649622::1::::<><>::
+Deco All 14.png::CompressedTexture2D::7651840714351203994::1730649529::1730649622::1::::<><>::
+Deco All 15.png::CompressedTexture2D::78945690001479778::1730649529::1730649622::1::::<><>::
+Deco All 16.png::CompressedTexture2D::66766621829395964::1730649529::1730649622::1::::<><>::
+Ram Border All.png::CompressedTexture2D::4533407649540704770::1730649529::1730649622::1::::<><>::
+Ram Deco All.png::CompressedTexture2D::4717776255677129884::1730649529::1730649621::1::::<><>::
+Ram Panels All.png::CompressedTexture2D::3063969314639584293::1730649529::1730649621::1::::<><>::
+::res://art/Final/::1730649529
+Dash.png::CompressedTexture2D::9022401295827284851::1730649529::1730649621::1::::<><>::
+death.png::CompressedTexture2D::5396888576990952736::1730649529::1730649621::1::::<><>::
+High Attack.png::CompressedTexture2D::1636540589491707653::1730649529::1730649621::1::::<><>::
+Idle and running.png::CompressedTexture2D::5047214317634890538::1730649529::1730649621::1::::<><>::
+Jumping.png::CompressedTexture2D::6241002149715999854::1730649529::1730649621::1::::<><>::
+Low attack.png::CompressedTexture2D::8419587667869777066::1730649529::1730649621::1::::<><>::
+Normal Attack.png::CompressedTexture2D::1110218530109451413::1730649529::1730649621::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/::1730649530
+Pixel_Magic_Effects_Animations.png::CompressedTexture2D::2636346831704511517::1730649530::1730649621::1::::<><>::
+Pixel_Magic_Effects_Icons.png::CompressedTexture2D::4637002528807352504::1730649530::1730649621::1::::<><>::
+Readme.txt::TextFile::-1::1730648694::0::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Earth_Spike/::1730649529
+001.png::CompressedTexture2D::7388697934703779476::1730649529::1730649621::1::::<><>::
+002.png::CompressedTexture2D::2303083384186776714::1730649529::1730649621::1::::<><>::
+003.png::CompressedTexture2D::5476727003081725825::1730649529::1730649621::1::::<><>::
+004.png::CompressedTexture2D::1288574293440063040::1730649529::1730649621::1::::<><>::
+005.png::CompressedTexture2D::151825981604472385::1730649529::1730649621::1::::<><>::
+006.png::CompressedTexture2D::2445300635150472706::1730649529::1730649621::1::::<><>::
+007.png::CompressedTexture2D::1872216043336618279::1730649529::1730649621::1::::<><>::
+008.png::CompressedTexture2D::7724743171984263843::1730649529::1730649621::1::::<><>::
+009.png::CompressedTexture2D::552073875988098065::1730649529::1730649621::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Explosion/::1730649529
+001.png::CompressedTexture2D::1592910610689061427::1730649529::1730649621::1::::<><>::
+002.png::CompressedTexture2D::8268929558162932288::1730649529::1730649621::1::::<><>::
+003.png::CompressedTexture2D::3808204382284654611::1730649529::1730649621::1::::<><>::
+004.png::CompressedTexture2D::8842763472399791996::1730649529::1730649621::1::::<><>::
+005.png::CompressedTexture2D::5397404986826949429::1730649529::1730649621::1::::<><>::
+006.png::CompressedTexture2D::6010028266090454992::1730649529::1730649621::1::::<><>::
+007.png::CompressedTexture2D::6430917984880829841::1730649529::1730649621::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Fire_Ball/::1730649530
+001.png::CompressedTexture2D::547084793712742250::1730649529::1730649621::1::::<><>::
+002.png::CompressedTexture2D::744282264646865256::1730649529::1730649621::1::::<><>::
+003.png::CompressedTexture2D::3770073792082601141::1730649529::1730649621::1::::<><>::
+004.png::CompressedTexture2D::5875178800837229662::1730649529::1730649621::1::::<><>::
+005.png::CompressedTexture2D::309165333110168757::1730649529::1730649621::1::::<><>::
+006.png::CompressedTexture2D::2696213376070674021::1730649529::1730649621::1::::<><>::
+007.png::CompressedTexture2D::2467309351313820421::1730649529::1730649621::1::::<><>::
+008.png::CompressedTexture2D::5055720546851416758::1730649529::1730649621::1::::<><>::
+009.png::CompressedTexture2D::20939596754472135::1730649530::1730649621::1::::<><>::
+010.png::CompressedTexture2D::6505956689960849312::1730649530::1730649621::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Icons/::1730649530
+tile000.png::CompressedTexture2D::8775869624585807455::1730649530::1730649622::1::::<><>::
+tile001.png::CompressedTexture2D::116463462846249765::1730649530::1730649622::1::::<><>::
+tile002.png::CompressedTexture2D::5258489787377893538::1730649530::1730649622::1::::<><>::
+tile003.png::CompressedTexture2D::291062181349936820::1730649530::1730649622::1::::<><>::
+tile004.png::CompressedTexture2D::1554851465804417338::1730649530::1730649622::1::::<><>::
+tile005.png::CompressedTexture2D::1295908618425198615::1730649530::1730649622::1::::<><>::
+tile006.png::CompressedTexture2D::5371906977771119959::1730649530::1730649622::1::::<><>::
+tile007.png::CompressedTexture2D::1346712630441885289::1730649530::1730649622::1::::<><>::
+tile008.png::CompressedTexture2D::6840071685966834788::1730649530::1730649622::1::::<><>::
+tile009.png::CompressedTexture2D::5249553624198386171::1730649530::1730649622::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Molten_Spear/::1730649530
+001.png::CompressedTexture2D::4337464641331675526::1730649530::1730649622::1::::<><>::
+002.png::CompressedTexture2D::2821343705628726421::1730649530::1730649622::1::::<><>::
+003.png::CompressedTexture2D::2241136690024230172::1730649530::1730649622::1::::<><>::
+004.png::CompressedTexture2D::4232278131023728321::1730649530::1730649622::1::::<><>::
+005.png::CompressedTexture2D::3072737138822606035::1730649530::1730649622::1::::<><>::
+006.png::CompressedTexture2D::536932899794558156::1730649530::1730649622::1::::<><>::
+007.png::CompressedTexture2D::537599048568836045::1730649530::1730649622::1::::<><>::
+008.png::CompressedTexture2D::4073897375474286132::1730649530::1730649622::1::::<><>::
+009.png::CompressedTexture2D::8098224881665569873::1730649530::1730649622::1::::<><>::
+010.png::CompressedTexture2D::330475507867235834::1730649530::1730649622::1::::<><>::
+011.png::CompressedTexture2D::3953965004978633158::1730649530::1730649622::1::::<><>::
+012.png::CompressedTexture2D::1669184394129083794::1730649530::1730649622::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Portal/::1730649530
+001.png::CompressedTexture2D::6721411283309087643::1730649530::1730649622::1::::<><>::
+002.png::CompressedTexture2D::1452055657588746038::1730649530::1730649622::1::::<><>::
+003.png::CompressedTexture2D::3422392784308265332::1730649530::1730649622::1::::<><>::
+004.png::CompressedTexture2D::3466871036592292128::1730649530::1730649622::1::::<><>::
+005.png::CompressedTexture2D::7139980838298444364::1730649530::1730649622::1::::<><>::
+006.png::CompressedTexture2D::2798149945689444543::1730649530::1730649622::1::::<><>::
+007.png::CompressedTexture2D::6040447880508729362::1730649530::1730649622::1::::<><>::
+008.png::CompressedTexture2D::4297039093363450786::1730649530::1730649622::1::::<><>::
+009.png::CompressedTexture2D::630355842209762100::1730649530::1730649622::1::::<><>::
+010.png::CompressedTexture2D::7107360497077694394::1730649530::1730649622::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Rocks/::1730649530
+001.png::CompressedTexture2D::431930655013043467::1730649530::1730649622::1::::<><>::
+002.png::CompressedTexture2D::179466997441742069::1730649530::1730649622::1::::<><>::
+003.png::CompressedTexture2D::6278686831364377794::1730649530::1730649622::1::::<><>::
+004.png::CompressedTexture2D::5918380140482404768::1730649530::1730649622::1::::<><>::
+005.png::CompressedTexture2D::9036154366359383895::1730649530::1730649622::1::::<><>::
+006.png::CompressedTexture2D::6777244204761699048::1730649530::1730649622::1::::<><>::
+007.png::CompressedTexture2D::8847888622149956096::1730649530::1730649622::1::::<><>::
+008.png::CompressedTexture2D::918435293813123705::1730649530::1730649622::1::::<><>::
+009.png::CompressedTexture2D::4203914234867937396::1730649530::1730649622::1::::<><>::
+010.png::CompressedTexture2D::8735345992654027810::1730649530::1730649622::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Tornado/::1730649530
+001.png::CompressedTexture2D::8990279954809827674::1730649530::1730649622::1::::<><>::
+002.png::CompressedTexture2D::935098051388086839::1730649530::1730649622::1::::<><>::
+003.png::CompressedTexture2D::8787069243653588528::1730649530::1730649622::1::::<><>::
+004.png::CompressedTexture2D::1680629558641998098::1730649530::1730649622::1::::<><>::
+005.png::CompressedTexture2D::5893804969322382584::1730649530::1730649622::1::::<><>::
+006.png::CompressedTexture2D::137871066686435373::1730649530::1730649622::1::::<><>::
+007.png::CompressedTexture2D::3022635271962913159::1730649530::1730649622::1::::<><>::
+008.png::CompressedTexture2D::8861949289971895592::1730649530::1730649622::1::::<><>::
+009.png::CompressedTexture2D::3999262850034825893::1730649530::1730649622::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Water/::1730649530
+001.png::CompressedTexture2D::5749286729053353728::1730649530::1730649622::1::::<><>::
+002.png::CompressedTexture2D::840865861989502609::1730649530::1730649622::1::::<><>::
+003.png::CompressedTexture2D::1771878486433563613::1730649530::1730649622::1::::<><>::
+004.png::CompressedTexture2D::4861582144038148935::1730649530::1730649622::1::::<><>::
+005.png::CompressedTexture2D::1601070685583680743::1730649530::1730649622::1::::<><>::
+006.png::CompressedTexture2D::3418419879713288664::1730649530::1730649622::1::::<><>::
+007.png::CompressedTexture2D::5804068092389509695::1730649530::1730649622::1::::<><>::
+008.png::CompressedTexture2D::7283324282032681836::1730649530::1730649622::1::::<><>::
+009.png::CompressedTexture2D::6821329855795300310::1730649530::1730649622::1::::<><>::
+010.png::CompressedTexture2D::4235932094390809195::1730649530::1730649622::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Water_Geyser/::1730649530
+001.png::CompressedTexture2D::4342224937814599793::1730649530::1730649622::1::::<><>::
+002.png::CompressedTexture2D::5528192024277901529::1730649530::1730649622::1::::<><>::
+003.png::CompressedTexture2D::368845306354724456::1730649530::1730649622::1::::<><>::
+004.png::CompressedTexture2D::4067222643566083624::1730649530::1730649622::1::::<><>::
+005.png::CompressedTexture2D::7494745697917840158::1730649530::1730649622::1::::<><>::
+006.png::CompressedTexture2D::2070919859318211214::1730649530::1730649622::1::::<><>::
+007.png::CompressedTexture2D::7654218935355054656::1730649530::1730649622::1::::<><>::
+008.png::CompressedTexture2D::5616684610719463284::1730649530::1730649622::1::::<><>::
+009.png::CompressedTexture2D::2878009934771809427::1730649530::1730649622::1::::<><>::
+010.png::CompressedTexture2D::5419946801001444191::1730649530::1730649622::1::::<><>::
+011.png::CompressedTexture2D::6959696121083457221::1730649530::1730649622::1::::<><>::
+012.png::CompressedTexture2D::7218917751067213002::1730649530::1730649622::1::::<><>::
+013.png::CompressedTexture2D::367677977938340716::1730649530::1730649622::1::::<><>::
+::res://art/Foozle_2DE0001_Pixel_Magic_Effects/Wind/::1730649530
+001.png::CompressedTexture2D::1116947171515192775::1730649530::1730649622::1::::<><>::
+002.png::CompressedTexture2D::7388705894520097589::1730649530::1730649620::1::::<><>::
+003.png::CompressedTexture2D::7405018213685762559::1730649530::1730649620::1::::<><>::
+004.png::CompressedTexture2D::4285429417096418726::1730649530::1730649620::1::::<><>::
+005.png::CompressedTexture2D::4192029258866999026::1730649530::1730649620::1::::<><>::
+006.png::CompressedTexture2D::8781344428701446393::1730649530::1730649620::1::::<><>::
+007.png::CompressedTexture2D::8505490129927484006::1730649530::1730649620::1::::<><>::
+008.png::CompressedTexture2D::1709463779381202872::1730649530::1730649620::1::::<><>::
+009.png::CompressedTexture2D::4680414218229395328::1730649530::1730649620::1::::<><>::
+010.png::CompressedTexture2D::8413664512143921043::1730649530::1730649620::1::::<><>::
+::res://art/Hunter_Free/::1730649530
+Hunter_1.png::CompressedTexture2D::5525050273005260872::1730649530::1730649621::1::::<><>::
+Hunter_2.png::CompressedTexture2D::8715413181960484446::1730649530::1730649620::1::::<><>::
+Hunter_3.png::CompressedTexture2D::7636788592859414862::1730649530::1730649620::1::::<><>::
+Hunter_4.png::CompressedTexture2D::4229273035318097597::1730649530::1730649620::1::::<><>::
+Hunter_5.png::CompressedTexture2D::926662181335532111::1730649530::1730649620::1::::<><>::
+Hunter_6.png::CompressedTexture2D::4708048092777105783::1730649530::1730649620::1::::<><>::
+Hunter_7.png::CompressedTexture2D::3972280903311901913::1730649530::1730649620::1::::<><>::
+Hunter_8.png::CompressedTexture2D::5390551926628023845::1730649530::1730649620::1::::<><>::
+Hunter_9.png::CompressedTexture2D::3570540997075830193::1730649530::1730649620::1::::<><>::
+Hunter_10.png::CompressedTexture2D::2608451470005617862::1730649530::1730649621::1::::<><>::
+Hunter_11.png::CompressedTexture2D::503202693610196687::1730649530::1730649621::1::::<><>::
+Hunter_12.png::CompressedTexture2D::6376852702086778036::1730649530::1730649621::1::::<><>::
+Hunter_13.png::CompressedTexture2D::1584391434710420764::1730649530::1730649621::1::::<><>::
+Hunter_14.png::CompressedTexture2D::7664409646671369784::1730649530::1730649621::1::::<><>::
+Hunter_15.png::CompressedTexture2D::6980033040121004317::1730649530::1730649621::1::::<><>::
+Hunter_16.png::CompressedTexture2D::2576642050717931602::1730649530::1730649621::1::::<><>::
+Hunter_17.png::CompressedTexture2D::5101698038371988045::1730649530::1730649621::1::::<><>::
+Hunter_18.png::CompressedTexture2D::6023624408168002406::1730649530::1730649621::1::::<><>::
+Hunter_19.png::CompressedTexture2D::7114511496058853608::1730649530::1730649621::1::::<><>::
+Hunter_20.png::CompressedTexture2D::9181139662639000747::1730649530::1730649621::1::::<><>::
+Hunter_21.png::CompressedTexture2D::7596997161245758377::1730649530::1730649621::1::::<><>::
+Hunter_22.png::CompressedTexture2D::7598524245889589873::1730649530::1730649621::1::::<><>::
+Hunter_23.png::CompressedTexture2D::3603634012531792803::1730649530::1730649621::1::::<><>::
+Hunter_24.png::CompressedTexture2D::4478646411804580287::1730649530::1730649621::1::::<><>::
+Hunter_25.png::CompressedTexture2D::5774116457549950768::1730649530::1730649621::1::::<><>::
+::res://art/Necromancer/::1730649530
+::res://art/Necromancer/Attack/::1730649530
+spr_NecromancerAttackEffectWithBkg_strip47.png::CompressedTexture2D::2783613531373345649::1730649530::1730649621::1::::<><>::
+spr_NecromancerAttackEffect_strip47.png::CompressedTexture2D::8371483487759648336::1730649530::1730649621::1::::<><>::
+spr_NecromancerAttackWithEffectWithBkg_strip47.png::CompressedTexture2D::5756151889442219644::1730649530::1730649621::1::::<><>::
+spr_NecromancerAttackWithEffect_strip47.png::CompressedTexture2D::4483753138108304505::1730649530::1730649620::1::::<><>::
+spr_NecromancerAttackWithoutEffectWithBkg_strip47.png::CompressedTexture2D::707320981217102884::1730649530::1730649620::1::::<><>::
+spr_NecromancerAttackWithoutEffect_strip47.png::CompressedTexture2D::4687657210481176092::1730649530::1730649620::1::::<><>::
+::res://art/Necromancer/Death/::1730649530
+spr_NecromancerDeathWithBkg_strip52.png::CompressedTexture2D::6671929529896079212::1730649530::1730649620::1::::<><>::
+spr_NecromancerDeath_strip52.png::CompressedTexture2D::8830754268805617734::1730649530::1730649620::1::::<><>::
+::res://art/Necromancer/GetHit/::1730649530
+spr_NecromancerGetHitEffectWithBkg_strip9.png::CompressedTexture2D::6863331104743193361::1730649530::1730649620::1::::<><>::
+spr_NecromancerGetHitEffect_strip9.png::CompressedTexture2D::5402183097524323082::1730649530::1730649620::1::::<><>::
+spr_NecromancerGetHitWithBkg_strip9.png::CompressedTexture2D::892881175422329988::1730649530::1730649620::1::::<><>::
+spr_NecromancerGetHitWithoutEffectWithBkg_strip9.png::CompressedTexture2D::8136533449959699554::1730649530::1730649620::1::::<><>::
+spr_NecromancerGetHitWithoutEffect_strip9.png::CompressedTexture2D::1694540795753091609::1730649530::1730649620::1::::<><>::
+spr_NecromancerGetHit_strip9.png::CompressedTexture2D::6289926770180810518::1730649530::1730649620::1::::<><>::
+::res://art/Necromancer/Idle/::1730649530
+spr_NecromancerIdleWithBkg_strip50.png::CompressedTexture2D::7723604176346875427::1730649530::1730649620::1::::<><>::
+spr_NecromancerIdle_strip50.png::CompressedTexture2D::1433735623080910941::1730649530::1730649620::1::::<><>::
+::res://art/Necromancer/Jump/::1730649530
+spr_NecromancerIdle_strip50.png::CompressedTexture2D::6206620618334710638::1730649530::1730649620::1::::<><>::
+spr_NecromancerJumpWithBkg_strip12.png::CompressedTexture2D::8225539954457107372::1730649530::1730649620::1::::<><>::
+::res://art/Necromancer/Spawn/::1730649530
+spr_NecromancerSpawnWithBkg_strip20.png::CompressedTexture2D::6205796084605370632::1730649530::1730649620::1::::<><>::
+spr_NecromancerSpawn_strip20.png::CompressedTexture2D::9148432155820477424::1730649530::1730649620::1::::<><>::
+::res://art/Necromancer/Walk/::1730649530
+spr_NecromancerWalkWithBkg_strip10.png::CompressedTexture2D::1907770715683414742::1730649530::1730649620::1::::<><>::
+spr_NecromancerWalk_strip10.png::CompressedTexture2D::7418942331254777444::1730649530::1730649620::1::::<><>::
+::res://art/swamp_/::1730649530
+puddle_.png::CompressedTexture2D::664786895315204539::1730649530::1730649620::1::::<><>::
+swamp_ [bridgeAnimatedTiles].png::CompressedTexture2D::1969699185722905014::1730649530::1730649620::1::::<><>::
+swamp_ [bridgeHorizontal].png::CompressedTexture2D::6100689395975851646::1730649530::1730649620::1::::<><>::
+swamp_ [bridgeVertical].png::CompressedTexture2D::7034681512572766299::1730649530::1730649620::1::::<><>::
+swamp_ [fencesAndWalls].png::CompressedTexture2D::1899061890642324896::1730649530::1730649620::1::::<><>::
+swamp_ [fountain].png::CompressedTexture2D::3194262188351358085::1730649530::1730649620::1::::<><>::
+swamp_ [resources].png::CompressedTexture2D::7704237856923475384::1730649530::1730649620::1::::<><>::
+swamp_.png::CompressedTexture2D::6168830493384728991::1730649530::1730649620::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/::1730649530
+Meow-Meow.jpg::CompressedTexture2D::8101188800538605681::1730649530::1730649620::1::::<><>::
+PUT A RATING!.jpg::CompressedTexture2D::8141814732268584062::1730649530::1730649620::1::::<><>::
+Thank you!.jpg::CompressedTexture2D::3748774877013921342::1730649530::1730649621::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/::1730649530
+Btn01.png::CompressedTexture2D::4428356503713221553::1730649530::1730649620::1::::<><>::
+Panel01.png::CompressedTexture2D::4656944620413453985::1730649530::1730649620::1::::<><>::
+Panel02.png::CompressedTexture2D::8148596461887807302::1730649530::1730649620::1::::<><>::
+Panel03.png::CompressedTexture2D::3009476836806019649::1730649530::1730649620::1::::<><>::
+Panel04.png::CompressedTexture2D::8330853323636472640::1730649530::1730649620::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/Icons/::1730649530
+Arrow.png::CompressedTexture2D::7190150106945954238::1730649530::1730649620::1::::<><>::
+Arrows02.png::CompressedTexture2D::508596459653896188::1730649530::1730649620::1::::<><>::
+Arrows03.png::CompressedTexture2D::8301400522707052281::1730649530::1730649621::1::::<><>::
+Arrows.png::CompressedTexture2D::537842605128507239::1730649530::1730649621::1::::<><>::
+ArrowsLeft2.png::CompressedTexture2D::5793301762583794329::1730649530::1730649621::1::::<><>::
+ArrowsLeft3.png::CompressedTexture2D::2582690207532332022::1730649530::1730649621::1::::<><>::
+ArrowsLeft.png::CompressedTexture2D::4967515947911508418::1730649530::1730649621::1::::<><>::
+ArrowsRight2.png::CompressedTexture2D::3441784754087914248::1730649530::1730649621::1::::<><>::
+ArrowsRight3.png::CompressedTexture2D::7555812172847928490::1730649530::1730649621::1::::<><>::
+ArrowsRight.png::CompressedTexture2D::231841235087877296::1730649530::1730649621::1::::<><>::
+Circle01.png::CompressedTexture2D::1534043685628738253::1730649530::1730649621::1::::<><>::
+Circle02.png::CompressedTexture2D::8594395447315354818::1730649530::1730649621::1::::<><>::
+Circle03.png::CompressedTexture2D::7790192279048640541::1730649530::1730649621::1::::<><>::
+Close.png::CompressedTexture2D::4987229107523833556::1730649530::1730649621::1::::<><>::
+Icon01.png::CompressedTexture2D::2480219390670017532::1730649530::1730649621::1::::<><>::
+Icon02.png::CompressedTexture2D::3590633149258554708::1730649530::1730649621::1::::<><>::
+Icon03.png::CompressedTexture2D::2923031843889518585::1730649530::1730649621::1::::<><>::
+Icon04.png::CompressedTexture2D::8961784531775134245::1730649530::1730649621::1::::<><>::
+Icon05.png::CompressedTexture2D::4940451245327594342::1730649530::1730649621::1::::<><>::
+Icon06.png::CompressedTexture2D::6407984892004934245::1730649530::1730649621::1::::<><>::
+Icon07.png::CompressedTexture2D::3223518261353296757::1730649530::1730649621::1::::<><>::
+Icon08.png::CompressedTexture2D::6897425275852766109::1730649530::1730649621::1::::<><>::
+Icon09.png::CompressedTexture2D::319166418679660575::1730649530::1730649621::1::::<><>::
+Icon10.png::CompressedTexture2D::7190518504981839398::1730649530::1730649621::1::::<><>::
+Icon11.png::CompressedTexture2D::8261908633517102084::1730649530::1730649621::1::::<><>::
+Icon12.png::CompressedTexture2D::379087952275145467::1730649530::1730649621::1::::<><>::
+Icon13.png::CompressedTexture2D::353291339064810394::1730649530::1730649621::1::::<><>::
+Icon14.png::CompressedTexture2D::6617597106180935933::1730649530::1730649621::1::::<><>::
+Icon15.png::CompressedTexture2D::4585196705622938657::1730649530::1730649621::1::::<><>::
+Icon16.png::CompressedTexture2D::2257901399934872423::1730649530::1730649621::1::::<><>::
+Icon17.png::CompressedTexture2D::6555627624879130452::1730649530::1730649621::1::::<><>::
+Icon18.png::CompressedTexture2D::6266389476836802515::1730649530::1730649621::1::::<><>::
+Icon19.png::CompressedTexture2D::104197989753087067::1730649530::1730649621::1::::<><>::
+Icon20.png::CompressedTexture2D::3324650660033117815::1730649530::1730649621::1::::<><>::
+Icon21.png::CompressedTexture2D::1826235501031664119::1730649530::1730649621::1::::<><>::
+Icon22.png::CompressedTexture2D::8611684712373845126::1730649530::1730649621::1::::<><>::
+Icon23.png::CompressedTexture2D::8177672769633363825::1730649530::1730649621::1::::<><>::
+Icon24.png::CompressedTexture2D::8317757988459739121::1730649530::1730649621::1::::<><>::
+Icon25.png::CompressedTexture2D::2365635311093885242::1730649530::1730649621::1::::<><>::
+Icon26.png::CompressedTexture2D::5920094031822238351::1730649530::1730649621::1::::<><>::
+Icon27.png::CompressedTexture2D::5025992439244659569::1730649530::1730649621::1::::<><>::
+Icon28.png::CompressedTexture2D::2776949314143768210::1730649530::1730649621::1::::<><>::
+Icon29.png::CompressedTexture2D::1602921506430514042::1730649530::1730649621::1::::<><>::
+Icon30.png::CompressedTexture2D::1550601002555497570::1730649530::1730649621::1::::<><>::
+Icon31.png::CompressedTexture2D::247354504327817496::1730649530::1730649621::1::::<><>::
+Icon32.png::CompressedTexture2D::3773195038085568572::1730649530::1730649621::1::::<><>::
+Icon33.png::CompressedTexture2D::5798816892286626086::1730649530::1730649621::1::::<><>::
+Icon34.png::CompressedTexture2D::5294595741467572171::1730649530::1730649621::1::::<><>::
+Icon35.png::CompressedTexture2D::3660788473918471001::1730649530::1730649621::1::::<><>::
+Icon36.png::CompressedTexture2D::3587369568476498106::1730649530::1730649621::1::::<><>::
+Icon37.png::CompressedTexture2D::3590457793741289411::1730649530::1730649621::1::::<><>::
+Icon38.png::CompressedTexture2D::6005003132216012307::1730649530::1730649621::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/::1730649530
+BarV1_Bar.png::CompressedTexture2D::4844781453013184735::1730649530::1730649621::1::::<><>::
+BarV1_ProgressBar.png::CompressedTexture2D::5038458080754398584::1730649530::1730649621::1::::<><>::
+BarV1_ProgressBarBorder.png::CompressedTexture2D::2820981093488650781::1730649530::1730649621::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_02/::1730649530
+BarV2_Bar.png::CompressedTexture2D::6772852243240440906::1730649530::1730649621::1::::<><>::
+BarV2_ProgressBar.png::CompressedTexture2D::1893293331469586969::1730649530::1730649621::1::::<><>::
+BarV2_ProgressBarBorder.png::CompressedTexture2D::2659411481218015056::1730649530::1730649621::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_03/::1730649530
+BarV3_Bar.png::CompressedTexture2D::8800182669490031550::1730649530::1730649621::1::::<><>::
+BarV3_ProgressBar.png::CompressedTexture2D::8978750251494744688::1730649530::1730649621::1::::<><>::
+BarV3_ProgressBarBorder.png::CompressedTexture2D::1679350953827088366::1730649530::1730649621::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_04/::1730649530
+BarV4_Bar.png::CompressedTexture2D::2292458553373352977::1730649530::1730649621::1::::<><>::
+BarV4_ProgressBar.png::CompressedTexture2D::240763005990978598::1730649530::1730649621::1::::<><>::
+BarV4_ProgressBarBorder.png::CompressedTexture2D::2117278979859627795::1730649530::1730649621::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_05/::1730649530
+BarV5_Bar.png::CompressedTexture2D::6910191576478392118::1730649530::1730649621::1::::<><>::
+BarV5_ProgressBar.png::CompressedTexture2D::7692331076428321233::1730649530::1730649621::1::::<><>::
+BarV5_ProgressBarBorder.png::CompressedTexture2D::2486125823091701048::1730649530::1730649621::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_06/::1730649530
+BarV6_Bar.png::CompressedTexture2D::2980143314690637830::1730649530::1730649621::1::::<><>::
+BarV6_ProgressBar.png::CompressedTexture2D::1395370986289270629::1730649530::1730649621::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_07/::1730649530
+BarV7_Bar.png::CompressedTexture2D::3544488830588422496::1730649530::1730649621::1::::<><>::
+BarV7_ProgressBar.png::CompressedTexture2D::4295184117671472902::1730649530::1730649621::1::::<><>::
+BarV7_ProgressBarBorder.png::CompressedTexture2D::4783540133730469667::1730649530::1730649621::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_08/::1730649530
+BarV8_Bar.png::CompressedTexture2D::5574869914779137147::1730649530::1730649621::1::::<><>::
+BarV8_ProgressBar.png::CompressedTexture2D::2087043303936238376::1730649530::1730649621::1::::<><>::
+::res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_09/::1730649530
+BarV6_ProgressBarBorder.png::CompressedTexture2D::2258140910508918515::1730649530::1730649621::1::::<><>::
+BarV9_Bar.png::CompressedTexture2D::8563285667392988782::1730649530::1730649621::1::::<><>::
+BarV9_ProgressBar.png::CompressedTexture2D::3228384136114800792::1730649530::1730649621::1::::<><>::
+::res://characters/::1730649530
+battle_character.gd::GDScript::-1::1730649530::0::1::::BattleCharacter<>CharacterBody2D<>::
+::res://characters/necromancer/::1730649530
+ai_controller.gd::GDScript::-1::1730649530::0::1::::<>AIComponent<>::
+Necromancer.tscn::PackedScene::6199012198936456429::1730648694::0::1::::<><>::res://characters/battle_character.gd<>uid://b44702rw2pcjx::::res://art/Necromancer/Attack/spr_NecromancerAttackWithEffect_strip47.png<>uid://cvu5f7hwbl1yw::::res://art/Necromancer/GetHit/spr_NecromancerGetHit_strip9.png<>uid://uoroff6q2mqv::::res://art/Necromancer/Idle/spr_NecromancerIdle_strip50.png<>uid://ddx15qdgghfjg::::res://art/Necromancer/Walk/spr_NecromancerWalk_strip10.png<>res://utils/components/sprite_component.gd<>uid://b710a872lor0g::::res://art/Necromancer/Attack/spr_NecromancerAttackWithoutEffect_strip47.png<>res://utils/components/stat_component.gd<>res://characters/necromancer/ai_controller.gd<>uid://v0nnau447l0g::::res://spells/death_lance/DeathLance.tscn
+::res://characters/player/::1730649530
+Player.tscn::PackedScene::7024694740481177181::1730648694::0::1::::<><>::res://characters/battle_character.gd<>uid://p22ewmdirodp::::res://art/Final/Normal Attack.png<>uid://cd555acarioba::::res://art/Final/Idle and running.png<>res://utils/components/sprite_component.gd<>res://utils/components/stat_component.gd<>uid://tpyden628vdc::::res://spells/shoot/Shoot.tscn
+::res://spells/::1730649530
+::res://spells/death_lance/::1730649530
+DeathLance.tscn::PackedScene::1526387728730642804::1730649530::0::1::::<><>::res://spells/death_lance/death_lance.gd
+death_lance.gd::GDScript::-1::1730649530::0::1::::<>SpellComponent<>::
+Lance.tscn::PackedScene::5015699011717868874::1730649530::0::1::::<><>::uid://drjhd0dv73cls::::res://art/Necromancer/Attack/spr_NecromancerAttackEffect_strip47.png
+::res://spells/shoot/::1730649530
+shoot.gd::GDScript::-1::1730649530::0::1::::<>SpellComponent<>::
+Shoot.tscn::PackedScene::1366016492263380372::1730649530::0::1::::<><>::res://spells/shoot/shoot.gd<>uid://b42qwf1yt61mx::::res://art/Hunter_Free/Hunter_24.png
+::res://ui/::1730649530
+::res://ui/character_frame/::1730649530
+CharacterFrame.tscn::PackedScene::6237466749477491497::1730648694::0::1::::<><>::res://ui/character_frame/character_frame.gd<>uid://v4dqfsfxkjnp::::res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Circle01.png<>uid://dupgo4uao7147::::res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Circle02.png<>uid://c66f6mfqcyten::::res://art/BerkshireSwash-Regular.ttf
+character_frame.gd::GDScript::-1::1730649530::0::1::::<>Control<>::
+::res://ui/damage_popups/::1730649530
+DamagePopup.tscn::PackedScene::2277465597221988810::1730649530::0::1::::<><>::uid://c66f6mfqcyten::::res://art/BerkshireSwash-Regular.ttf
+::res://ui/spells/::1730649530
+spell_slot.gd::GDScript::-1::1730649530::0::1::::<>AspectRatioContainer<>::
+spell_slot.tscn::PackedScene::766243764778791052::1730648694::0::1::::<><>::uid://codyompr0070o::::res://art/Custom Border and Panels Menu All Part/Border All 1.png<>res://ui/spells/spell_slot.gd
+::res://ui/turn_order/::1730649530
+CharacterBox.tscn::PackedScene::3044064386402080491::1730649530::0::1::::<><>::res://ui/turn_order/character_box.gd<>uid://djsok1jun5fdd::::res://art/Pxiel Art UI borders.png
+character_box.gd::GDScript::-1::1730649530::0::1::::<>VSplitContainer<>::
+EndTurnButton.tscn::PackedScene::2319023847246262963::1730648694::0::1::::<><>::uid://dao7ysmlwk23k::::res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Arrow.png<>res://ui/turn_order/end_turn_button.gd<>uid://codyompr0070o::::res://art/Custom Border and Panels Menu All Part/Border All 1.png
+end_turn_button.gd::GDScript::-1::1730649530::0::1::::<>Control<>::
+TurnList.tscn::PackedScene::1688219975779534201::1730648694::0::1::::<><>::res://ui/turn_order/turn_list.gd
+turn_list.gd::GDScript::-1::1730649530::0::1::::<>HBoxContainer<>::
+::res://utils/::1730649530
+component.gd::GDScript::-1::1730649530::0::1::::Component<>Node<>::
+damage_event.gd::GDScript::-1::1730649530::0::1::::DamageEvent<>RefCounted<>::
+::res://utils/battle_manager/::1730649530
+BattleManager.tscn::PackedScene::7764108378872843777::1730648694::0::1::::<><>::res://utils/battle_manager/battle_manager.gd
+battle_manager.gd::GDScript::-1::1730649530::0::1::::<>Node2D<>::
+::res://utils/components/::1730649530
+ai_controller_component.gd::GDScript::-1::1730649530::0::1::::AIComponent<>Component<>::
+spell_component.gd::GDScript::-1::1730649530::0::1::::SpellComponent<>Component<>::
+sprite_component.gd::GDScript::-1::1730649530::0::1::::SpriteComponent<>Component<>::
+stat_component.gd::GDScript::-1::1730649530::0::1::::StatComponent<>Component<>::

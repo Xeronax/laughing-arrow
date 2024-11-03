@@ -1,0 +1,264 @@
+[gd_scene load_steps=13 format=4 uid="uid://c2dngih7l0yhr"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_3mysk"]
+[ext_resource type="Script" path="res://layer_holder.gd" id="2_q6s3v"]
+[ext_resource type="PackedScene" uid="uid://k6f6m27c5usi" path="res://ui/spells/spell_slot.tscn" id="3_1hdd8"]
+[ext_resource type="Texture2D" uid="uid://ct5h0b6a8s7b4" path="res://art/swamp_/swamp_.png" id="3_4xohx"]
+[ext_resource type="PackedScene" uid="uid://cu4qfv71c1i70" path="res://ui/character_frame/CharacterFrame.tscn" id="4_ebvww"]
+[ext_resource type="PackedScene" uid="uid://diu8y3vpmuvuf" path="res://utils/battle_manager/BattleManager.tscn" id="4_qbdbn"]
+[ext_resource type="PackedScene" uid="uid://8bl8ppgre6d8" path="res://ui/turn_order/EndTurnButton.tscn" id="5_rhj0d"]
+[ext_resource type="PackedScene" uid="uid://c7c2xwv0ldlh2" path="res://characters/player/Player.tscn" id="5_vb872"]
+[ext_resource type="PackedScene" uid="uid://cuk33b723yb5n" path="res://characters/necromancer/Necromancer.tscn" id="6_yln2q"]
+[ext_resource type="PackedScene" uid="uid://yb10bhp06gq0" path="res://ui/turn_order/TurnList.tscn" id="7_50md7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tdrj"]
+texture = ExtResource("3_4xohx")
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+1:5/animation_columns = 4
+1:5/animation_separation = Vector2i(4, 0)
+1:5/animation_speed = 2.0
+1:5/animation_frame_0/duration = 1.0
+1:5/animation_frame_1/duration = 1.0
+1:5/animation_frame_2/duration = 1.0
+1:5/animation_frame_3/duration = 1.0
+1:5/0 = 0
+2:5/animation_columns = 4
+2:5/animation_separation = Vector2i(4, 0)
+2:5/animation_speed = 2.0
+2:5/animation_frame_0/duration = 1.0
+2:5/animation_frame_1/duration = 1.0
+2:5/animation_frame_2/duration = 1.0
+2:5/animation_frame_3/duration = 1.0
+2:5/0 = 0
+3:5/animation_columns = 4
+3:5/animation_separation = Vector2i(4, 0)
+3:5/animation_speed = 2.0
+3:5/animation_frame_0/duration = 1.0
+3:5/animation_frame_1/duration = 1.0
+3:5/animation_frame_2/duration = 1.0
+3:5/animation_frame_3/duration = 1.0
+3:5/0 = 0
+4:5/animation_columns = 4
+4:5/animation_separation = Vector2i(4, 0)
+4:5/animation_speed = 2.0
+4:5/animation_frame_0/duration = 1.0
+4:5/animation_frame_1/duration = 1.0
+4:5/animation_frame_2/duration = 1.0
+4:5/animation_frame_3/duration = 1.0
+4:5/0 = 0
+5:5/animation_columns = 4
+5:5/animation_separation = Vector2i(4, 0)
+5:5/animation_speed = 2.0
+5:5/animation_frame_0/duration = 1.0
+5:5/animation_frame_1/duration = 1.0
+5:5/animation_frame_2/duration = 1.0
+5:5/animation_frame_3/duration = 1.0
+5:5/0 = 0
+1:6/animation_columns = 4
+1:6/animation_separation = Vector2i(4, 0)
+1:6/animation_speed = 2.0
+1:6/animation_frame_0/duration = 1.0
+1:6/animation_frame_1/duration = 1.0
+1:6/animation_frame_2/duration = 1.0
+1:6/animation_frame_3/duration = 1.0
+1:6/0 = 0
+2:6/animation_columns = 4
+2:6/animation_separation = Vector2i(4, 0)
+2:6/animation_speed = 2.0
+2:6/animation_frame_0/duration = 1.0
+2:6/animation_frame_1/duration = 1.0
+2:6/animation_frame_2/duration = 1.0
+2:6/animation_frame_3/duration = 1.0
+2:6/0 = 0
+3:6/animation_columns = 4
+3:6/animation_separation = Vector2i(4, 0)
+3:6/animation_speed = 2.0
+3:6/animation_frame_0/duration = 1.0
+3:6/animation_frame_1/duration = 1.0
+3:6/animation_frame_2/duration = 1.0
+3:6/animation_frame_3/duration = 1.0
+3:6/0 = 0
+4:6/animation_columns = 4
+4:6/animation_separation = Vector2i(4, 0)
+4:6/animation_speed = 2.0
+4:6/animation_frame_0/duration = 1.0
+4:6/animation_frame_1/duration = 1.0
+4:6/animation_frame_2/duration = 1.0
+4:6/animation_frame_3/duration = 1.0
+4:6/0 = 0
+5:6/animation_columns = 4
+5:6/animation_separation = Vector2i(4, 0)
+5:6/animation_speed = 2.0
+5:6/animation_frame_0/duration = 1.0
+5:6/animation_frame_1/duration = 1.0
+5:6/animation_frame_2/duration = 1.0
+5:6/animation_frame_3/duration = 1.0
+5:6/0 = 0
+1:7/animation_columns = 4
+1:7/animation_separation = Vector2i(4, 0)
+1:7/animation_speed = 2.0
+1:7/animation_frame_0/duration = 1.0
+1:7/animation_frame_1/duration = 1.0
+1:7/animation_frame_2/duration = 1.0
+1:7/animation_frame_3/duration = 1.0
+1:7/0 = 0
+2:7/animation_columns = 4
+2:7/animation_separation = Vector2i(4, 0)
+2:7/animation_speed = 2.0
+2:7/animation_frame_0/duration = 1.0
+2:7/animation_frame_1/duration = 1.0
+2:7/animation_frame_2/duration = 1.0
+2:7/animation_frame_3/duration = 1.0
+2:7/0 = 0
+3:7/animation_columns = 4
+3:7/animation_separation = Vector2i(4, 0)
+3:7/animation_speed = 2.0
+3:7/animation_frame_0/duration = 1.0
+3:7/animation_frame_1/duration = 1.0
+3:7/animation_frame_2/duration = 1.0
+3:7/animation_frame_3/duration = 1.0
+3:7/0 = 0
+4:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o7cbq"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_0tdrj")
+
+[node name="root" type="Node2D"]
+z_index = 2
+script = ExtResource("1_3mysk")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TurnList" parent="UI" node_paths=PackedStringArray("_battle_manager") instance=ExtResource("7_50md7")]
+offset_left = -64.0
+offset_top = 1.0
+offset_right = 54.0
+offset_bottom = 51.0
+_battle_manager = NodePath("../../BattleManager")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -249.0
+offset_top = -87.34
+offset_right = 249.0
+offset_bottom = -37.34
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SpellSlot" parent="UI/HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("3_1hdd8")]
+layout_mode = 2
+alignment_horizontal = 0
+player = NodePath("../../../Player")
+
+[node name="CharacterFrame" parent="UI" node_paths=PackedStringArray("target") instance=ExtResource("4_ebvww")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -437.0
+offset_top = -146.0
+offset_right = -88.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.375, 0.375)
+target = NodePath("../../Player")
+
+[node name="EndTurnButton" parent="UI" node_paths=PackedStringArray("target") instance=ExtResource("5_rhj0d")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 292.0
+offset_top = -88.0
+offset_right = 346.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+target = NodePath("../../Player")
+
+[node name="LayerHolder" type="Node2D" parent="."]
+script = ExtResource("2_q6s3v")
+
+[node name="Ground" type="TileMapLayer" parent="LayerHolder"]
+z_index = -1
+tile_map_data = PackedByteArray("AAACAAIAAAABAAUAAAADAAIAAAACAAUAAAAEAAIAAAACAAUAAAAFAAIAAAACAAUAAAAGAAIAAAACAAUAAAAHAAIAAAACAAUAAAAIAAIAAAACAAUAAAAJAAIAAAACAAUAAAAKAAIAAAACAAUAAAALAAIAAAACAAUAAAAMAAIAAAACAAUAAAANAAIAAAACAAUAAAAOAAIAAAACAAUAAAAPAAIAAAADAAUAAAAPAAMAAAADAAYAAAAPAAQAAAADAAYAAAAPAAUAAAADAAYAAAAPAAYAAAADAAYAAAAPAAcAAAADAAYAAAAPAAgAAAADAAcAAAAOAAgAAAACAAcAAAANAAgAAAACAAcAAAAMAAgAAAACAAcAAAALAAgAAAACAAcAAAAKAAgAAAACAAcAAAAJAAgAAAACAAcAAAAIAAgAAAACAAcAAAAHAAgAAAACAAcAAAAGAAgAAAACAAcAAAAFAAgAAAACAAcAAAAEAAgAAAACAAcAAAADAAgAAAACAAcAAAACAAgAAAABAAcAAAACAAcAAAABAAYAAAACAAYAAAABAAYAAAACAAUAAAABAAYAAAACAAQAAAABAAYAAAACAAMAAAABAAYAAAADAAMAAAACAAYAAAAEAAMAAAACAAYAAAAFAAQAAAACAAYAAAAGAAQAAAACAAYAAAAHAAQAAAACAAYAAAAIAAQAAAACAAYAAAAJAAUAAAACAAYAAAAKAAUAAAACAAYAAAALAAUAAAACAAYAAAAMAAYAAAACAAYAAAANAAYAAAACAAYAAAADAAQAAAACAAYAAAAEAAQAAAACAAYAAAAEAAUAAAACAAYAAAAFAAUAAAACAAYAAAAGAAYAAAACAAYAAAAHAAYAAAACAAYAAAAHAAcAAAACAAYAAAAIAAcAAAACAAYAAAAJAAcAAAACAAYAAAAKAAcAAAACAAYAAAADAAUAAAACAAYAAAADAAYAAAACAAYAAAADAAcAAAACAAYAAAAEAAYAAAACAAYAAAAEAAcAAAACAAYAAAAFAAMAAAACAAYAAAAFAAYAAAACAAYAAAAFAAcAAAACAAYAAAAGAAMAAAACAAYAAAAGAAUAAAACAAYAAAAGAAcAAAACAAYAAAAHAAMAAAACAAYAAAAHAAUAAAACAAYAAAAIAAMAAAACAAYAAAAIAAUAAAACAAYAAAAIAAYAAAACAAYAAAAJAAMAAAACAAYAAAAJAAQAAAACAAYAAAAJAAYAAAACAAYAAAAKAAMAAAACAAYAAAAKAAQAAAACAAYAAAAKAAYAAAACAAYAAAALAAMAAAACAAYAAAALAAQAAAACAAYAAAALAAYAAAACAAYAAAALAAcAAAACAAYAAAAMAAMAAAACAAYAAAAMAAQAAAACAAYAAAAMAAUAAAACAAYAAAAMAAcAAAACAAYAAAANAAMAAAACAAYAAAANAAQAAAACAAYAAAANAAUAAAACAAYAAAANAAcAAAACAAYAAAAOAAMAAAACAAYAAAAOAAQAAAACAAYAAAAOAAUAAAACAAYAAAAOAAYAAAACAAYAAAAOAAcAAAACAAYAAAAAAAAAAAAEAAcAAAAAAAEAAAAEAAcAAAAAAAIAAAAEAAcAAAAAAAMAAAAEAAcAAAAAAAQAAAAEAAcAAAAAAAUAAAAEAAcAAAAAAAYAAAAEAAcAAAAAAAcAAAAEAAcAAAAAAAgAAAAEAAcAAAAAAAkAAAAEAAcAAAAAAAoAAAAEAAcAAAAAAAsAAAAEAAcAAAAAAAwAAAAEAAcAAAABAAAAAAAEAAcAAAABAAEAAAAEAAcAAAABAAIAAAAEAAcAAAABAAMAAAAEAAcAAAABAAQAAAAEAAcAAAABAAUAAAAEAAcAAAABAAYAAAAEAAcAAAABAAcAAAAEAAcAAAABAAgAAAAEAAcAAAABAAkAAAAEAAcAAAABAAoAAAAEAAcAAAABAAsAAAAEAAcAAAABAAwAAAAEAAcAAAACAAkAAAAEAAcAAAACAAoAAAAEAAcAAAACAAsAAAAEAAcAAAACAAwAAAAEAAcAAAADAAkAAAAEAAcAAAADAAoAAAAEAAcAAAADAAsAAAAEAAcAAAADAAwAAAAEAAcAAAAEAAkAAAAEAAcAAAAEAAoAAAAEAAcAAAAEAAsAAAAEAAcAAAAEAAwAAAAEAAcAAAAFAAkAAAAEAAcAAAAFAAoAAAAEAAcAAAAFAAsAAAAEAAcAAAAFAAwAAAAEAAcAAAAGAAkAAAAEAAcAAAAGAAoAAAAEAAcAAAAGAAsAAAAEAAcAAAAGAAwAAAAEAAcAAAAHAAkAAAAEAAcAAAAHAAoAAAAEAAcAAAAHAAsAAAAEAAcAAAAHAAwAAAAEAAcAAAAIAAkAAAAEAAcAAAAIAAoAAAAEAAcAAAAIAAsAAAAEAAcAAAAIAAwAAAAEAAcAAAAJAAkAAAAEAAcAAAAJAAoAAAAEAAcAAAAJAAsAAAAEAAcAAAAJAAwAAAAEAAcAAAAKAAkAAAAEAAcAAAAKAAoAAAAEAAcAAAAKAAsAAAAEAAcAAAAKAAwAAAAEAAcAAAALAAkAAAAEAAcAAAALAAoAAAAEAAcAAAALAAsAAAAEAAcAAAALAAwAAAAEAAcAAAAMAAkAAAAEAAcAAAAMAAoAAAAEAAcAAAAMAAsAAAAEAAcAAAAMAAwAAAAEAAcAAAANAAkAAAAEAAcAAAANAAoAAAAEAAcAAAANAAsAAAAEAAcAAAANAAwAAAAEAAcAAAAOAAkAAAAEAAcAAAAOAAoAAAAEAAcAAAAOAAsAAAAEAAcAAAAOAAwAAAAEAAcAAAAPAAkAAAAEAAcAAAAPAAoAAAAEAAcAAAAPAAsAAAAEAAcAAAAPAAwAAAAEAAcAAAAQAAkAAAAEAAcAAAAQAAoAAAAEAAcAAAAQAAsAAAAEAAcAAAAQAAwAAAAEAAcAAAARAAkAAAAEAAcAAAARAAoAAAAEAAcAAAARAAsAAAAEAAcAAAARAAwAAAAEAAcAAAASAAkAAAAEAAcAAAASAAoAAAAEAAcAAAASAAsAAAAEAAcAAAASAAwAAAAEAAcAAAATAAkAAAAEAAcAAAATAAoAAAAEAAcAAAATAAsAAAAEAAcAAAATAAwAAAAEAAcAAAAQAAAAAAAEAAcAAAAQAAEAAAAEAAcAAAAQAAIAAAAEAAcAAAAQAAMAAAAEAAcAAAAQAAQAAAAEAAcAAAAQAAUAAAAEAAcAAAAQAAYAAAAEAAcAAAAQAAcAAAAEAAcAAAAQAAgAAAAEAAcAAAARAAAAAAAEAAcAAAARAAEAAAAEAAcAAAARAAIAAAAEAAcAAAARAAMAAAAEAAcAAAARAAQAAAAEAAcAAAARAAUAAAAEAAcAAAARAAYAAAAEAAcAAAARAAcAAAAEAAcAAAARAAgAAAAEAAcAAAASAAAAAAAEAAcAAAASAAEAAAAEAAcAAAASAAIAAAAEAAcAAAASAAMAAAAEAAcAAAASAAQAAAAEAAcAAAASAAUAAAAEAAcAAAASAAYAAAAEAAcAAAASAAcAAAAEAAcAAAASAAgAAAAEAAcAAAATAAAAAAAEAAcAAAATAAEAAAAEAAcAAAATAAIAAAAEAAcAAAATAAMAAAAEAAcAAAATAAQAAAAEAAcAAAATAAUAAAAEAAcAAAATAAYAAAAEAAcAAAATAAcAAAAEAAcAAAATAAgAAAAEAAcAAAACAAAAAAAEAAcAAAACAAEAAAAEAAcAAAADAAAAAAAEAAcAAAADAAEAAAAEAAcAAAAEAAAAAAAEAAcAAAAEAAEAAAAEAAcAAAAFAAAAAAAEAAcAAAAFAAEAAAAEAAcAAAAGAAAAAAAEAAcAAAAGAAEAAAAEAAcAAAAHAAAAAAAEAAcAAAAHAAEAAAAEAAcAAAAIAAAAAAAEAAcAAAAIAAEAAAAEAAcAAAAJAAAAAAAEAAcAAAAJAAEAAAAEAAcAAAAKAAAAAAAEAAcAAAAKAAEAAAAEAAcAAAALAAAAAAAEAAcAAAALAAEAAAAEAAcAAAAMAAAAAAAEAAcAAAAMAAEAAAAEAAcAAAANAAAAAAAEAAcAAAANAAEAAAAEAAcAAAAOAAAAAAAEAAcAAAAOAAEAAAAEAAcAAAAPAAAAAAAEAAcAAAAPAAEAAAAEAAcAAAA=")
+tile_set = SubResource("TileSet_o7cbq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(146, 95)
+zoom = Vector2(4.345, 4.345)
+
+[node name="BattleManager" parent="." instance=ExtResource("4_qbdbn")]
+
+[node name="Player" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_vb872")]
+player_team = true
+target = NodePath("../Dummy")
+
+[node name="Dummy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_yln2q")]
+target = NodePath("../Player")

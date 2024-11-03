@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://tpyden628vdc"]
+
+[ext_resource type="Script" path="res://spells/shoot/shoot.gd" id="1_h6oyd"]
+[ext_resource type="Texture2D" uid="uid://b42qwf1yt61mx" path="res://art/Hunter_Free/Hunter_24.png" id="2_lpb8a"]
+
+[node name="Shoot" type="Node"]
+script = ExtResource("1_h6oyd")
+spell_icon = ExtResource("2_lpb8a")

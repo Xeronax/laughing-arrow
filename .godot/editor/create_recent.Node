@@ -1,0 +1,14 @@
+AnimationPlayer
+SpriteComponent
+AnimatedSprite2D
+SpellComponent
+Node
+AIComponent
+AspectRatioContainer
+Button
+TextureRect
+TextureButton
+Panel
+Label
+GridContainer
+Control

@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjmtkb3hpj8gd"]
+
+[ext_resource type="Script" path="res://ui/turn_order/character_box.gd" id="1_gmcrw"]
+[ext_resource type="Texture2D" uid="uid://djsok1jun5fdd" path="res://art/Pxiel Art UI borders.png" id="2_ho480"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ds75n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul1l5"]
+atlas = ExtResource("2_ho480")
+region = Rect2(17, 17, 94, 94)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqrlo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_342t5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdyxq"]
+bg_color = Color(0.94902, 0.94902, 0.94902, 0.54902)
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwisc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ak4aj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8p64"]
+bg_color = Color(0.921569, 0.192157, 0.105882, 1)
+
+[node name="VSplitContainer" type="VSplitContainer"]
+offset_right = 10.0
+offset_bottom = 11.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+dragger_visibility = 1
+script = ExtResource("1_gmcrw")
+
+[node name="ARContainer" type="PanelContainer" parent="."]
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ds75n")
+
+[node name="Border" type="TextureRect" parent="ARContainer"]
+clip_contents = true
+layout_mode = 2
+texture = SubResource("AtlasTexture_ul1l5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharacterImage" type="TextureRect" parent="ARContainer"]
+layout_mode = 2
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="ARContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sqrlo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_342t5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xdyxq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwisc")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+size_flags_vertical = 10
+size_flags_stretch_ratio = 0.1
+theme_override_styles/background = SubResource("StyleBoxFlat_ak4aj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x8p64")
+show_percentage = false
