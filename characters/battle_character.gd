@@ -7,6 +7,7 @@ class_name BattleCharacter extends CharacterBody2D
 @export var player_team: bool = false
 @export var target: BattleCharacter
 @export var grid_position: Vector2
+@export var hitbox: CollisionShape2D
 
 signal turn_starting
 signal turn_ending

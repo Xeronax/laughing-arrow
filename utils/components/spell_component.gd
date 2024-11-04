@@ -1,7 +1,7 @@
 class_name SpellComponent extends Component
 
 @export var sprite_component: SpriteComponent
-@export var character: BattleCharacter
+@export var caster: BattleCharacter
 @export var spell_icon: Texture
 
 enum TargetType { STRAIGHT_LINE, ANY, CIRCLE, CROSS }
@@ -23,15 +23,15 @@ func highlight_range() -> void:
 	pass
 
 func cast() -> bool:
-	if not character.is_turn:
+	if not caster.is_turn:
 		return false
-	if character.casting:
+	if caster.casting:
 		return false
-	if character.stats.ap < ap_cost:
+	if caster.stats.ap < ap_cost:
 		print("Not enough ap to cast ", spell_name)
 		return false
-	character.stats.ap -= ap_cost
-	character.stats.ap_changed.emit(character.stats.ap)
+	caster.stats.ap -= ap_cost
+	caster.stats.ap_changed.emit(caster.stats.ap)
 	return true
 
 func deal_damage() -> void:

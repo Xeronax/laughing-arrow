@@ -190,8 +190,9 @@ animations = [{
 radius = 6.0
 height = 16.0
 
-[node name="BattleCharacter" type="CharacterBody2D"]
+[node name="BattleCharacter" type="CharacterBody2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_qxmu1")
+hitbox = NodePath("CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 21)
@@ -219,6 +220,6 @@ target_node = NodePath("..")
 
 [node name="Spellbook" type="Node" parent="."]
 
-[node name="Shoot" parent="Spellbook" node_paths=PackedStringArray("character", "target_node") instance=ExtResource("6_8stvu")]
-character = NodePath("../..")
+[node name="Shoot" parent="Spellbook" node_paths=PackedStringArray("caster", "target_node") instance=ExtResource("6_8stvu")]
+caster = NodePath("../..")
 target_node = NodePath("..")

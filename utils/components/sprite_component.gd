@@ -1,6 +1,7 @@
 class_name SpriteComponent extends Component
 
 @export var Sprite: AnimatedSprite2D
+@export var animation_player: AnimationPlayer
 @export var target_size: int
 
 @onready var portrait: Texture2D = Sprite.sprite_frames.get_frame_texture('idle', 0)
