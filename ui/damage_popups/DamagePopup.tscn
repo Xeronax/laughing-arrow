@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://7phr4v6qjxta"]
+[gd_scene load_steps=6 format=3 uid="uid://7phr4v6qjxta"]
 
-[ext_resource type="FontFile" uid="uid://c66f6mfqcyten" path="res://art/BerkshireSwash-Regular.ttf" id="1_w3ujy"]
+[ext_resource type="FontFile" uid="uid://uy6e42ny2gqe" path="res://art/BebasNeue-Regular.ttf" id="1_mgt78"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pprgn"]
-font = ExtResource("1_w3ujy")
+font = ExtResource("1_mgt78")
 font_size = 32
-font_color = Color(0.94902, 0.0235294, 0.0235294, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_jkykw"]
 resource_name = "popup"
@@ -20,7 +21,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
+"values": [Vector2(0.35, 0.35), Vector2(1.5, 1.5), Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -48,9 +49,37 @@ tracks/2/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.73889, 0.32529, 0.10369, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fnfjt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ugcaq"]
 _data = {
+"RESET": SubResource("Animation_fnfjt"),
 "popup": SubResource("Animation_jkykw")
 }
 
@@ -74,7 +103,10 @@ offset_right = 18.0
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.35, 0.35)
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.99558, 0.99558, 0.99558, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "50"
 label_settings = SubResource("LabelSettings_pprgn")
 horizontal_alignment = 1

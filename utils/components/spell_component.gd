@@ -30,10 +30,8 @@ func cast() -> bool:
 	if caster.stats.ap < ap_cost:
 		print("Not enough ap to cast ", spell_name)
 		return false
-	caster.stats.ap -= ap_cost
-	caster.stats.ap_changed.emit(caster.stats.ap)
+	caster.stats.set_ap(caster.stats.ap - ap_cost)
 	return true
 
 func deal_damage() -> void:
 	target.take_damage(DamageEvent.new(self, damage_calc))
-	target.sprite_component.Sprite.play("get_hit")

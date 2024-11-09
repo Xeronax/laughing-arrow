@@ -1,10 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1730660022
+::res://::1731096418
 global.gd::GDScript::-1::1730649530::0::1::::<>Node<>::
-layer_holder.gd::GDScript::-1::1730649530::0::1::::<>Node2D<>::
+layer_holder.gd::GDScript::-1::1730857547::0::1::::<>Node2D<>::
 main.gd::GDScript::-1::1730649530::0::1::::<>Node2D<>::
-Main.tscn::PackedScene::6674933747014725143::1730650348::0::1::::<><>::res://main.gd<>res://layer_holder.gd<>uid://k6f6m27c5usi::::res://ui/spells/spell_slot.tscn<>uid://ct5h0b6a8s7b4::::res://art/swamp_/swamp_.png<>uid://cu4qfv71c1i70::::res://ui/character_frame/CharacterFrame.tscn<>uid://diu8y3vpmuvuf::::res://utils/battle_manager/BattleManager.tscn<>uid://8bl8ppgre6d8::::res://ui/turn_order/EndTurnButton.tscn<>uid://c7c2xwv0ldlh2::::res://characters/player/Player.tscn<>uid://cuk33b723yb5n::::res://characters/necromancer/Necromancer.tscn<>uid://yb10bhp06gq0::::res://ui/turn_order/TurnList.tscn
-::res://art/::1730649622
+Main.tscn::PackedScene::6674933747014725143::1730980589::0::1::::<><>::res://main.gd<>res://layer_holder.gd<>uid://k6f6m27c5usi::::res://ui/spells/spell_slot.tscn<>uid://ct5h0b6a8s7b4::::res://art/swamp_/swamp_.png<>uid://cu4qfv71c1i70::::res://ui/character_frame/CharacterFrame.tscn<>uid://diu8y3vpmuvuf::::res://utils/battle_manager/BattleManager.tscn<>uid://8bl8ppgre6d8::::res://ui/turn_order/EndTurnButton.tscn<>uid://c7c2xwv0ldlh2::::res://characters/player/Player.tscn<>uid://cuk33b723yb5n::::res://characters/necromancer/Necromancer.tscn<>uid://yb10bhp06gq0::::res://ui/turn_order/TurnList.tscn<>res://highlight.gdshader
+highlight.gdshader::Shader::-1::1730980590::0::1::::<><>::
+::res://art/::1730745592
+BebasNeue-Regular.ttf::FontFile::1455212874320136948::1730745501::1730745592::1::::<><>::
 BerkshireSwash-Regular.ttf::FontFile::7013050813850771841::1730649529::1730649620::1::::<><>::
 icon.svg::CompressedTexture2D::4760478720731652130::1730649530::1730649622::1::::<><>::
 Necromancer_creativekind-Sheet.png::CompressedTexture2D::3521471204773554858::1730649530::1730649622::1::::<><>::
@@ -341,45 +343,66 @@ BarV8_ProgressBar.png::CompressedTexture2D::2087043303936238376::1730649530::173
 BarV6_ProgressBarBorder.png::CompressedTexture2D::2258140910508918515::1730649530::1730649621::1::::<><>::
 BarV9_Bar.png::CompressedTexture2D::8563285667392988782::1730649530::1730649621::1::::<><>::
 BarV9_ProgressBar.png::CompressedTexture2D::3228384136114800792::1730649530::1730649621::1::::<><>::
-::res://characters/::1730649530
-battle_character.gd::GDScript::-1::1730649530::0::1::::BattleCharacter<>CharacterBody2D<>::
-::res://characters/necromancer/::1730657277
+::res://characters/::1730842259
+battle_character.gd::GDScript::-1::1730842259::0::1::::BattleCharacter<>CharacterBody2D<>::
+::res://characters/necromancer/::1730980589
 ai_controller.gd::GDScript::-1::1730649530::0::1::::<>AIComponent<>::
-Necromancer.tscn::PackedScene::6199012198936456429::1730657277::0::1::::<><>::res://characters/battle_character.gd<>uid://b44702rw2pcjx::::res://art/Necromancer/Attack/spr_NecromancerAttackWithEffect_strip47.png<>uid://cvu5f7hwbl1yw::::res://art/Necromancer/GetHit/spr_NecromancerGetHit_strip9.png<>uid://uoroff6q2mqv::::res://art/Necromancer/Idle/spr_NecromancerIdle_strip50.png<>uid://ddx15qdgghfjg::::res://art/Necromancer/Walk/spr_NecromancerWalk_strip10.png<>res://utils/components/sprite_component.gd<>uid://b710a872lor0g::::res://art/Necromancer/Attack/spr_NecromancerAttackWithoutEffect_strip47.png<>res://utils/components/stat_component.gd<>res://characters/necromancer/ai_controller.gd<>uid://v0nnau447l0g::::res://spells/death_lance/DeathLance.tscn
-::res://characters/player/::1730650348
-Player.tscn::PackedScene::7024694740481177181::1730650348::0::1::::<><>::res://characters/battle_character.gd<>uid://p22ewmdirodp::::res://art/Final/Normal Attack.png<>uid://cd555acarioba::::res://art/Final/Idle and running.png<>res://utils/components/sprite_component.gd<>res://utils/components/stat_component.gd<>uid://tpyden628vdc::::res://spells/shoot/Shoot.tscn
+Necromancer.tscn::PackedScene::6199012198936456429::1730980589::0::1::::<><>::res://characters/battle_character.gd<>uid://b44702rw2pcjx::::res://art/Necromancer/Attack/spr_NecromancerAttackWithEffect_strip47.png<>uid://cvu5f7hwbl1yw::::res://art/Necromancer/GetHit/spr_NecromancerGetHit_strip9.png<>uid://uoroff6q2mqv::::res://art/Necromancer/Idle/spr_NecromancerIdle_strip50.png<>uid://ddx15qdgghfjg::::res://art/Necromancer/Walk/spr_NecromancerWalk_strip10.png<>res://utils/components/sprite_component.gd<>uid://b710a872lor0g::::res://art/Necromancer/Attack/spr_NecromancerAttackWithoutEffect_strip47.png<>res://utils/components/stat_component.gd<>res://characters/necromancer/ai_controller.gd<>uid://v0nnau447l0g::::res://spells/death_lance/DeathLance.tscn
+::res://characters/player/::1730980589
+Player.tscn::PackedScene::7024694740481177181::1730980589::0::1::::<><>::res://characters/battle_character.gd<>uid://p22ewmdirodp::::res://art/Final/Normal Attack.png<>uid://cd555acarioba::::res://art/Final/Idle and running.png<>res://utils/components/sprite_component.gd<>res://utils/components/stat_component.gd<>uid://tpyden628vdc::::res://spells/shoot/Shoot.tscn
+::res://PixelWoods/::1677419955
+::res://PixelWoods/Bridge/::1677419778
+Bridge.png::CompressedTexture2D::5936879039669730059::1677419774::1731096423::1::::<><>::
+::res://PixelWoods/Decorations(main)/::1677419839
+Decorations.png::CompressedTexture2D::8545984846381900432::1675130620::1731096423::1::::<><>::
+::res://PixelWoods/Seasons/::1677419861
+::res://PixelWoods/Seasons/autumn/::1675756427
+decorations.png::CompressedTexture2D::6127205925658378974::1675488308::1731096423::1::::<><>::
+terrain1.png::CompressedTexture2D::4944133309204015030::1675516300::1731096423::1::::<><>::
+::res://PixelWoods/Seasons/spring/::1677419922
+Decorations1.png::CompressedTexture2D::2050269391556973062::1677380788::1731096423::1::::<><>::
+terrain tiles.png::CompressedTexture2D::2459719463749944891::1677380698::1731096423::1::::<><>::
+waterfalls1.png::CompressedTexture2D::9089586945307890780::1677381164::1731096423::1::::<><>::
+::res://PixelWoods/Seasons/winter/::1675756427
+decorations.png::CompressedTexture2D::6404939536993572090::1675405178::1731096423::1::::<><>::
+terrain.png::CompressedTexture2D::1256785640691853336::1675516406::1731096423::1::::<><>::
+::res://PixelWoods/Terrain(main)/::1677419810
+terrain tiles.png::CompressedTexture2D::5322102947552222212::1676105211::1731096423::1::::<><>::
+::res://PixelWoods/Waterfall/::1677419966
+waterfalls.png::CompressedTexture2D::6839971502743059104::1675130692::1731096423::1::::<><>::
 ::res://spells/::1730649530
-::res://spells/death_lance/::1730650349
-DeathLance.tscn::PackedScene::1526387728730642804::1730650349::0::1::::<><>::res://spells/death_lance/death_lance.gd
-death_lance.gd::GDScript::-1::1730649530::0::1::::<>SpellComponent<>::
-Lance.tscn::PackedScene::5015699011717868874::1730649530::0::1::::<><>::uid://drjhd0dv73cls::::res://art/Necromancer/Attack/spr_NecromancerAttackEffect_strip47.png
-::res://spells/shoot/::1730650348
-shoot.gd::GDScript::-1::1730649530::0::1::::<>SpellComponent<>::
-Shoot.tscn::PackedScene::1366016492263380372::1730650348::0::1::::<><>::res://spells/shoot/shoot.gd<>uid://b42qwf1yt61mx::::res://art/Hunter_Free/Hunter_24.png
+::res://spells/death_lance/::1730980590
+DeathLance.tscn::PackedScene::1526387728730642804::1730980589::0::1::::<><>::res://spells/death_lance/death_lance.gd
+death_lance.gd::GDScript::-1::1730827185::0::1::::<>SpellComponent<>::
+Lance.tscn::PackedScene::5015699011717868874::1730980590::0::1::::<><>::uid://drjhd0dv73cls::::res://art/Necromancer/Attack/spr_NecromancerAttackEffect_strip47.png<>res://spells/death_lance/lance.gd
+lance.gd::GDScript::-1::1730744998::0::1::::Lance<>AnimatedSprite2D<>::
+::res://spells/shoot/::1730980589
+shoot.gd::GDScript::-1::1730735338::0::1::::<>SpellComponent<>::
+Shoot.tscn::PackedScene::1366016492263380372::1730980589::0::1::::<><>::res://spells/shoot/shoot.gd<>uid://b42qwf1yt61mx::::res://art/Hunter_Free/Hunter_24.png
 ::res://ui/::1730649530
-::res://ui/character_frame/::1730650348
-CharacterFrame.tscn::PackedScene::6237466749477491497::1730650348::0::1::::<><>::res://ui/character_frame/character_frame.gd<>uid://v4dqfsfxkjnp::::res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Circle01.png<>uid://dupgo4uao7147::::res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Circle02.png<>uid://c66f6mfqcyten::::res://art/BerkshireSwash-Regular.ttf
-character_frame.gd::GDScript::-1::1730649530::0::1::::<>Control<>::
-::res://ui/damage_popups/::1730650348
-DamagePopup.tscn::PackedScene::2277465597221988810::1730650348::0::1::::<><>::uid://c66f6mfqcyten::::res://art/BerkshireSwash-Regular.ttf
-::res://ui/spells/::1730650348
+::res://ui/character_frame/::1730980589
+CharacterFrame.tscn::PackedScene::6237466749477491497::1730980589::0::1::::<><>::res://ui/character_frame/character_frame.gd<>uid://v4dqfsfxkjnp::::res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Circle01.png<>uid://dupgo4uao7147::::res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Circle02.png<>uid://c66f6mfqcyten::::res://art/BerkshireSwash-Regular.ttf
+character_frame.gd::GDScript::-1::1730828188::0::1::::<>Control<>::
+::res://ui/damage_popups/::1730980589
+DamagePopup.tscn::PackedScene::2277465597221988810::1730980589::0::1::::<><>::uid://uy6e42ny2gqe::::res://art/BebasNeue-Regular.ttf
+::res://ui/spells/::1730980589
 spell_slot.gd::GDScript::-1::1730649530::0::1::::<>AspectRatioContainer<>::
-spell_slot.tscn::PackedScene::766243764778791052::1730650348::0::1::::<><>::uid://codyompr0070o::::res://art/Custom Border and Panels Menu All Part/Border All 1.png<>res://ui/spells/spell_slot.gd
-::res://ui/turn_order/::1730650349
-CharacterBox.tscn::PackedScene::3044064386402080491::1730650349::0::1::::<><>::res://ui/turn_order/character_box.gd<>uid://djsok1jun5fdd::::res://art/Pxiel Art UI borders.png
+spell_slot.tscn::PackedScene::766243764778791052::1730980589::0::1::::<><>::uid://codyompr0070o::::res://art/Custom Border and Panels Menu All Part/Border All 1.png<>res://ui/spells/spell_slot.gd
+::res://ui/turn_order/::1730980589
+CharacterBox.tscn::PackedScene::3044064386402080491::1730980589::0::1::::<><>::res://ui/turn_order/character_box.gd<>uid://djsok1jun5fdd::::res://art/Pxiel Art UI borders.png
 character_box.gd::GDScript::-1::1730649530::0::1::::<>VSplitContainer<>::
-EndTurnButton.tscn::PackedScene::2319023847246262963::1730650349::0::1::::<><>::uid://dao7ysmlwk23k::::res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Arrow.png<>res://ui/turn_order/end_turn_button.gd<>uid://codyompr0070o::::res://art/Custom Border and Panels Menu All Part/Border All 1.png
-end_turn_button.gd::GDScript::-1::1730649530::0::1::::<>Control<>::
-TurnList.tscn::PackedScene::1688219975779534201::1730650349::0::1::::<><>::res://ui/turn_order/turn_list.gd
+EndTurnButton.tscn::PackedScene::2319023847246262963::1730980589::0::1::::<><>::uid://dao7ysmlwk23k::::res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Arrow.png<>res://ui/turn_order/end_turn_button.gd<>uid://codyompr0070o::::res://art/Custom Border and Panels Menu All Part/Border All 1.png
+end_turn_button.gd::GDScript::-1::1730744916::0::1::::<>Control<>::
+TurnList.tscn::PackedScene::1688219975779534201::1730980589::0::1::::<><>::res://ui/turn_order/turn_list.gd
 turn_list.gd::GDScript::-1::1730649530::0::1::::<>HBoxContainer<>::
-::res://utils/::1730649530
+::res://utils/::1730733174
 component.gd::GDScript::-1::1730649530::0::1::::Component<>Node<>::
-damage_event.gd::GDScript::-1::1730649530::0::1::::DamageEvent<>RefCounted<>::
+damage_event.gd::GDScript::-1::1730733174::0::1::::DamageEvent<>RefCounted<>::
 ::res://utils/battle_manager/::1730649530
 BattleManager.tscn::PackedScene::7764108378872843777::1730649530::0::1::::<><>::res://utils/battle_manager/battle_manager.gd
 battle_manager.gd::GDScript::-1::1730649530::0::1::::<>Node2D<>::
-::res://utils/components/::1730649530
+::res://utils/components/::1730856999
 ai_controller_component.gd::GDScript::-1::1730649530::0::1::::AIComponent<>Component<>::
-spell_component.gd::GDScript::-1::1730649530::0::1::::SpellComponent<>Component<>::
-sprite_component.gd::GDScript::-1::1730649530::0::1::::SpriteComponent<>Component<>::
-stat_component.gd::GDScript::-1::1730649530::0::1::::StatComponent<>Component<>::
+spell_component.gd::GDScript::-1::1730856999::0::1::::SpellComponent<>Component<>::
+sprite_component.gd::GDScript::-1::1730731045::0::1::::SpriteComponent<>Component<>::
+stat_component.gd::GDScript::-1::1730827282::0::1::::StatComponent<>Component<>::

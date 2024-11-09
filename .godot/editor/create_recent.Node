@@ -1,3 +1,4 @@
+TileMapLayer
 AnimationPlayer
 SpriteComponent
 AnimatedSprite2D
@@ -11,4 +12,3 @@ TextureButton
 Panel
 Label
 GridContainer
-Control

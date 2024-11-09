@@ -14,13 +14,20 @@ signal hp_changed
 signal ap_changed
 signal mp_changed
 
+func set_ap(val: int) -> void:
+	if(ap == val):
+		return
+	ap = val
+	ap_changed.emit()
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func set_mp(val: int) -> void:
+	if(mp == val):
+		return
+	mp = val
+	mp_changed.emit()
+
+func set_hp(val: int) -> void:
+	if(hp == val):
+		return
+	hp = val
 	hp_changed.emit()
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass

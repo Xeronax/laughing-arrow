@@ -31,14 +31,3 @@ func _cleanup() -> void:
 	print("Cleaning")
 	caster.casting = false
 	sprite_component.animation_player.play("idle")
-
-
-#func _cleanup_spell_effect() -> void:
-	#print("Cleaning up animation")
-	#lance.animation_changed.disconnect(_animation_deal_damage)
-	#lance.queue_free()
-	#target.sprite_component.animate()
-	#sprite_component.Sprite.frame_changed.disconnect(_attack)
-	#character.ai_component.move_ready.emit()
-	#lance = null
-#

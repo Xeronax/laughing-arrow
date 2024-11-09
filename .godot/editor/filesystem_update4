@@ -18,3 +18,9 @@ res://spells/death_lance/DeathLance.tscn
 res://spells/shoot/shoot.gd
 res://characters/battle_character.gd
 res://ui/turn_order/end_turn_button.gd
+res://utils/components/stat_component.gd
+res://highlight.gdshader
+res://ui/character_frame/character_frame.gd
+res://layer_holder.gd
+res://global.gd
+res://main.gd

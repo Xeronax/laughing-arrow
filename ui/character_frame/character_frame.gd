@@ -6,28 +6,23 @@ extends Control
 
 @export var target: BattleCharacter
 
-func set_ap(ap: int) -> void:
-	ap_label.text = str(ap)
-
-func set_mp(mp: int) -> void:
-	mp_label.text = str(mp)
+func _update() -> void:
+	ap_label.text = str(target.stats.ap)
+	mp_label.text = str(target.stats.mp)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await(target.ready)
 	switch_target(target)
-	pass # Replace with function body.
 
 func switch_target(character: BattleCharacter) -> void:
 	if target:
-		if(target.stats.ap_changed.is_connected(set_ap)):
-			target.stats.ap_changed.disconnect(set_ap)
-		if(target.stats.mp_changed.is_connected(set_mp)):
-			target.stats.mp_changed.disconnect(set_mp)
+		if(target.stats.ap_changed.is_connected(_update)):
+			target.stats.ap_changed.disconnect(_update)
+		if(target.stats.mp_changed.is_connected(_update)):
+			target.stats.mp_changed.disconnect(_update)
 	target = character
 	portrait.texture = target.sprite_component.portrait
-	ap_label.text = str(target.stats.ap)
-	mp_label.text = str(target.stats.mp)
-	target.stats.ap_changed.connect(set_ap)
-	target.stats.mp_changed.connect(set_mp)
-	
+	_update()
+	target.stats.ap_changed.connect(_update)
+	target.stats.mp_changed.connect(_update)

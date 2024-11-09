@@ -6,3 +6,4 @@ extends Node2D
 @onready var battle_manager: Node2D = $BattleManager
 @onready var ui: CanvasLayer = $UI
 @onready var camera: Camera2D = $Camera2D
+@onready var highlight_map: TileMapLayer = $LayerHolder/Highlights

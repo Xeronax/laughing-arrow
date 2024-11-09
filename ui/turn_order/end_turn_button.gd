@@ -5,14 +5,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	button.pressed.connect(_end_turn)
+	button.pressed.connect(target.end_turn)
 	target.turn_starting.connect(_enable)
 	pass # Replace with function body.
-
-func _end_turn() -> void:
-	target.turn_ending.emit()
-	target.is_turn = false
-	button.set_disabled(true)
 
 func _enable() -> void:
 	button.set_disabled(false)
