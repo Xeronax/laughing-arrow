@@ -17,6 +17,7 @@ var moving: bool = false
 var reversed: bool = false
 var casting: bool = false
 var damage_node: PackedScene = preload("res://ui/damage_popups/DamagePopup.tscn")
+var movement_cells: Array[Vector2i] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,8 +28,7 @@ func start_turn() -> void:
 	_reset_resources()
 	is_turn = true
 	turn_starting.emit()
-	print(self, " starting turn")
-	if(ai_component):
+	if(ai_component._enabled if ai_component else false):
 		print("Starting ai behavior")
 		ai_component.turn_behavior()
 	else:
@@ -64,11 +64,15 @@ func _create_damage_popup(damage: int) -> void:
 	label.text = str(damage)
 	animation.play("popup")
 
-func _highlight_movement_range() -> void:
+func move(cell: Vector2i) -> void:
+	reversed = cell.x < grid_position.x
+	sprite_component.animation_player.play("run")
+	
+
+func _highlight_movement_range(pos: Vector2i = grid_position) -> void:
 	if stats.mp <= 0:
 		return
 	var movement_range: int = stats.mp
-	var cells_to_highlight: Array[Vector2i] = []
 	var highlight_map: TileMapLayer = Global.highlight_map
 	
 	for dist in range(1, movement_range):
@@ -77,14 +81,14 @@ func _highlight_movement_range() -> void:
 		var left: Vector2i = grid_position + Vector2i(-dist, 0)
 		var right: Vector2i = grid_position + Vector2i(dist, 0)
 		for direction in [up, down, left, right]:
-			cells_to_highlight.append_array(
+			movement_cells.append_array(
 				highlight_map.get_surrounding_cells(direction).filter(func (cell):
-					if cells_to_highlight.has(cell):
+					if movement_cells.has(cell):
 						return false
 					if cell == grid_position:
 						return false
 					return true
 					)
 				)
-	for cell in cells_to_highlight:
+	for cell in movement_cells:
 		Global.highlight_cell(cell, Global.GREEN_HIGHLIGHT)

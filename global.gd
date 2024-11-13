@@ -29,7 +29,7 @@ func grid_to_global_position(cell: Vector2) -> Vector2:
 	return current_scene.to_global(map.map_to_local(cell))
 
 func teleport_character(character: BattleCharacter, x: int, y: int) -> void: 
-	character.global_position = grid_to_global_position(Vector2(x, y)) + OFFSET
+	character.global_position = grid_to_global_position(Vector2(x, y))
 	character.grid_position = Vector2(x, y)
 
 func grid_to_ui(cell: Vector2) -> Vector2:

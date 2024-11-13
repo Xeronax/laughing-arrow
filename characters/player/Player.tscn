@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c7c2xwv0ldlh2"]
+[gd_scene load_steps=33 format=3 uid="uid://c7c2xwv0ldlh2"]
 
 [ext_resource type="Script" path="res://characters/battle_character.gd" id="1_qxmu1"]
 [ext_resource type="Texture2D" uid="uid://p22ewmdirodp" path="res://art/Final/Normal Attack.png" id="2_ollde"]
@@ -186,6 +186,69 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Animation" id="Animation_id3sk"]
+resource_name = "idle"
+length = 0.0333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+
+[sub_resource type="Animation" id="Animation_2k0ht"]
+resource_name = "run"
+length = 0.2333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.2333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lc5g3"]
+_data = {
+"idle": SubResource("Animation_id3sk"),
+"run": SubResource("Animation_2k0ht")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdhi5"]
 radius = 6.0
 height = 16.0
@@ -195,17 +258,21 @@ script = ExtResource("1_qxmu1")
 hitbox = NodePath("CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 21)
 sprite_frames = SubResource("SpriteFrames_rhcyd")
-animation = &"get_hit"
+animation = &"idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_lc5g3")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 23)
 shape = SubResource("CapsuleShape2D_sdhi5")
 
-[node name="SpriteComponent" type="Node" parent="." node_paths=PackedStringArray("Sprite", "target_node")]
+[node name="SpriteComponent" type="Node" parent="." node_paths=PackedStringArray("Sprite", "animation_player", "target_node")]
 script = ExtResource("4_ktlyp")
 Sprite = NodePath("../AnimatedSprite2D")
+animation_player = NodePath("../AnimatedSprite2D/AnimationPlayer")
 target_size = 24
 target_node = NodePath("..")
 
