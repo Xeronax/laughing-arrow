@@ -9,6 +9,7 @@ var camera: Camera2D = null
 var map: TileMapLayer = null
 var highlight_map: TileMapLayer = null
 var ui: CanvasLayer = null
+var pathfinding_map: AStarGrid2D = null
 
 
 func _ready() -> void:
@@ -19,6 +20,7 @@ func _ready() -> void:
 	map = current_scene.map
 	ui = current_scene.ui
 	highlight_map = current_scene.highlight_map
+	pathfinding_map = current_scene.layer_holder.map_astar
 	
 	teleport_character(current_scene.player, 4, 4)
 	teleport_character(current_scene.dummy, 13, 4)
@@ -36,5 +38,13 @@ func grid_to_ui(cell: Vector2) -> Vector2:
 	return (grid_to_global_position(cell) - camera.global_position) * camera.zoom + current_scene.get_viewport_rect().size / 2
 
 func highlight_cell(position: Vector2i, color: Vector2i) -> void:
-	print("Highlighting ", position)
 	highlight_map.set_cell(position, 0, color)
+
+func path_to_cell(from: Vector2i, to: Vector2i) -> Array[Vector2i]:
+	var path: Array[Vector2i] = []
+	for vec in pathfinding_map.get_point_path(from, to):
+		if Vector2i(vec/16) == from:
+			continue
+		var local_point: Vector2i = Vector2i(vec/16)
+		path.append(local_point)
+	return path

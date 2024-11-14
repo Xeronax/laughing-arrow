@@ -31,6 +31,7 @@ func cast() -> bool:
 		print("Not enough ap to cast ", spell_name)
 		return false
 	caster.stats.set_ap(caster.stats.ap - ap_cost)
+	caster.reversed = caster.grid_position.x > target.grid_position.x
 	return true
 
 func deal_damage() -> void:

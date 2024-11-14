@@ -7,3 +7,4 @@ extends Node2D
 @onready var ui: CanvasLayer = $UI
 @onready var camera: Camera2D = $Camera2D
 @onready var highlight_map: TileMapLayer = $LayerHolder/Highlights
+@onready var layer_holder: Node2D = $LayerHolder

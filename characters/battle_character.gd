@@ -35,6 +35,7 @@ func start_turn() -> void:
 		_highlight_movement_range()
 
 func end_turn() -> void:
+	movement_cells.clear()
 	is_turn = false
 	Global.highlight_map.clear()
 	turn_ending.emit()
@@ -65,17 +66,34 @@ func _create_damage_popup(damage: int) -> void:
 	animation.play("popup")
 
 func move(cell: Vector2i) -> void:
-	reversed = cell.x < grid_position.x
-	sprite_component.animation_player.play("run")
-	
+	var path: Array[Vector2i] = Global.path_to_cell(self.grid_position, cell)
+	_create_move_tween(path).call()
+
+func _create_move_tween(path: Array[Vector2i]) -> Callable:
+	var temp: Array[Vector2i] = path.duplicate()
+	if temp.is_empty():
+		return func (): 
+			sprite_component.animation_player.play("idle")
+			_highlight_movement_range()
+	var cell: Vector2i = temp.pop_front()
+	return func ():
+		var tween: Tween = get_tree().create_tween()
+		reversed = grid_position > cell
+		stats.set_mp(stats.mp - 1)
+		grid_position = cell
+		sprite_component.animation_player.play("run")
+		tween.tween_property(self, "global_position", Global.grid_to_global_position(cell), .5)
+		tween.tween_callback(_create_move_tween(temp))
+	print(cell)
 
 func _highlight_movement_range(pos: Vector2i = grid_position) -> void:
 	if stats.mp <= 0:
 		return
 	var movement_range: int = stats.mp
 	var highlight_map: TileMapLayer = Global.highlight_map
+	movement_cells.clear()
 	
-	for dist in range(1, movement_range):
+	for dist in range(0, movement_range):
 		var up: Vector2i = grid_position + Vector2i(0, -dist)
 		var down: Vector2i = grid_position + Vector2i(0, dist)
 		var left: Vector2i = grid_position + Vector2i(-dist, 0)

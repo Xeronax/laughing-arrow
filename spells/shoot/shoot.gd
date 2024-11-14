@@ -14,17 +14,11 @@ func cast() -> bool:
 	if not super():
 		return false
 	caster.casting = true
-	caster.sprite_component.Sprite.play(animation_name)
-	caster.sprite_component.Sprite.frame_changed.connect(attack)
-	caster.sprite_component.Sprite.animation_finished.connect(_cleanup)
+	caster.sprite_component.animation_player.play("attack")
 	return true
 
-func attack() -> void:
-	if(caster.sprite_component.Sprite.get_frame() != 8):
-		return
-	deal_damage()
-
-func _cleanup() -> void:
+func deal_damage() -> void:
+	super()
 	caster.casting = false
-	caster.sprite_component.Sprite.frame_changed.disconnect(attack)
-	caster.sprite_component.Sprite.animation_finished.disconnect(_cleanup)
+	caster.sprite_component.animation_player.play("idle")
+	target.sprite_component.animation_player.play("get_hit")
