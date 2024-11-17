@@ -29,6 +29,23 @@ func _draw() -> void:
 		var ending_point: Vector2 = Vector2(map_width * tile_size, y * tile_size)
 		draw_line(starting_point, ending_point, grid_color, grid_width)
 
+func _process(_delta: float) -> void:
+	if not (current_controller.is_turn and current_controller.stats.mp > 0):
+		return
+	if current_controller.moving:
+		return
+	if Global.mouse_on_ui:
+		current_controller.highlight_movement_range()
+		return
+	var mouse_grid_position: Vector2i = map.local_to_map(get_local_mouse_position())
+	if current_controller.movement_cells.has(mouse_grid_position):
+		highlight_map.clear()
+		var path: Array[Vector2i] = Global.path_to_cell(current_controller.grid_position, mouse_grid_position)
+		for cell in path:
+			Global.highlight_cell(cell, Global.GREEN_HIGHLIGHT)
+	else:
+		current_controller.highlight_movement_range()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton:
 		return

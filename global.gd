@@ -10,6 +10,7 @@ var map: TileMapLayer = null
 var highlight_map: TileMapLayer = null
 var ui: CanvasLayer = null
 var pathfinding_map: AStarGrid2D = null
+var mouse_on_ui: bool = false
 
 
 func _ready() -> void:

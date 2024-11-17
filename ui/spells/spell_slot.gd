@@ -9,6 +9,8 @@ var current_spell: SpellComponent
 
 
 func _ready() -> void:
+	mouse_entered.connect(func (): Global.mouse_on_ui = true)
+	mouse_exited.connect(func (): Global.mouse_on_ui = false)
 	await(player.ready)
 	var spellbook = player.spellbook
 	var spells: Array = spellbook.get_children()

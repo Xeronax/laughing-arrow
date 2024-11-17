@@ -5,14 +5,20 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	button.pressed.connect(target.end_turn)
-	target.turn_starting.connect(_enable)
-	pass # Replace with function body.
+	mouse_entered.connect(func (): Global.mouse_on_ui = true)
+	mouse_exited.connect(func (): Global.mouse_on_ui = false)
+	_focus_target(target)
 
 func _enable() -> void:
 	button.set_disabled(false)
 
+func _disable() -> void:
+	button.set_disabled(true)
+
 func _focus_target(character: BattleCharacter) -> void:
-	target.turn_starting.disconnect(_enable)
+	if target.turn_starting.is_connected(_enable):
+		target.turn_starting.disconnect(_enable)
 	target = character
+	button.pressed.connect(target.end_turn)
 	target.turn_starting.connect(_enable)
+	target.turn_ending.connect(_disable)

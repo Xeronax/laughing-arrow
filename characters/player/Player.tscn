@@ -258,7 +258,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_pvpa4"]
 resource_name = "attack"
-length = 0.3333
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -328,7 +328,7 @@ hitbox = NodePath("CollisionShape2D")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rhcyd")
 animation = &"attack"
-frame = 9
+frame = 10
 speed_scale = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
@@ -353,7 +353,7 @@ initiative = 2
 max_hp = 50
 attack = 1
 max_ap = 7
-max_mp = 3
+max_mp = 5
 target_node = NodePath("..")
 
 [node name="Spellbook" type="Node" parent="."]

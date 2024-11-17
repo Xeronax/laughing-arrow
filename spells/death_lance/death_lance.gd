@@ -13,7 +13,6 @@ func _ready() -> void:
 	ap_cost = 5
 	spell_range = 6
 	targeting_method = TargetType.ANY
-	var anim
 
 func cast() -> bool:
 	if not super():

@@ -178,6 +178,7 @@ texture = ExtResource("3_4xohx")
 3:7/animation_frame_3/duration = 1.0
 3:7/0 = 0
 4:7/0 = 0
+4:7/0/probability = 0.0
 
 [sub_resource type="TileSet" id="TileSet_o7cbq"]
 physics_layer_0/collision_layer = 1

@@ -17,3 +17,9 @@ res://spells/death_lance/Lance.tscn
 res://spells/shoot/Shoot.tscn
 res://spells/shoot/shoot.gd
 res://utils/components/spell_component.gd
+res://ui/turn_order/end_turn_button.gd
+res://spells/death_lance/death_lance.gd
+res://ui/turn_order/turn_list.gd
+res://ui/ui.gd
+res://ui/character_frame/character_frame.gd
+res://ui/spells/spell_slot.gd

@@ -32,7 +32,7 @@ func start_turn() -> void:
 		print("Starting ai behavior")
 		ai_component.turn_behavior()
 	else:
-		_highlight_movement_range()
+		highlight_movement_range()
 
 func end_turn() -> void:
 	movement_cells.clear()
@@ -44,6 +44,25 @@ func take_damage(damage_event: DamageEvent) -> void:
 	stats.set_hp(stats.hp - damage_event.final_damage)
 	sprite_component.Sprite.play("get_hit")
 	_create_damage_popup(damage_event.final_damage)
+
+func move(cell: Vector2i) -> void:
+	var path: Array[Vector2i] = Global.path_to_cell(self.grid_position, cell)
+	if path.size() > stats.mp:
+		return
+	moving = true
+	reversed = cell.x < grid_position.x
+	var tween: Tween = get_tree().create_tween()
+	if path.is_empty(): 
+		return
+	sprite_component.animation_player.play("run")
+	for point in path:
+		stats.set_mp(stats.mp - 1)
+		tween.tween_property(self, "global_position", Global.grid_to_global_position(point), 0.5)
+	tween.tween_callback(func (): 
+		sprite_component.animation_player.play("idle")
+		moving = false
+		grid_position = cell
+		)
 
 func _reset_resources():
 	stats.set_ap(stats.max_ap)
@@ -58,55 +77,41 @@ func _create_damage_popup(damage: int) -> void:
 	var tween: Tween = get_tree().create_tween()
 	var x_component: float = loc.x + randf_range(-30, 30)
 	var y_component: float = loc.y - randf_range(35, 60)
-	tween.tween_property(damage_popup, "position", Vector2(x_component, y_component), .5)
+	tween.tween_property(damage_popup, "position", Vector2(x_component, y_component), .5).set_ease(Tween.EASE_OUT)
 	
 	Global.ui.add_child(damage_popup)
 	damage_popup.position = loc
 	label.text = str(damage)
 	animation.play("popup")
 
-func move(cell: Vector2i) -> void:
-	var path: Array[Vector2i] = Global.path_to_cell(self.grid_position, cell)
-	_create_move_tween(path).call()
-
-func _create_move_tween(path: Array[Vector2i]) -> Callable:
-	var temp: Array[Vector2i] = path.duplicate()
-	if temp.is_empty():
-		return func (): 
-			sprite_component.animation_player.play("idle")
-			_highlight_movement_range()
-	var cell: Vector2i = temp.pop_front()
-	return func ():
-		var tween: Tween = get_tree().create_tween()
-		reversed = grid_position > cell
-		stats.set_mp(stats.mp - 1)
-		grid_position = cell
-		sprite_component.animation_player.play("run")
-		tween.tween_property(self, "global_position", Global.grid_to_global_position(cell), .5)
-		tween.tween_callback(_create_move_tween(temp))
-	print(cell)
-
-func _highlight_movement_range(pos: Vector2i = grid_position) -> void:
+func _update_movement_range(pos: Vector2i = grid_position) -> void:
 	if stats.mp <= 0:
+		movement_cells.clear()
 		return
-	var movement_range: int = stats.mp
-	var highlight_map: TileMapLayer = Global.highlight_map
+	var map_grid: TileMapLayer = Global.map
 	movement_cells.clear()
-	
-	for dist in range(0, movement_range):
-		var up: Vector2i = grid_position + Vector2i(0, -dist)
-		var down: Vector2i = grid_position + Vector2i(0, dist)
-		var left: Vector2i = grid_position + Vector2i(-dist, 0)
-		var right: Vector2i = grid_position + Vector2i(dist, 0)
-		for direction in [up, down, left, right]:
-			movement_cells.append_array(
-				highlight_map.get_surrounding_cells(direction).filter(func (cell):
-					if movement_cells.has(cell):
-						return false
-					if cell == grid_position:
-						return false
-					return true
-					)
-				)
+	var explored: Array[Vector2i] = []
+	var queue: Array[Vector2i] = [ grid_position ]
+	while not queue.is_empty():
+		var current_cell: Vector2i = queue.pop_back()
+		# Nonwalkable cell check
+		var cell_data: TileData = map_grid.get_cell_tile_data(current_cell)
+		if cell_data.probability < 1:
+			continue
+		# Distance check
+		var dist: int = abs((grid_position - current_cell).x) + abs((grid_position - current_cell).y)
+		if dist > stats.mp:
+			continue
+		
+		if explored.has(current_cell):
+			continue
+		if current_cell != grid_position:
+			movement_cells.append(current_cell)
+		explored.append(current_cell)
+		for neighbor in map_grid.get_surrounding_cells(current_cell):
+			queue.push_back(neighbor)
+
+func highlight_movement_range() -> void:
+	_update_movement_range()
 	for cell in movement_cells:
 		Global.highlight_cell(cell, Global.GREEN_HIGHLIGHT)

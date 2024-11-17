@@ -14,6 +14,8 @@ func _update() -> void:
 func _ready() -> void:
 	await(target.ready)
 	switch_target(target)
+	mouse_entered.connect(func (): Global.mouse_on_ui = true)
+	mouse_exited.connect(func (): Global.mouse_on_ui = false)
 
 func switch_target(character: BattleCharacter) -> void:
 	if target:
