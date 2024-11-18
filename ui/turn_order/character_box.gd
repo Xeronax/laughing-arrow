@@ -11,3 +11,9 @@ func update_hp_bar() -> void:
 	hp_bar.max_value = character.stats.max_hp
 	hp_bar.value = character.stats.hp
 	print("Updating HP for ", character)
+
+func _ready() -> void:
+	focus_button.pressed.connect(_on_click)
+
+func _on_click() -> void:
+	character.targeted.emit()

@@ -1,9 +1,9 @@
 extends Node2D
 
-var characters: Array = []
-var participants_in_turn_order: Array = []
-var player_team: Array = []
-var enemy_team: Array = []
+var characters: Array[BattleCharacter] = []
+var participants_in_turn_order: Array[BattleCharacter] = []
+var player_team: Array[BattleCharacter] = []
+var enemy_team: Array[BattleCharacter] = []
 var current_turn_idx: int = 0
 var current_round: int = 1
 
@@ -32,7 +32,7 @@ func set_teams() -> void:
 	for character in enemy_team:
 		character.reversed = true
 
-func start_battle(new_characters: Array) -> void:
+func start_battle(new_characters: Array[BattleCharacter]) -> void:
 	characters = new_characters
 	for character in characters:
 		character.turn_ending.connect(next_turn)

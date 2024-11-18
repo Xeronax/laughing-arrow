@@ -5,6 +5,7 @@ extends Control
 @onready var mp_label: Label = $MPFrame/MPLabel
 
 @export var target: BattleCharacter
+@export var current_controller: bool
 
 func _update() -> void:
 	ap_label.text = str(target.stats.ap)
@@ -12,10 +13,18 @@ func _update() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await(target.ready)
-	switch_target(target)
 	mouse_entered.connect(func (): Global.mouse_on_ui = true)
 	mouse_exited.connect(func (): Global.mouse_on_ui = false)
+	if not current_controller:
+		set_visible(false)
+		await(get_tree().create_timer(1).timeout)
+		for c: BattleCharacter in Global.battle_manager.characters:
+			c.targeted.connect(func (): switch_target(c))
+	if not target:
+		return
+	await(target.ready)
+	switch_target(target)
+
 
 func switch_target(character: BattleCharacter) -> void:
 	if target:
@@ -26,5 +35,6 @@ func switch_target(character: BattleCharacter) -> void:
 	target = character
 	portrait.texture = target.sprite_component.portrait
 	_update()
+	set_visible(true)
 	target.stats.ap_changed.connect(_update)
 	target.stats.mp_changed.connect(_update)

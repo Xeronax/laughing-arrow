@@ -10,6 +10,7 @@ var map: TileMapLayer = null
 var highlight_map: TileMapLayer = null
 var ui: CanvasLayer = null
 var pathfinding_map: AStarGrid2D = null
+var battle_manager: Node2D = null
 var mouse_on_ui: bool = false
 
 
@@ -22,11 +23,13 @@ func _ready() -> void:
 	ui = current_scene.ui
 	highlight_map = current_scene.highlight_map
 	pathfinding_map = current_scene.layer_holder.map_astar
+	battle_manager = current_scene.battle_manager
 	
 	teleport_character(current_scene.player, 4, 4)
 	teleport_character(current_scene.dummy, 13, 4)
 	
-	current_scene.battle_manager.start_battle([current_scene.player, current_scene.dummy])
+	var combatants: Array[BattleCharacter] = [current_scene.player, current_scene.dummy]
+	current_scene.battle_manager.start_battle(combatants)
 
 func grid_to_global_position(cell: Vector2) -> Vector2: 
 	return current_scene.to_global(map.map_to_local(cell))

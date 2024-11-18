@@ -23,3 +23,5 @@ res://ui/turn_order/turn_list.gd
 res://ui/ui.gd
 res://ui/character_frame/character_frame.gd
 res://ui/spells/spell_slot.gd
+res://ui/turn_order/character_box.gd
+res://utils/battle_manager/battle_manager.gd

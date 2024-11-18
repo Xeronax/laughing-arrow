@@ -11,6 +11,7 @@ class_name BattleCharacter extends CharacterBody2D
 
 signal turn_starting
 signal turn_ending
+signal targeted
 
 var is_turn: bool = false
 var moving: bool = false
@@ -102,7 +103,7 @@ func _update_movement_range(pos: Vector2i = grid_position) -> void:
 		var dist: int = abs((grid_position - current_cell).x) + abs((grid_position - current_cell).y)
 		if dist > stats.mp:
 			continue
-		
+		# Breadth first search
 		if explored.has(current_cell):
 			continue
 		if current_cell != grid_position:
