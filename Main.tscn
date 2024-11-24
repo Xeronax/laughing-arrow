@@ -414,13 +414,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -475.0
-offset_top = -142.0
-offset_right = -126.0
-offset_bottom = 161.0
+offset_left = -532.0
+offset_top = -189.0
+offset_right = -183.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.375, 0.375)
+scale = Vector2(0.55, 0.55)
 target = NodePath("../../Player")
 current_controller = true
 
@@ -431,12 +431,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 359.0
-offset_top = -142.0
+offset_top = -189.0
 offset_right = 708.0
-offset_bottom = 161.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.375, 0.375)
+scale = Vector2(0.55, 0.55)
 
 [node name="EndTurnButton" parent="UI" node_paths=PackedStringArray("target") instance=ExtResource("5_rhj0d")]
 anchors_preset = 7

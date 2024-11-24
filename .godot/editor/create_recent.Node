@@ -1,3 +1,5 @@
+Label
+TextureProgressBar
 AnimationPlayer
 TileMapLayer
 SpriteComponent
@@ -10,5 +12,3 @@ Button
 TextureRect
 TextureButton
 Panel
-Label
-GridContainer

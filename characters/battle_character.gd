@@ -91,26 +91,7 @@ func _update_movement_range(pos: Vector2i = grid_position) -> void:
 		return
 	var map_grid: TileMapLayer = Global.map
 	movement_cells.clear()
-	var explored: Array[Vector2i] = []
-	var queue: Array[Vector2i] = [ grid_position ]
-	while not queue.is_empty():
-		var current_cell: Vector2i = queue.pop_back()
-		# Nonwalkable cell check
-		var cell_data: TileData = map_grid.get_cell_tile_data(current_cell)
-		if cell_data.probability < 1:
-			continue
-		# Distance check
-		var dist: int = abs((grid_position - current_cell).x) + abs((grid_position - current_cell).y)
-		if dist > stats.mp:
-			continue
-		# Breadth first search
-		if explored.has(current_cell):
-			continue
-		if current_cell != grid_position:
-			movement_cells.append(current_cell)
-		explored.append(current_cell)
-		for neighbor in map_grid.get_surrounding_cells(current_cell):
-			queue.push_back(neighbor)
+	movement_cells = Global.get_range(grid_position, stats.mp)
 
 func highlight_movement_range() -> void:
 	_update_movement_range()
