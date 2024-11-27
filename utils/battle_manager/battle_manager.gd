@@ -1,25 +1,23 @@
 extends Node2D
+## The BattleManager controls starting battles and the flow of turns
+##
+## 
 
-var characters: Array[BattleCharacter] = []
-var participants_in_turn_order: Array[BattleCharacter] = []
-var player_team: Array[BattleCharacter] = []
-var enemy_team: Array[BattleCharacter] = []
-var current_turn_idx: int = 0
-var current_round: int = 1
+var characters: Array[BattleCharacter] = [] ## All BattleCharacters, including dead
+var participants_in_turn_order: Array[BattleCharacter] = [] ## Alive BattleCharacters sorted in turn order
+var player_team: Array[BattleCharacter] = [] ## Player team, including dead
+var enemy_team: Array[BattleCharacter] = [] ## Enemy team, including dead
+var current_turn_idx: int = 0 ## The index of the participants_in_turn_order array for the BattleCharacter whose turn it is
+var current_round: int = 1 ## A round consists of a full cycle of turns for each BattleCharacter
 
-signal participants_populated(participants)
+signal participants_populated(participants) ## Emitted when participants_in_turn_order array is initialized
 
-func get_player(idx: int) -> BattleCharacter:
-	return participants_in_turn_order[idx]
-
-func _sort_by_initiative(a: BattleCharacter, b: BattleCharacter) -> bool:
-	if a.stats.initiative > b.stats.initiative:
-		return true
-	return false
-
+## Sorts the participants_in_turn_order array by initiative
 func set_turn_order() -> void:
 	var temp_array = characters
-	temp_array.sort_custom(_sort_by_initiative)
+	temp_array.sort_custom(func (a: BattleCharacter, b: BattleCharacter): 
+		return a.stats.initiative > b.stats.initiative
+	)
 	participants_in_turn_order = temp_array
 
 func set_teams() -> void:
@@ -30,8 +28,9 @@ func set_teams() -> void:
 			enemy_team.append(character)
 	
 	for character in enemy_team:
-		character.reversed = true
+		character.reversed = true # Hacky way to make mobs spawn in looking toward the player
 
+## Starts battle by setting up turn order, teams, and then starting the first turn
 func start_battle(new_characters: Array[BattleCharacter]) -> void:
 	characters = new_characters
 	for character in characters:
@@ -46,5 +45,5 @@ func next_turn() -> void:
 	if current_turn_idx == characters.size():
 		current_turn_idx = 0
 		current_round += 1
-	var current_player: BattleCharacter = get_player(current_turn_idx)
+	var current_player: BattleCharacter = participants_in_turn_order[current_turn_idx]
 	current_player.start_turn()

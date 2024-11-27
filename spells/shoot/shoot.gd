@@ -1,9 +1,7 @@
-extends SpellComponent
+extends Spell
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spell_name = "Shoot"
-	animation_name = "attack"
 	ap_cost = 2
 	targeting_method = TargetType.ANY
 	spell_range = 7
@@ -11,7 +9,7 @@ func _ready() -> void:
 	maximum_damage = 5
 
 func cast() -> bool:
-	if not super():
+	if not await(super()):
 		return false
 	caster.casting = true
 	caster.sprite_component.animation_player.play("attack")

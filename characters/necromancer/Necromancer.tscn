@@ -1077,19 +1077,15 @@ target_node = NodePath("..")
 
 [node name="StatComponent" type="Node" parent="." node_paths=PackedStringArray("target_node")]
 script = ExtResource("4_04ait")
-initiative = 1
-max_hp = 40
-attack = 2
-max_ap = 5
-max_mp = 2
+base_max_hp = 35
+base_max_ap = 5
+base_max_mp = 2
 target_node = NodePath("..")
 
 [node name="Spellbook" type="Node" parent="."]
 
-[node name="DeathLance" parent="Spellbook" node_paths=PackedStringArray("sprite_component", "caster", "target_node") instance=ExtResource("10_awpd8")]
-sprite_component = NodePath("../../SpriteComponent")
+[node name="DeathLance" parent="Spellbook" node_paths=PackedStringArray("caster") instance=ExtResource("10_awpd8")]
 caster = NodePath("../..")
-target_node = NodePath("..")
 
 [node name="AIController" type="Node" parent="." node_paths=PackedStringArray("target_node")]
 script = ExtResource("7_4f4sg")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4hfvw0we1rqs"
-path="res://.godot/imported/Decorations1.png-7c6edd4fb41c84c98c350854b98dc587.ctex"
+uid="uid://dt00ee3vxw7y7"
+path="res://.godot/imported/Decorations.png-a00b20ff5d5dba83db1687dd4856d207.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PixelWoods/Seasons/spring/Decorations1.png"
-dest_files=["res://.godot/imported/Decorations1.png-7c6edd4fb41c84c98c350854b98dc587.ctex"]
+source_file="res://art/PixelWoods/Decorations(main)/Decorations.png"
+dest_files=["res://.godot/imported/Decorations.png-a00b20ff5d5dba83db1687dd4856d207.ctex"]
 
 [params]
 

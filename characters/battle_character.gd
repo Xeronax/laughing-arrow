@@ -4,6 +4,7 @@ class_name BattleCharacter extends CharacterBody2D
 @onready var stats: StatComponent = $StatComponent
 @onready var spellbook: Node = $Spellbook
 @onready var ai_component: AIComponent = $AIController
+
 @export var player_team: bool = false
 @export var target: BattleCharacter
 @export var grid_position: Vector2i
@@ -22,7 +23,7 @@ var movement_cells: Array[Vector2i] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	stats.hp = stats.max_hp
+	stats.set_hp(stats.max_hp)
 	_reset_resources()
 
 func start_turn() -> void:
@@ -41,10 +42,10 @@ func end_turn() -> void:
 	Global.highlight_map.clear()
 	turn_ending.emit()
 
-func take_damage(damage_event: DamageEvent) -> void:
-	stats.set_hp(stats.hp - damage_event.final_damage)
+func take_damage(event: DamageEvent) -> void:
+	stats.set_hp(stats.hp - event.final_damage)
 	sprite_component.Sprite.play("get_hit")
-	_create_damage_popup(damage_event.final_damage)
+	_create_damage_popup(event.final_damage)
 
 func move(cell: Vector2i) -> void:
 	var path: Array[Vector2i] = Global.path_to_cell(self.grid_position, cell)

@@ -12,6 +12,7 @@ var ui: CanvasLayer = null
 var pathfinding_map: AStarGrid2D = null
 var battle_manager: Node2D = null
 var mouse_on_ui: bool = false
+var selecting_target: bool = false
 
 func _ready() -> void:
 	var root = get_tree().get_root()

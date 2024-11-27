@@ -1,12 +1,9 @@
-extends SpellComponent
-
+extends Spell
 
 var lance_scene = preload("res://spells/death_lance/Lance.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spell_name = "Death Lance"
-	animation_name = "attack"
 	target = caster.target
 	minimum_damage = 9
 	maximum_damage = 12
@@ -15,9 +12,9 @@ func _ready() -> void:
 	targeting_method = TargetType.ANY
 
 func cast() -> bool:
-	if not super():
+	if not await(super()):
 		return false
-	sprite_component.animation_player.play("attack")
+	caster.sprite_component.animation_player.play("attack")
 	return true
 
 func attack() -> void:
@@ -29,4 +26,4 @@ func attack() -> void:
 func _cleanup() -> void:
 	print("Cleaning")
 	caster.casting = false
-	sprite_component.animation_player.play("idle")
+	caster.sprite_component.animation_player.play("idle")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4plljad7kt2o"
-path="res://.godot/imported/waterfalls.png-0cc4f7630f7c415074d2f707bf56c561.ctex"
+uid="uid://d2rcf0l0llrfg"
+path="res://.godot/imported/waterfalls1.png-c7cd96621aa552912d588ac041e87bda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PixelWoods/Waterfall/waterfalls.png"
-dest_files=["res://.godot/imported/waterfalls.png-0cc4f7630f7c415074d2f707bf56c561.ctex"]
+source_file="res://art/PixelWoods/Seasons/spring/waterfalls1.png"
+dest_files=["res://.godot/imported/waterfalls1.png-c7cd96621aa552912d588ac041e87bda.ctex"]
 
 [params]
 

@@ -1,14 +1,17 @@
 class_name DamageEvent
+## Damage events are a work in progress class that implements various
+## functions that streamline damage calculation
 
-var final_damage: int
+var final_damage: int ## The value that the BattleCharacter will lose as HP.
 var modifiers: Array[Node]
-var spell: SpellComponent = null
+var spell: Spell = null ## The spell being cast
 
-func _init(caller: SpellComponent, calc_damage: Callable) -> void:
+## Constructor for damage events, takes in a spell + a damage calculation function.
+func _init(caller: Spell, calc_damage: Callable = _default_damage_calculation) -> void:
 	spell = caller
 	modifiers = spell.get_children()
-	if(calc_damage):
-		final_damage = calc_damage.call()
-		return
-	var base_damage: int = randi_range(spell.minimum_damage, spell.maximum_damage)
-	final_damage = base_damage
+	final_damage = calc_damage.call()
+
+## If a custom damage calculation function isn't provided, this function will be used by default.
+var _default_damage_calculation: Callable = func(): 
+	return randi_range(spell.minimum_damage, spell.maximum_damage)

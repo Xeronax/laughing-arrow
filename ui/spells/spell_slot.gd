@@ -5,7 +5,7 @@ extends AspectRatioContainer
 
 @export var player: BattleCharacter
 
-var current_spell: SpellComponent
+var current_spell: Spell
 
 
 func _ready() -> void:

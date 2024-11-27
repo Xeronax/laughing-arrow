@@ -30,9 +30,7 @@ func _draw() -> void:
 		draw_line(starting_point, ending_point, grid_color, grid_width)
 
 func _process(_delta: float) -> void:
-	if not (current_controller.is_turn and current_controller.stats.mp > 0):
-		return
-	if current_controller.moving:
+	if current_controller.moving or current_controller.casting:
 		return
 	if Global.mouse_on_ui:
 		current_controller.highlight_movement_range()
@@ -44,7 +42,8 @@ func _process(_delta: float) -> void:
 		for cell in path:
 			Global.highlight_cell(cell, Global.GREEN_HIGHLIGHT)
 	else:
-		current_controller.highlight_movement_range()
+		if current_controller.is_turn:
+			current_controller.highlight_movement_range()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton:

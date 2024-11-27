@@ -1,6 +1,6 @@
 extends AIComponent
 
-var lance: SpellComponent
+var lance: Spell
 
 func _ready() -> void:
 	super()

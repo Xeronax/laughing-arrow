@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctkcglqirb8u1"
-path="res://.godot/imported/decorations.png-d0ad58e94e5d0e522858b106d5f1a95f.ctex"
+uid="uid://ch3ci1hsicfgu"
+path="res://.godot/imported/terrain tiles.png-c2061991a56bd3d1089b2b3c189f3a0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PixelWoods/Seasons/autumn/decorations.png"
-dest_files=["res://.godot/imported/decorations.png-d0ad58e94e5d0e522858b106d5f1a95f.ctex"]
+source_file="res://art/PixelWoods/Terrain(main)/terrain tiles.png"
+dest_files=["res://.godot/imported/terrain tiles.png-c2061991a56bd3d1089b2b3c189f3a0f.ctex"]
 
 [params]
 

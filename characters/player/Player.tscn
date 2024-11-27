@@ -349,15 +349,13 @@ target_node = NodePath("..")
 
 [node name="StatComponent" type="Node" parent="." node_paths=PackedStringArray("target_node")]
 script = ExtResource("5_b4ykd")
-initiative = 2
-max_hp = 50
-attack = 1
-max_ap = 7
-max_mp = 5
+base_max_hp = 40
+base_max_ap = 6
+base_max_mp = 3
+initiative = 1
 target_node = NodePath("..")
 
 [node name="Spellbook" type="Node" parent="."]
 
-[node name="Shoot" parent="Spellbook" node_paths=PackedStringArray("caster", "target_node") instance=ExtResource("6_8stvu")]
+[node name="Shoot" parent="Spellbook" node_paths=PackedStringArray("caster") instance=ExtResource("6_8stvu")]
 caster = NodePath("../..")
-target_node = NodePath("..")

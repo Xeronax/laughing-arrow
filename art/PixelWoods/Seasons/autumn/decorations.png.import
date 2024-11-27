@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqt4sbevh75ad"
-path="res://.godot/imported/Bridge.png-2c12941d91325280b26d14c7b5bcab28.ctex"
+uid="uid://ctkcglqirb8u1"
+path="res://.godot/imported/decorations.png-07271487851dcf8bd1920d3d300fb6d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PixelWoods/Bridge/Bridge.png"
-dest_files=["res://.godot/imported/Bridge.png-2c12941d91325280b26d14c7b5bcab28.ctex"]
+source_file="res://art/PixelWoods/Seasons/autumn/decorations.png"
+dest_files=["res://.godot/imported/decorations.png-07271487851dcf8bd1920d3d300fb6d7.ctex"]
 
 [params]
 
