@@ -1,4 +1,8 @@
 class_name BattleCharacter extends CharacterBody2D
+## BattleCharacter defines the default behaviors for characters in combat.
+##
+## Partially, BattleCharacter acts as a holder for a bunch of other components
+## and acts as the bridge between things that components can't do on their own.
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var stats: StatComponent = $StatComponent
@@ -7,28 +11,33 @@ class_name BattleCharacter extends CharacterBody2D
 
 @export var player_team: bool = false
 @export var target: BattleCharacter
-@export var grid_position: Vector2i
-@export var hitbox: CollisionShape2D
+@export var grid_position: Vector2i ## Position inside of the game TileMap
+@export var hitbox: CollisionShape2D 
 
 signal turn_starting
 signal turn_ending
 signal targeted
 
-var is_turn: bool = false
-var moving: bool = false
-var reversed: bool = false
-var casting: bool = false
-var damage_node: PackedScene = preload("res://ui/damage_popups/DamagePopup.tscn")
-var movement_cells: Array[Vector2i] = []
+enum States {IDLE, CASTING, MOVING, TARGETING, DEAD}
 
-# Called when the node enters the scene tree for the first time.
+var state: States = States.IDLE
+
+var damage_node: PackedScene = preload("res://ui/damage_popups/DamagePopup.tscn")
+var is_turn: bool = false
+var reversed: bool = false ## Orients the character's sprite.
+var movement_cells: Array[Vector2i] = [] ## The cells that the player currently has available to move.
+var spell_cells: Array[Vector2i] = [] ## If the player is in targeting mode, this array will be populated.
+
 func _ready() -> void:
+	if not ai_component:
+		Global.current_controller = self
 	stats.set_hp(stats.max_hp)
 	_reset_resources()
 
 func start_turn() -> void:
 	_reset_resources()
 	is_turn = true
+	state = States.IDLE
 	turn_starting.emit()
 	if(ai_component._enabled if ai_component else false):
 		print("Starting ai behavior")
@@ -39,6 +48,7 @@ func start_turn() -> void:
 func end_turn() -> void:
 	movement_cells.clear()
 	is_turn = false
+	state = States.IDLE
 	Global.highlight_map.clear()
 	turn_ending.emit()
 
@@ -51,7 +61,7 @@ func move(cell: Vector2i) -> void:
 	var path: Array[Vector2i] = Global.path_to_cell(self.grid_position, cell)
 	if path.size() > stats.mp:
 		return
-	moving = true
+	state = States.MOVING
 	reversed = cell.x < grid_position.x
 	var tween: Tween = get_tree().create_tween()
 	if path.is_empty(): 
@@ -60,9 +70,10 @@ func move(cell: Vector2i) -> void:
 	for point in path:
 		stats.set_mp(stats.mp - 1)
 		tween.tween_property(self, "global_position", Global.grid_to_global_position(point), 0.5)
+		grid_position = point
 	tween.tween_callback(func (): 
 		sprite_component.animation_player.play("idle")
-		moving = false
+		state = States.IDLE
 		grid_position = cell
 		)
 
@@ -97,4 +108,8 @@ func _update_movement_range(pos: Vector2i = grid_position) -> void:
 func highlight_movement_range() -> void:
 	_update_movement_range()
 	for cell in movement_cells:
-		Global.highlight_cell(cell, Global.GREEN_HIGHLIGHT)
+		Global.highlight_cell(cell, Global.GREEN)
+
+func highlight_spell_range() -> void:
+	for cell in spell_cells:
+		Global.highlight_cell(cell, Global.ORANGE)

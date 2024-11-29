@@ -1,8 +1,15 @@
 extends Node
 
-const OFFSET: Vector2 = Vector2(0, -7)
-const GREEN_HIGHLIGHT: Vector2i = Vector2i(5, 1)
-const ORANGE_HIGHLIGHT: Vector2i = Vector2i(2, 7)
+class Highlight:
+	var tilemap_id: int
+	var coordinates: Vector2i
+	func _init(id: int, coords: Vector2i) -> void:
+		tilemap_id = id
+		coordinates = coords
+
+var GREEN: Highlight = Highlight.new(0, Vector2i(5, 1))
+var ORANGE: Highlight = Highlight.new(0, Vector2i(2, 7))
+var WHITE: Highlight = Highlight.new(1, Vector2i(9, 5))
 
 var current_scene = null
 var camera: Camera2D = null
@@ -12,7 +19,9 @@ var ui: CanvasLayer = null
 var pathfinding_map: AStarGrid2D = null
 var battle_manager: Node2D = null
 var mouse_on_ui: bool = false
-var selecting_target: bool = false
+var current_controller: BattleCharacter = null
+
+signal target_selected(targets)
 
 func _ready() -> void:
 	var root = get_tree().get_root()
@@ -34,6 +43,12 @@ func _ready() -> void:
 func grid_to_global_position(cell: Vector2) -> Vector2: 
 	return current_scene.to_global(map.map_to_local(cell))
 
+func get_character(cell: Vector2i) -> BattleCharacter:
+	for character: BattleCharacter in battle_manager.characters:
+		if character.grid_position == cell:
+			return character
+	return null
+
 func teleport_character(character: BattleCharacter, x: int, y: int) -> void: 
 	character.global_position = grid_to_global_position(Vector2(x, y))
 	character.grid_position = Vector2(x, y)
@@ -41,8 +56,8 @@ func teleport_character(character: BattleCharacter, x: int, y: int) -> void:
 func grid_to_ui(cell: Vector2) -> Vector2:
 	return (grid_to_global_position(cell) - camera.global_position) * camera.zoom + current_scene.get_viewport_rect().size / 2
 
-func highlight_cell(position: Vector2i, color: Vector2i) -> void:
-	highlight_map.set_cell(position, 0, color)
+func highlight_cell(position: Vector2i, color: Highlight) -> void:
+	highlight_map.set_cell(position, color.tilemap_id, color.coordinates)
 
 func path_to_cell(from: Vector2i, to: Vector2i) -> Array[Vector2i]:
 	var path: Array[Vector2i] = []

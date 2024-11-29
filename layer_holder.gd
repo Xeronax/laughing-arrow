@@ -3,14 +3,13 @@ extends Node2D
 @onready var highlight_map: TileMapLayer = $Highlights
 @onready var map: TileMapLayer = $Ground
 
-@export var current_controller: BattleCharacter 
-
 var tile_size: int = 16
 var grid_color: Color = Color('black', 0.25)
 var grid_width: float = 0.35
 var map_width: int = 20
 var map_height: int = 15
 var map_astar: AStarGrid2D = AStarGrid2D.new()
+var hovered_tile: Vector2i 
 
 func _ready() -> void:
 	map_astar.set_cell_size(Vector2i(16, 16))
@@ -30,30 +29,37 @@ func _draw() -> void:
 		draw_line(starting_point, ending_point, grid_color, grid_width)
 
 func _process(_delta: float) -> void:
-	if current_controller.moving or current_controller.casting:
-		return
 	if Global.mouse_on_ui:
-		current_controller.highlight_movement_range()
 		return
-	var mouse_grid_position: Vector2i = map.local_to_map(get_local_mouse_position())
-	if current_controller.movement_cells.has(mouse_grid_position):
-		highlight_map.clear()
-		var path: Array[Vector2i] = Global.path_to_cell(current_controller.grid_position, mouse_grid_position)
-		for cell in path:
-			Global.highlight_cell(cell, Global.GREEN_HIGHLIGHT)
-	else:
-		if current_controller.is_turn:
-			current_controller.highlight_movement_range()
+	_current_controller_highlighting()
+
+func _current_controller_highlighting() -> void:
+	var current_controller: BattleCharacter = Global.current_controller
+	var cell_currently_hovered: Vector2i = map.local_to_map(get_local_mouse_position())
+	highlight_map.erase_cell(hovered_tile)
+	if current_controller.state == BattleCharacter.States.IDLE:
+		current_controller.highlight_movement_range()
+	if current_controller.state == BattleCharacter.States.TARGETING:
+		current_controller.highlight_spell_range()
+	hovered_tile = cell_currently_hovered
+	Global.highlight_cell(hovered_tile, Global.WHITE)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton:
 		return
-	if not current_controller.is_turn:
+	if not Global.current_controller.is_turn:
 		return
 	if not event.is_pressed():
 		return
-	var hovered_tile: Vector2i = map.local_to_map(get_local_mouse_position())
-	if not current_controller.movement_cells.has(hovered_tile):
-		return
-	highlight_map.clear()
-	current_controller.move(hovered_tile)
+	if Global.current_controller.state in [Global.current_controller.States.IDLE]:
+		if not Global.current_controller.movement_cells.has(hovered_tile):
+			return
+		var character_on_cell = Global.get_character(hovered_tile)
+		if character_on_cell:
+			Global.current_controller.target = character_on_cell
+			return
+		highlight_map.clear()
+		Global.current_controller.move(hovered_tile)
+	if Global.current_controller.state in [Global.current_controller.States.TARGETING]:
+		highlight_map.clear()
+		Global.target_selected.emit([hovered_tile])

@@ -1,14 +1,8 @@
-res://spells/shoot/Shoot.tscn
+res://characters/player/Player.tscn
 res://highlight.gdshader
-res://utils/damage_event.gd
-res://spells/death_lance/death_lance.gd
-res://spells/shoot/shoot.gd
-res://utils/battle_manager/battle_manager.gd
-res://utils/components/stat_component.gd
-res://ui/spells/spell_slot.gd
+res://spells/spell.gd
 res://Main.tscn
 res://ui/spells/spell_slot.tscn
-res://characters/player/Player.tscn
 res://characters/necromancer/Necromancer.tscn
 res://ui/damage_popups/DamagePopup.tscn
 res://ui/character_frame/CharacterFrame.tscn
@@ -16,7 +10,4 @@ res://ui/turn_order/TurnList.tscn
 res://ui/turn_order/EndTurnButton.tscn
 res://ui/turn_order/CharacterBox.tscn
 res://spells/death_lance/Lance.tscn
-res://characters/necromancer/ai_controller.gd
-res://ui/character_frame/character_frame.gd
-res://characters/battle_character.gd
-res://spells/spell.gd
+res://spells/shoot/Shoot.tscn
