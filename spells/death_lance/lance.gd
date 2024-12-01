@@ -1,17 +1,22 @@
-class_name Lance extends AnimatedSprite2D
+extends AnimatedSprite2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-const OFFSET: Vector2 = Vector2(50, 10)
+var OFFSET: Vector2 = Vector2(50, 10)
 var damage_event: DamageEvent = null
 
 func _ready() -> void:
 	if damage_event.spell.caster.reversed:
 		set_flip_h(true)
-		position = OFFSET
+	else:
+		OFFSET.x *= -1
+	position = OFFSET
 	animation_player.play("lance")
 
 func _deal_damage() -> void:
-	damage_event.spell.target.take_damage(damage_event)
-	if damage_event.spell.caster.ai_component:
-		damage_event.spell.caster.ai_component.move_ready.emit()
+	print("Hitting ", damage_event.targets)
+	for target in damage_event.targets:
+		target.take_damage(damage_event)
+	var caster: BattleCharacter = damage_event.spell.caster
+	if caster.ai_component:
+		caster.ai_component.move_ready.emit()

@@ -21,6 +21,7 @@ var battle_manager: Node2D = null
 var mouse_on_ui: bool = false
 var current_controller: BattleCharacter = null
 
+signal all_ready
 signal target_selected(targets)
 
 func _ready() -> void:
@@ -33,6 +34,8 @@ func _ready() -> void:
 	highlight_map = current_scene.highlight_map
 	pathfinding_map = current_scene.layer_holder.map_astar
 	battle_manager = current_scene.battle_manager
+	
+	all_ready.emit()
 	
 	teleport_character(current_scene.player, 4, 4)
 	teleport_character(current_scene.dummy, 13, 4)

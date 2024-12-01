@@ -17,13 +17,11 @@ func cast() -> bool:
 	return true
 
 func attack() -> void:
-	var damage: DamageEvent = DamageEvent.new(self, damage_calc)
-	var lance: Lance = lance_scene.instantiate()
+	var damage: DamageEvent = DamageEvent.new(self)
+	var lance = lance_scene.instantiate()
 	lance.damage_event = damage
-	add_child(lance)
-	lance.global_position = Global.grid_to_global_position(targets[0])
+	damage.spell.targeted_characters[0].hitbox.add_child(lance)
 
 func _cleanup() -> void:
-	print("Cleaning")
-	caster.casting = false
+	super()
 	caster.sprite_component.animation_player.play("idle")

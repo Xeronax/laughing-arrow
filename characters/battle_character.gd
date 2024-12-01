@@ -6,7 +6,7 @@ class_name BattleCharacter extends CharacterBody2D
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var stats: StatComponent = $StatComponent
-@onready var spellbook: Node = $Spellbook
+@onready var spellbook: Array = $Spellbook.get_children()
 @onready var ai_component: AIComponent = $AIController
 
 @export var player_team: bool = false
@@ -31,8 +31,15 @@ var spell_cells: Array[Vector2i] = [] ## If the player is in targeting mode, thi
 func _ready() -> void:
 	if not ai_component:
 		Global.current_controller = self
+	for spell: Spell in spellbook:
+		spell.caster = self
 	stats.set_hp(stats.max_hp)
 	_reset_resources()
+
+func set_grid_position(pos: Vector2i) -> void:
+	Global.pathfinding_map.set_point_solid(grid_position, false)
+	grid_position = pos
+	Global.pathfinding_map.set_point_solid(pos, true)
 
 func start_turn() -> void:
 	_reset_resources()
@@ -70,11 +77,13 @@ func move(cell: Vector2i) -> void:
 	for point in path:
 		stats.set_mp(stats.mp - 1)
 		tween.tween_property(self, "global_position", Global.grid_to_global_position(point), 0.5)
-		grid_position = point
+		set_grid_position(point)
 	tween.tween_callback(func (): 
 		sprite_component.animation_player.play("idle")
 		state = States.IDLE
-		grid_position = cell
+		set_grid_position(cell)
+		if ai_component:
+			ai_component.move_ready.emit()
 		)
 
 func _reset_resources():
@@ -97,16 +106,17 @@ func _create_damage_popup(damage: int) -> void:
 	label.text = str(damage)
 	animation.play("popup")
 
-func _update_movement_range(pos: Vector2i = grid_position) -> void:
+func update_movement_range(pos: Vector2i = grid_position) -> void:
 	if stats.mp <= 0:
 		movement_cells.clear()
 		return
 	var map_grid: TileMapLayer = Global.map
 	movement_cells.clear()
-	movement_cells = Global.get_range(grid_position, stats.mp)
+	movement_cells = Global.get_range(grid_position, stats.mp).filter(func(cell): 
+		return not Global.pathfinding_map.is_point_solid(cell))
 
 func highlight_movement_range() -> void:
-	_update_movement_range()
+	update_movement_range()
 	for cell in movement_cells:
 		Global.highlight_cell(cell, Global.GREEN)
 

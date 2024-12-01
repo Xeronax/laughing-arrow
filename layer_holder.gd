@@ -34,6 +34,8 @@ func _process(_delta: float) -> void:
 	_current_controller_highlighting()
 
 func _current_controller_highlighting() -> void:
+	if not Global.current_controller.is_turn:
+		return
 	var current_controller: BattleCharacter = Global.current_controller
 	var cell_currently_hovered: Vector2i = map.local_to_map(get_local_mouse_position())
 	highlight_map.erase_cell(hovered_tile)

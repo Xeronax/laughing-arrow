@@ -21,3 +21,4 @@ func deal_damage() -> void:
 	caster.sprite_component.animation_player.play("idle")
 	for target: BattleCharacter in targeted_characters:
 		target.sprite_component.animation_player.play("get_hit")
+	_cleanup()

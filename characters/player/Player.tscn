@@ -329,7 +329,6 @@ hitbox = NodePath("CollisionShape2D")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rhcyd")
 animation = &"attack"
-frame = 10
 speed_scale = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
@@ -358,5 +357,4 @@ target_node = NodePath("..")
 
 [node name="Spellbook" type="Node" parent="."]
 
-[node name="Shoot" parent="Spellbook" node_paths=PackedStringArray("caster") instance=ExtResource("6_8stvu")]
-caster = NodePath("../..")
+[node name="Shoot" parent="Spellbook" instance=ExtResource("6_8stvu")]
