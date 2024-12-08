@@ -43,6 +43,12 @@ func _ready() -> void:
 	var combatants: Array[BattleCharacter] = [current_scene.player, current_scene.dummy]
 	current_scene.battle_manager.start_battle(combatants)
 
+func set_ui_children(node: Control):
+	node.mouse_entered.connect(func (): mouse_on_ui = true)
+	node.mouse_exited.connect(func (): mouse_on_ui = false)
+	for child in node.get_children():
+		set_ui_children(child)
+
 func grid_to_global_position(cell: Vector2) -> Vector2: 
 	return current_scene.to_global(map.map_to_local(cell))
 
@@ -94,3 +100,6 @@ func get_range(grid_position: Vector2i, range: int, _minimum_range: int = 0) -> 
 		for neighbor in map.get_surrounding_cells(current_cell):
 			queue.push_back(neighbor)
 	return cells_in_range
+
+func get_dist(from: Vector2i, to: Vector2i) -> int:
+	return pathfinding_map.get_point_path(from, to).size()

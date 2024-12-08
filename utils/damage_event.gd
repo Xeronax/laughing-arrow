@@ -13,7 +13,6 @@ func _init(caller: Spell, calc_damage: Callable = _default_damage_calculation) -
 	modifiers = spell.get_children()
 	final_damage = calc_damage.call()
 	targets = spell.targeted_characters.duplicate()
-	print("Got ", targets)
 
 ## If a custom damage calculation function isn't provided, this function will be used by default.
 var _default_damage_calculation: Callable = func(): 

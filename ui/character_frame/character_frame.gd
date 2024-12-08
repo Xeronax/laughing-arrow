@@ -1,9 +1,10 @@
 extends Control
 
-@onready var portrait: TextureRect = $Portrait/TextureRect
+@onready var portrait: TextureRect = $Portrait/Self
 @onready var ap_label: Label = $APFrame/APLabel
 @onready var mp_label: Label = $MPFrame/MPLabel
 @onready var health_bar: TextureProgressBar = $HealthBar
+@onready var hp_panel: Panel = $HealthBar/Panel
 @onready var hp_label: Label = $HealthBar/HealthText
 
 @export var target: BattleCharacter
@@ -21,6 +22,8 @@ func _ready() -> void:
 	mouse_entered.connect(func (): Global.mouse_on_ui = true)
 	mouse_exited.connect(func (): Global.mouse_on_ui = false)
 	if not current_controller:
+		hp_label.position.x = -40
+		hp_panel.position.x = -40
 		set_visible(false)
 		await(get_tree().create_timer(1).timeout)
 		for c: BattleCharacter in Global.battle_manager.characters:

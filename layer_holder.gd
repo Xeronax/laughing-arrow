@@ -29,8 +29,6 @@ func _draw() -> void:
 		draw_line(starting_point, ending_point, grid_color, grid_width)
 
 func _process(_delta: float) -> void:
-	if Global.mouse_on_ui:
-		return
 	_current_controller_highlighting()
 
 func _current_controller_highlighting() -> void:
@@ -44,7 +42,8 @@ func _current_controller_highlighting() -> void:
 	if current_controller.state == BattleCharacter.States.TARGETING:
 		current_controller.highlight_spell_range()
 	hovered_tile = cell_currently_hovered
-	Global.highlight_cell(hovered_tile, Global.WHITE)
+	if not Global.mouse_on_ui:
+		Global.highlight_cell(hovered_tile, Global.WHITE)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton:

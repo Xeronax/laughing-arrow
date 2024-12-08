@@ -29,6 +29,7 @@ var movement_cells: Array[Vector2i] = [] ## The cells that the player currently 
 var spell_cells: Array[Vector2i] = [] ## If the player is in targeting mode, this array will be populated.
 
 func _ready() -> void:
+	input_pickable = true
 	if not ai_component:
 		Global.current_controller = self
 	for spell: Spell in spellbook:
@@ -113,7 +114,11 @@ func update_movement_range(pos: Vector2i = grid_position) -> void:
 	var map_grid: TileMapLayer = Global.map
 	movement_cells.clear()
 	movement_cells = Global.get_range(grid_position, stats.mp).filter(func(cell): 
-		return not Global.pathfinding_map.is_point_solid(cell))
+		if Global.pathfinding_map.is_point_solid(cell):
+			return false
+		if Global.pathfinding_map.get_point_path(grid_position, cell).size() - 1 > stats.mp:
+			return false
+		return true)
 
 func highlight_movement_range() -> void:
 	update_movement_range()
@@ -123,3 +128,6 @@ func highlight_movement_range() -> void:
 func highlight_spell_range() -> void:
 	for cell in spell_cells:
 		Global.highlight_cell(cell, Global.ORANGE)
+
+func _mouse_enter() -> void:
+	print("Entered!")

@@ -6,9 +6,8 @@ var _character_box: PackedScene = preload("res://ui/turn_order/CharacterBox.tscn
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	mouse_entered.connect(func (): Global.mouse_on_ui = true)
-	mouse_exited.connect(func (): Global.mouse_on_ui = false)
 	_battle_manager.participants_populated.connect(_create_list)
+	Global.set_ui_children(self)
 
 func _get_box(character: BattleCharacter) -> Variant:
 	var boxes = get_children()
@@ -22,11 +21,10 @@ func _create_list(characters: Array) -> void:
 		_create_character_box(character)
 
 func _create_character_box(character: BattleCharacter) -> void:
-	print('Adding character ', character)
 	var instance = _character_box.instantiate()
 	add_child(instance)
 	instance.character_icon.texture = character.sprite_component.portrait
 	instance.character = character
 	character.stats.hp_changed.connect(instance.update_hp_bar)
 	instance.update_hp_bar()
-	
+	Global.set_ui_children(instance)

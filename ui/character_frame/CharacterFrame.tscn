@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cu4qfv71c1i70"]
+[gd_scene load_steps=17 format=3 uid="uid://cu4qfv71c1i70"]
 
 [ext_resource type="Script" path="res://ui/character_frame/character_frame.gd" id="1_e3w8j"]
 [ext_resource type="Texture2D" uid="uid://dupgo4uao7147" path="res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Circle02.png" id="2_bpfcq"]
@@ -11,6 +11,13 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_6lcgl"]
 atlas = ExtResource("2_y2lut")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Gradient" id="Gradient_n7c71"]
+offsets = PackedFloat32Array(0.993506, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dnmvb"]
+gradient = SubResource("Gradient_n7c71")
+width = 128
 
 [sub_resource type="LabelSettings" id="LabelSettings_xsqjc"]
 font = ExtResource("3_xpfbi")
@@ -33,11 +40,13 @@ font_size = 40
 font_color = Color(0.222677, 0.334882, 0.795021, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_epx7a"]
+font_weight = 650
 subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_1dpq8"]
 font = SubResource("SystemFont_epx7a")
-font_size = 24
+font_size = 28
+font_color = Color(0.85098, 0.223529, 0.172549, 0.482353)
 
 [node name="CharacterFrame" type="Control"]
 layout_mode = 3
@@ -54,12 +63,21 @@ texture = SubResource("AtlasTexture_6lcgl")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="Portrait"]
+[node name="Background" type="TextureRect" parent="Portrait"]
+modulate = Color(1, 1, 1, 0.545098)
 layout_mode = 0
-offset_left = 44.0
-offset_top = 41.0
-offset_right = 234.0
-offset_bottom = 248.0
+offset_left = 28.0
+offset_top = 31.0
+offset_right = 260.0
+offset_bottom = 255.0
+texture = SubResource("GradientTexture1D_dnmvb")
+
+[node name="Self" type="TextureRect" parent="Portrait"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 29.0
+offset_right = 256.0
+offset_bottom = 255.0
 stretch_mode = 5
 
 [node name="APFrame" type="TextureRect" parent="."]
@@ -139,20 +157,27 @@ vertical_alignment = 1
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 4.25
-offset_top = 282.0
-offset_right = 279.25
-offset_bottom = 309.0
+offset_top = 285.0
+offset_right = 275.0
+offset_bottom = 312.0
+scale = Vector2(1.025, 1.025)
 texture_under = ExtResource("5_sbi27")
 texture_over = ExtResource("6_ewnwg")
 texture_progress = ExtResource("7_roegc")
 
+[node name="Panel" type="Panel" parent="HealthBar"]
+layout_mode = 0
+offset_left = 275.122
+offset_top = -0.975616
+offset_right = 315.122
+offset_bottom = 26.0244
+
 [node name="HealthText" type="Label" parent="HealthBar"]
 layout_mode = 0
-offset_left = 118.0
-offset_top = -4.0
-offset_right = 158.0
-offset_bottom = 19.0
+offset_left = 275.122
+offset_top = -5.85365
+offset_right = 315.122
+offset_bottom = 28.1463
 label_settings = SubResource("LabelSettings_1dpq8")
 horizontal_alignment = 1
 vertical_alignment = 1
