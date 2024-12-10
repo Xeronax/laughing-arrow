@@ -2,7 +2,6 @@ extends Node2D
 ## The BattleManager controls starting battles and the flow of turns
 ##
 ## 
-
 var characters: Array[BattleCharacter] = [] ## All BattleCharacters, including dead
 var participants_in_turn_order: Array[BattleCharacter] = [] ## Alive BattleCharacters sorted in turn order
 var player_team: Array[BattleCharacter] = [] ## Player team, including dead

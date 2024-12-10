@@ -20,7 +20,9 @@ var pathfinding_map: AStarGrid2D = null
 var battle_manager: Node2D = null
 var mouse_on_ui: bool = false
 var current_controller: BattleCharacter = null
+var current_target: BattleCharacter = null
 
+signal current_target_changed
 signal all_ready
 signal target_selected(targets)
 
@@ -49,8 +51,9 @@ func set_ui_children(node: Control):
 	for child in node.get_children():
 		set_ui_children(child)
 
-func grid_to_global_position(cell: Vector2) -> Vector2: 
-	return current_scene.to_global(map.map_to_local(cell))
+func set_current_target(t: BattleCharacter) -> void:
+	current_target = t
+	current_target_changed.emit()
 
 func get_character(cell: Vector2i) -> BattleCharacter:
 	for character: BattleCharacter in battle_manager.characters:
@@ -62,8 +65,14 @@ func teleport_character(character: BattleCharacter, x: int, y: int) -> void:
 	character.global_position = grid_to_global_position(Vector2(x, y))
 	character.grid_position = Vector2(x, y)
 
+func grid_to_global_position(cell: Vector2) -> Vector2: 
+	return current_scene.to_global(map.map_to_local(cell))
+
+func global_to_ui(cell: Vector2) -> Vector2:
+	return (cell - camera.global_position) * camera.zoom + current_scene.get_viewport_rect().size / 2 
+
 func grid_to_ui(cell: Vector2) -> Vector2:
-	return (grid_to_global_position(cell) - camera.global_position) * camera.zoom + current_scene.get_viewport_rect().size / 2
+	return global_to_ui(grid_to_global_position(cell))
 
 func highlight_cell(position: Vector2i, color: Highlight) -> void:
 	highlight_map.set_cell(position, color.tilemap_id, color.coordinates)

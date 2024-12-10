@@ -19,22 +19,21 @@ func _update() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	mouse_entered.connect(func (): Global.mouse_on_ui = true)
-	mouse_exited.connect(func (): Global.mouse_on_ui = false)
+	Global.set_ui_children(self)
 	if not current_controller:
 		hp_label.position.x = -40
 		hp_panel.position.x = -40
+		portrait.set_flip_h(true)
 		set_visible(false)
 		await(get_tree().create_timer(1).timeout)
-		for c: BattleCharacter in Global.battle_manager.characters:
-			c.targeted.connect(func (): switch_target(c))
+		Global.current_target_changed.connect(switch_target)
 	if not target:
 		return
 	await(target.ready)
 	switch_target(target)
 
 
-func switch_target(character: BattleCharacter) -> void:
+func switch_target(character: BattleCharacter = null) -> void:
 	if target:
 		if(target.stats.ap_changed.is_connected(_update)):
 			target.stats.ap_changed.disconnect(_update)
@@ -42,7 +41,10 @@ func switch_target(character: BattleCharacter) -> void:
 			target.stats.mp_changed.disconnect(_update)
 		if(target.stats.hp_changed.is_connected(_update)):
 			target.stats.hp_changed.disconnect(_update)
-	target = character
+	if not current_controller:
+		target = Global.current_target
+	else:
+		target = character
 	portrait.texture = target.sprite_component.portrait
 	_update()
 	set_visible(true)

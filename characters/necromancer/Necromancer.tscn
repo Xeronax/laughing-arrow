@@ -1050,6 +1050,7 @@ height = 18.0
 [node name="Necromancer" type="CharacterBody2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_yphxw")
 hitbox = NodePath("CollisionShape2D")
+character_name = "Necromancer"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 2)
@@ -1078,7 +1079,7 @@ target_node = NodePath("..")
 script = ExtResource("4_04ait")
 base_max_hp = 35
 base_max_ap = 5
-base_max_mp = 3
+base_max_mp = 2
 target_node = NodePath("..")
 
 [node name="Spellbook" type="Node" parent="."]

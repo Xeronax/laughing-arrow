@@ -22,8 +22,6 @@ class Action:
 		method = m
 		component = ai_component
 	func run() -> void:
-		print("Running action: ", method.get_method())
-		print("Next: ", _next)
 		method.call()
 		await(component.move_ready)
 		next()
@@ -108,7 +106,6 @@ func _update_actions() -> void:
 					min = cell if Global.path_to_cell(character.grid_position, cell).size() < Global.path_to_cell(character.grid_position, min).size() else min
 				var closest = Global.path_to_cell(character.grid_position, min).reduce(func(max, vec):
 					return vec if (vec in character.movement_cells and Global.get_dist(character.grid_position, vec) > Global.get_dist(character.grid_position, max)) else max)
-				print("Moving to ", closest)
 				var m: Callable = func():
 					character.move(closest)
 					move_ready.emit()

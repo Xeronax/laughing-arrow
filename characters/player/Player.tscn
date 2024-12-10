@@ -325,6 +325,7 @@ height = 16.0
 script = ExtResource("1_qxmu1")
 player_team = true
 hitbox = NodePath("CollisionShape2D")
+character_name = "Archer"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rhcyd")

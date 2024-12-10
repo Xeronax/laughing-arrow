@@ -13,16 +13,19 @@ class_name BattleCharacter extends CharacterBody2D
 @export var target: BattleCharacter
 @export var grid_position: Vector2i ## Position inside of the game TileMap
 @export var hitbox: CollisionShape2D 
+@export var character_name: String
+
+var info_bar_scene: PackedScene = preload("res://ui/floating/info_bar.tscn")
+var damage_node: PackedScene = preload("res://ui/damage_popups/DamagePopup.tscn")
 
 signal turn_starting
 signal turn_ending
-signal targeted
 
 enum States {IDLE, CASTING, MOVING, TARGETING, DEAD}
 
+var hovered: bool = false
+var info_bar: Control = null
 var state: States = States.IDLE
-
-var damage_node: PackedScene = preload("res://ui/damage_popups/DamagePopup.tscn")
 var is_turn: bool = false
 var reversed: bool = false ## Orients the character's sprite.
 var movement_cells: Array[Vector2i] = [] ## The cells that the player currently has available to move.
@@ -30,6 +33,10 @@ var spell_cells: Array[Vector2i] = [] ## If the player is in targeting mode, thi
 
 func _ready() -> void:
 	input_pickable = true
+	await(Global.all_ready)
+	info_bar = info_bar_scene.instantiate()
+	info_bar.target = self
+	Global.ui.add_child(info_bar)
 	if not ai_component:
 		Global.current_controller = self
 	for spell: Spell in spellbook:
@@ -130,4 +137,22 @@ func highlight_spell_range() -> void:
 		Global.highlight_cell(cell, Global.ORANGE)
 
 func _mouse_enter() -> void:
-	print("Entered!")
+	_set_hovered(true)
+
+func _mouse_exit() -> void:
+	_set_hovered(false)
+
+func _input(event: InputEvent) -> void:
+	if event is not InputEventMouseButton:
+		return
+	if not hovered:
+		return
+	Global.set_current_target(self)
+	_set_hovered(true)
+
+func _set_hovered(h: bool) -> void:
+	hovered = h
+	if Global.current_target == self:
+		info_bar.set_visible(true)
+	else:
+		info_bar.set_visible(h)

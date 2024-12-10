@@ -16,4 +16,4 @@ func _ready() -> void:
 	focus_button.pressed.connect(_on_click)
 
 func _on_click() -> void:
-	character.targeted.emit()
+	Global.set_current_target(character)
