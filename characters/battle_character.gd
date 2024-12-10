@@ -142,10 +142,12 @@ func _mouse_enter() -> void:
 func _mouse_exit() -> void:
 	_set_hovered(false)
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton:
 		return
 	if not hovered:
+		return
+	if Global.current_controller.state in [BattleCharacter.States.TARGETING]:
 		return
 	Global.set_current_target(self)
 	_set_hovered(true)
