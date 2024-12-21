@@ -544,12 +544,11 @@ script = ExtResource("1_3mysk")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="TurnList" parent="UI" node_paths=PackedStringArray("_battle_manager") instance=ExtResource("7_50md7")]
-offset_left = -64.0
-offset_top = 1.0
-offset_right = 54.0
-offset_bottom = 51.0
-_battle_manager = NodePath("../../BattleManager")
+[node name="TurnList" parent="UI" instance=ExtResource("7_50md7")]
+offset_left = -119.0
+offset_top = -216.0
+offset_right = -1.0
+offset_bottom = 91.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI"]
 anchors_preset = 7

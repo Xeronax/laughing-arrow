@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" path="res://ui/turn_order/character_box.gd" id="1_gmcrw"]
 [ext_resource type="Texture2D" uid="uid://djsok1jun5fdd" path="res://art/Pxiel Art UI borders.png" id="2_ho480"]
+[ext_resource type="Texture2D" uid="uid://c5pl30ulif5fm" path="res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_05/BarV5_Bar.png" id="3_4a05x"]
+[ext_resource type="Texture2D" uid="uid://dhuhtlyuulk14" path="res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_05/BarV5_ProgressBar.png" id="4_y6mdo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ds75n"]
 
@@ -20,23 +22,22 @@ corner_detail = 4
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwisc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ak4aj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8p64"]
-bg_color = Color(0.921569, 0.192157, 0.105882, 1)
-
-[node name="VSplitContainer" type="VSplitContainer"]
-offset_right = 10.0
-offset_bottom = 11.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 0
-dragger_visibility = 1
+[node name="Control" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(95, 82)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 95.0
+offset_bottom = 82.0
 script = ExtResource("1_gmcrw")
 
 [node name="ARContainer" type="PanelContainer" parent="."]
+clip_contents = true
 layout_direction = 1
 layout_mode = 2
+offset_left = 13.0
+offset_right = 94.0
+offset_bottom = 81.0
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ds75n")
 
@@ -59,11 +60,14 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_342t5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xdyxq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jwisc")
 
-[node name="HealthBar" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(0, 3)
-layout_mode = 2
-size_flags_vertical = 10
-size_flags_stretch_ratio = 0.1
-theme_override_styles/background = SubResource("StyleBoxFlat_ak4aj")
-theme_override_styles/fill = SubResource("StyleBoxFlat_x8p64")
-show_percentage = false
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = 13.0
+offset_right = 285.0
+offset_bottom = 21.0
+rotation = 1.5708
+scale = Vector2(0.298, 0.615)
+fill_mode = 3
+texture_under = ExtResource("3_4a05x")
+texture_progress = ExtResource("4_y6mdo")
