@@ -629,3 +629,6 @@ zoom = Vector2(4.345, 4.345)
 [node name="Player" parent="." instance=ExtResource("5_vb872")]
 
 [node name="Dummy" parent="." instance=ExtResource("6_yln2q")]
+
+[node name="Dummy2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_yln2q")]
+target = NodePath("../Player")

@@ -10,6 +10,7 @@ var current_turn_idx: int = 0 ## The index of the participants_in_turn_order arr
 var current_round: int = 1 ## A round consists of a full cycle of turns for each BattleCharacter
 
 signal participants_populated(participants) ## Emitted when participants_in_turn_order array is initialized
+signal turn_starting
 
 ## Sorts the participants_in_turn_order array by initiative
 func set_turn_order() -> void:
@@ -36,7 +37,7 @@ func start_battle(new_characters: Array[BattleCharacter]) -> void:
 		character.turn_ending.connect(next_turn)
 	set_turn_order()
 	set_teams()
-	emit_signal('participants_populated', participants_in_turn_order)
+	participants_populated.emit(participants_in_turn_order)
 	participants_in_turn_order[current_turn_idx].start_turn()
 
 func next_turn() -> void:
@@ -45,4 +46,5 @@ func next_turn() -> void:
 		current_turn_idx = 0
 		current_round += 1
 	var current_player: BattleCharacter = participants_in_turn_order[current_turn_idx]
+	turn_starting.emit()
 	current_player.start_turn()

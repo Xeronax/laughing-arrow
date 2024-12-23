@@ -68,6 +68,6 @@ offset_right = 285.0
 offset_bottom = 21.0
 rotation = 1.5708
 scale = Vector2(0.298, 0.615)
-fill_mode = 3
+fill_mode = 1
 texture_under = ExtResource("3_4a05x")
 texture_progress = ExtResource("4_y6mdo")
