@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://v0nnau447l0g"]
 
-[ext_resource type="Script" path="res://spells/death_lance/death_lance.gd" id="1_wmow3"]
+[ext_resource type="Script" uid="uid://dlr33ff2rf4kd" path="res://spells/death_lance/death_lance.gd" id="1_wmow3"]
 
 [node name="DeathLance" type="Node"]
 script = ExtResource("1_wmow3")

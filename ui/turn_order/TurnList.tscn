@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://yb10bhp06gq0"]
 
-[ext_resource type="Script" path="res://ui/turn_order/turn_list.gd" id="1_kiutt"]
+[ext_resource type="Script" uid="uid://dpc28pncvxv1v" path="res://ui/turn_order/turn_list.gd" id="1_kiutt"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

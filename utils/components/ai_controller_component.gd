@@ -49,12 +49,13 @@ var possible_actions: Array[Action] = []
 
 ## Abstract function that holds the actual behavior for the unit
 func turn_behavior() -> void:
-	character.update_movement_range()
-	_update_actions()
-	possible_actions[0].run()
-	await(done)
 	character.end_turn()
-	possible_actions.clear()
+	#character.update_movement_range()
+	#_update_actions()
+	#possible_actions[0].run()
+	#await(done)
+	#character.end_turn()
+	#possible_actions.clear()
 
 ## Stops turn behavior from triggering
 func disable(target: BattleCharacter) -> void:
@@ -77,6 +78,7 @@ func _setup(target: BattleCharacter) -> void:
 	for opponent: BattleCharacter in Global.battle_manager.player_team:
 		print("Creating threat for ", opponent)
 		create_threat(opponent)
+		character.sprite_component.face_direction(opponent.grid_position)
 	setup_done.emit()
 
 func _target_node_ready() -> void:
@@ -97,6 +99,7 @@ func _update_actions() -> void:
 	for threat in threats:
 		for spell: Spell in _spellbook:
 			var spell_cells_from_target: Array[Vector2i] = spell.get_range_from_target(threat.entity)
+			print("Spell cells: ", spell_cells_from_target)
 			var intersect: Array[Vector2i] = spell_cells_from_target.filter(func(cell): 
 				return character.movement_cells.has(cell) or cell == character.grid_position)
 			# If spell isnt in range, add an action to move closer to within range

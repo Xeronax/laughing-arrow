@@ -7,12 +7,12 @@ class_name BattleCharacter extends CharacterBody2D
 @onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var stats: StatComponent = $StatComponent
 @onready var spellbook: Array = $Spellbook.get_children()
-@onready var ai_component: AIComponent = $AIController
+@onready var hitbox: CollisionShape2D = $CollisionShape2D
 
 @export var player_team: bool = false
+@export var ai_component: AIComponent
 @export var target: BattleCharacter
 @export var grid_position: Vector2i ## Position inside of the game TileMap
-@export var hitbox: CollisionShape2D 
 @export var character_name: String
 
 var info_bar_scene: PackedScene = preload("res://ui/floating/info_bar.tscn")
@@ -77,7 +77,7 @@ func move(cell: Vector2i) -> void:
 	if path.size() > stats.mp:
 		return
 	state = States.MOVING
-	reversed = cell.x < grid_position.x
+	sprite_component.face_direction(cell)
 	var tween: Tween = get_tree().create_tween()
 	if path.is_empty(): 
 		return
@@ -118,7 +118,6 @@ func update_movement_range(pos: Vector2i = grid_position) -> void:
 	if stats.mp <= 0:
 		movement_cells.clear()
 		return
-	var map_grid: TileMapLayer = Global.map
 	movement_cells.clear()
 	movement_cells = Global.get_range(grid_position, stats.mp).filter(func(cell): 
 		if Global.pathfinding_map.is_point_solid(cell):

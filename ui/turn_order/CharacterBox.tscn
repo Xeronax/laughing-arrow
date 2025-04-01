@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://bjmtkb3hpj8gd"]
 
-[ext_resource type="Script" path="res://ui/turn_order/character_box.gd" id="1_gmcrw"]
-[ext_resource type="Texture2D" uid="uid://djsok1jun5fdd" path="res://art/Pxiel Art UI borders.png" id="2_ho480"]
-[ext_resource type="Texture2D" uid="uid://c5pl30ulif5fm" path="res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_05/BarV5_Bar.png" id="3_4a05x"]
-[ext_resource type="Texture2D" uid="uid://dhuhtlyuulk14" path="res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_05/BarV5_ProgressBar.png" id="4_y6mdo"]
+[ext_resource type="Script" uid="uid://co7ygme0b3yb5" path="res://ui/turn_order/character_box.gd" id="1_gmcrw"]
+[ext_resource type="Texture2D" uid="uid://djsok1jun5fdd" path="res://assets/Pxiel Art UI borders.png" id="2_ho480"]
+[ext_resource type="Texture2D" uid="uid://c5pl30ulif5fm" path="res://assets/Wenrexa Interface UI KIT #4/PNG/ProgressBar_05/BarV5_Bar.png" id="3_4a05x"]
+[ext_resource type="Texture2D" uid="uid://dhuhtlyuulk14" path="res://assets/Wenrexa Interface UI KIT #4/PNG/ProgressBar_05/BarV5_ProgressBar.png" id="4_y6mdo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ds75n"]
 

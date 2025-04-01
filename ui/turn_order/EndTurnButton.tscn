@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://8bl8ppgre6d8"]
 
-[ext_resource type="Texture2D" uid="uid://dao7ysmlwk23k" path="res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Arrow.png" id="1_l50up"]
-[ext_resource type="Script" path="res://ui/turn_order/end_turn_button.gd" id="1_pdxno"]
-[ext_resource type="Texture2D" uid="uid://codyompr0070o" path="res://art/Custom Border and Panels Menu All Part/Border All 1.png" id="2_fm1gy"]
+[ext_resource type="Texture2D" uid="uid://dao7ysmlwk23k" path="res://assets/Wenrexa Interface UI KIT #4/PNG/Icons/Arrow.png" id="1_l50up"]
+[ext_resource type="Script" uid="uid://djtran4aep5pu" path="res://ui/turn_order/end_turn_button.gd" id="1_pdxno"]
+[ext_resource type="Texture2D" uid="uid://codyompr0070o" path="res://assets/Custom Border and Panels Menu All Part/Border All 1.png" id="2_fm1gy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bl4qb"]
 atlas = ExtResource("2_fm1gy")

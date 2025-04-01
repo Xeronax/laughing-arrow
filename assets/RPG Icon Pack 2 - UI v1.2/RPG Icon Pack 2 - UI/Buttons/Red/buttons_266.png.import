@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://by3qblp4m3k6y"
+path="res://.godot/imported/buttons_266.png-650063e0d7059d4e17f818abf1185e52.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/RPG Icon Pack 2 - UI v1.2/RPG Icon Pack 2 - UI/Buttons/Red/buttons_266.png"
+dest_files=["res://.godot/imported/buttons_266.png-650063e0d7059d4e17f818abf1185e52.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

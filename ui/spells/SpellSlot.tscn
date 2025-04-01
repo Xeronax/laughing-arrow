@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://b17l52u1kxlwn"]
+
+[ext_resource type="Texture2D" uid="uid://codyompr0070o" path="res://assets/Custom Border and Panels Menu All Part/Border All 1.png" id="1_4th1y"]
+[ext_resource type="Script" uid="uid://cdc4l68eedtmq" path="res://ui/spells/spell_slot.gd" id="1_an1d1"]
+[ext_resource type="PackedScene" uid="uid://70ouceanihss" path="res://ui/spells/Tooltip.tscn" id="2_ki1n0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ph77"]
+atlas = ExtResource("1_4th1y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjviy"]
+bg_color = Color(0, 0, 0, 0.780392)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp78u"]
+bg_color = Color(1, 1, 1, 0.643137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbqf2"]
+bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.603922)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6o2u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_87whd"]
+
+[node name="SpellSlot" type="AspectRatioContainer"]
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_an1d1")
+tooltip_scene = ExtResource("2_ki1n0")
+
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_1ph77")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="SpellIcon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.5
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yjviy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fp78u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lbqf2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e6o2u")
+
+[node name="Keybind" type="Label" parent="."]
+custom_minimum_size = Vector2(2.71, 4.385)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "1 "
+label_settings = SubResource("LabelSettings_87whd")

@@ -1,8 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://tpyden628vdc"]
 
-[ext_resource type="Script" path="res://spells/shoot/shoot.gd" id="1_h6oyd"]
-[ext_resource type="Texture2D" uid="uid://b42qwf1yt61mx" path="res://art/Hunter_Free/Hunter_24.png" id="2_lpb8a"]
+[ext_resource type="Script" uid="uid://7gx54c1kc4kb" path="res://spells/shoot/shoot.gd" id="1_h6oyd"]
+[ext_resource type="Texture2D" uid="uid://b42qwf1yt61mx" path="res://assets/Hunter_Free/Hunter_24.png" id="2_lpb8a"]
 
 [node name="Shoot" type="Node"]
 script = ExtResource("1_h6oyd")
 spell_icon = ExtResource("2_lpb8a")
+spell_name = "Arcane Shot"
+ap_cost = 2
+minimum_damage = 3
+maximum_damage = 5
+spell_range = 7
+description = "Fire a magic shot dealing {minimum_damage} - {maximum_damage} Physical damage to your target."
+target_type = 1

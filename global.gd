@@ -41,9 +41,10 @@ func _ready() -> void:
 	
 	teleport_character(current_scene.player, 4, 4)
 	teleport_character(current_scene.dummy, 13, 4)
-	teleport_character(current_scene.dummy2, 14, 5)
 	
-	var combatants: Array[BattleCharacter] = [current_scene.player, current_scene.dummy, current_scene.dummy2]
+	ui.get_node("SpellBar").refresh_spells()
+	
+	var combatants: Array[BattleCharacter] = [current_scene.player, current_scene.dummy]
 	current_scene.battle_manager.start_battle(combatants)
 
 func set_ui_children(node: Control):

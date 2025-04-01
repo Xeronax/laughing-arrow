@@ -44,6 +44,8 @@ func _current_controller_highlighting() -> void:
 	hovered_tile = cell_currently_hovered
 	if not Global.mouse_on_ui:
 		Global.highlight_cell(hovered_tile, Global.WHITE)
+	else:
+		highlight_map.erase_cell(hovered_tile)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton:

@@ -2,18 +2,20 @@ class_name Spell extends Node
 ## Spell.gd encapsulate the default behavior of spells as an abstract class
 
 @export var spell_icon: Texture
+@export var spell_name: String
+@export var ap_cost: int
+@export var minimum_damage: int
+@export var maximum_damage: int
+@export var spell_range: int
+@export var cooldown: int = 1
+@export_multiline var description: String
 
 var caster: BattleCharacter
-var spell_name: String
-var ap_cost: int
-var minimum_damage: int
-var maximum_damage: int
-var spell_range: int
 
 ## TargetType determines the cells that the spell is allowed to target
 enum TargetType { SELF, ENEMY, ANY, ALL, LINE }
 ## The enums are connected to the targeting method Callables through this Dictionary
-var target_type: TargetType
+@export var target_type: TargetType
 var targeting_method: Dictionary = {
 	TargetType.ENEMY : target_enemy,
 	TargetType.LINE : target_line
@@ -29,7 +31,8 @@ var radius: int = 0
 
 ## Work in progress semi-placeholder for defining custom damage calculation behavior such as 
 ## ignoring armor, might replace with a custom class soon
-var damage_calc: Callable
+var damage_calc: Callable = func():
+	return randi_range(minimum_damage, maximum_damage)
 var targeted_cells: Array[Vector2i] = []
 var targeted_characters: Array[BattleCharacter] = []
 
@@ -72,6 +75,16 @@ func get_range_from_target(t: BattleCharacter) -> Array[Vector2i]:
 		TargetType.LINE:
 			range = Global.get_range(t.grid_position, spell_range).filter(func(cell):
 				return (cell.x == t.grid_position.x or cell.y == t.grid_position.y)) 
+	return range
+
+func get_range() -> Array[Vector2i]:
+	var range: Array[Vector2i] = []
+	match target_type:
+		TargetType.ENEMY:
+			range = Global.get_range(caster.grid_position, spell_range)
+		TargetType.LINE:
+			range = Global.get_range(caster.grid_position, spell_range).filter(func(cell):
+				return (cell.x == caster.grid_position.x or cell.y == caster.grid_position.y))
 	return range
 
 ### Targeting methods

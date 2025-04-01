@@ -1,15 +1,15 @@
 [gd_scene load_steps=136 format=3 uid="uid://cuk33b723yb5n"]
 
-[ext_resource type="Script" path="res://characters/battle_character.gd" id="1_yphxw"]
-[ext_resource type="Texture2D" uid="uid://b44702rw2pcjx" path="res://art/Necromancer/Attack/spr_NecromancerAttackWithEffect_strip47.png" id="2_80js7"]
-[ext_resource type="Texture2D" uid="uid://cvu5f7hwbl1yw" path="res://art/Necromancer/GetHit/spr_NecromancerGetHit_strip9.png" id="2_aoroa"]
-[ext_resource type="Texture2D" uid="uid://uoroff6q2mqv" path="res://art/Necromancer/Idle/spr_NecromancerIdle_strip50.png" id="2_cin0y"]
-[ext_resource type="Texture2D" uid="uid://ddx15qdgghfjg" path="res://art/Necromancer/Walk/spr_NecromancerWalk_strip10.png" id="3_34r3f"]
-[ext_resource type="Script" path="res://utils/components/sprite_component.gd" id="3_cxgqt"]
-[ext_resource type="Texture2D" uid="uid://b710a872lor0g" path="res://art/Necromancer/Attack/spr_NecromancerAttackWithoutEffect_strip47.png" id="3_flw5n"]
-[ext_resource type="Script" path="res://utils/components/stat_component.gd" id="4_04ait"]
+[ext_resource type="Script" uid="uid://d25u85n7xlvpx" path="res://characters/battle_character.gd" id="1_yphxw"]
+[ext_resource type="Texture2D" uid="uid://b44702rw2pcjx" path="res://assets/Necromancer/Attack/spr_NecromancerAttackWithEffect_strip47.png" id="2_80js7"]
+[ext_resource type="Texture2D" uid="uid://cvu5f7hwbl1yw" path="res://assets/Necromancer/GetHit/spr_NecromancerGetHit_strip9.png" id="2_aoroa"]
+[ext_resource type="Texture2D" uid="uid://uoroff6q2mqv" path="res://assets/Necromancer/Idle/spr_NecromancerIdle_strip50.png" id="2_cin0y"]
+[ext_resource type="Texture2D" uid="uid://ddx15qdgghfjg" path="res://assets/Necromancer/Walk/spr_NecromancerWalk_strip10.png" id="3_34r3f"]
+[ext_resource type="Script" uid="uid://bew20kuthhrr5" path="res://utils/components/sprite_component.gd" id="3_cxgqt"]
+[ext_resource type="Texture2D" uid="uid://b710a872lor0g" path="res://assets/Necromancer/Attack/spr_NecromancerAttackWithoutEffect_strip47.png" id="3_flw5n"]
+[ext_resource type="Script" uid="uid://bd6rnpm4dcnet" path="res://utils/components/stat_component.gd" id="4_04ait"]
 [ext_resource type="PackedScene" uid="uid://v0nnau447l0g" path="res://spells/death_lance/DeathLance.tscn" id="10_awpd8"]
-[ext_resource type="Script" path="res://utils/components/ai_controller_component.gd" id="10_w3pq5"]
+[ext_resource type="Script" uid="uid://s8jebkbibsyh" path="res://utils/components/ai_controller_component.gd" id="10_w3pq5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwu6c"]
 atlas = ExtResource("2_80js7")
@@ -1036,11 +1036,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3aka1"]
 _data = {
-"RESET": SubResource("Animation_myefp"),
-"attack": SubResource("Animation_r3eki"),
-"get_hit": SubResource("Animation_oi4ny"),
-"idle": SubResource("Animation_2wglr"),
-"run": SubResource("Animation_mnviq")
+&"RESET": SubResource("Animation_myefp"),
+&"attack": SubResource("Animation_r3eki"),
+&"get_hit": SubResource("Animation_oi4ny"),
+&"idle": SubResource("Animation_2wglr"),
+&"run": SubResource("Animation_mnviq")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bu63c"]
@@ -1055,13 +1055,13 @@ character_name = "Necromancer"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 2)
 sprite_frames = SubResource("SpriteFrames_j07fn")
-animation = &"attack"
+animation = &"idle"
 speed_scale = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_3aka1")
+&"": SubResource("AnimationLibrary_3aka1")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1086,6 +1086,5 @@ target_node = NodePath("..")
 
 [node name="DeathLance" parent="Spellbook" instance=ExtResource("10_awpd8")]
 
-[node name="AIController" type="Node" parent="." node_paths=PackedStringArray("target_node")]
+[node name="AIController" type="Node" parent="."]
 script = ExtResource("10_w3pq5")
-target_node = NodePath("..")

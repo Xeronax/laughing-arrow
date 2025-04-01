@@ -8,12 +8,8 @@ var spell: Spell = null ## The spell being cast
 var targets: Array[BattleCharacter] = []
 
 ## Constructor for damage events, takes in a spell + a damage calculation function.
-func _init(caller: Spell, calc_damage: Callable = _default_damage_calculation) -> void:
+func _init(caller: Spell) -> void:
 	spell = caller
 	modifiers = spell.get_children()
-	final_damage = calc_damage.call()
+	final_damage = caller.damage_calc.call()
 	targets = spell.targeted_characters.duplicate()
-
-## If a custom damage calculation function isn't provided, this function will be used by default.
-var _default_damage_calculation: Callable = func(): 
-	return randi_range(spell.minimum_damage, spell.maximum_damage)

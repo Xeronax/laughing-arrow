@@ -1,10 +1,10 @@
 [gd_scene load_steps=34 format=3 uid="uid://c7c2xwv0ldlh2"]
 
-[ext_resource type="Script" path="res://characters/battle_character.gd" id="1_qxmu1"]
-[ext_resource type="Texture2D" uid="uid://p22ewmdirodp" path="res://art/Final/Normal Attack.png" id="2_ollde"]
-[ext_resource type="Texture2D" uid="uid://cd555acarioba" path="res://art/Final/Idle and running.png" id="3_86nxv"]
-[ext_resource type="Script" path="res://utils/components/sprite_component.gd" id="4_ktlyp"]
-[ext_resource type="Script" path="res://utils/components/stat_component.gd" id="5_b4ykd"]
+[ext_resource type="Script" uid="uid://d25u85n7xlvpx" path="res://characters/battle_character.gd" id="1_qxmu1"]
+[ext_resource type="Texture2D" uid="uid://p22ewmdirodp" path="res://assets/Final/Normal Attack.png" id="2_ollde"]
+[ext_resource type="Texture2D" uid="uid://cd555acarioba" path="res://assets/Final/Idle and running.png" id="3_86nxv"]
+[ext_resource type="Script" uid="uid://bew20kuthhrr5" path="res://utils/components/sprite_component.gd" id="4_ktlyp"]
+[ext_resource type="Script" uid="uid://bd6rnpm4dcnet" path="res://utils/components/stat_component.gd" id="5_b4ykd"]
 [ext_resource type="PackedScene" uid="uid://tpyden628vdc" path="res://spells/shoot/Shoot.tscn" id="6_8stvu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3daf"]
@@ -312,19 +312,18 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lc5g3"]
 _data = {
-"attack": SubResource("Animation_pvpa4"),
-"idle": SubResource("Animation_id3sk"),
-"run": SubResource("Animation_2k0ht")
+&"attack": SubResource("Animation_pvpa4"),
+&"idle": SubResource("Animation_id3sk"),
+&"run": SubResource("Animation_2k0ht")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sdhi5"]
 radius = 6.0
 height = 16.0
 
-[node name="BattleCharacter" type="CharacterBody2D" node_paths=PackedStringArray("hitbox")]
+[node name="BattleCharacter" type="CharacterBody2D"]
 script = ExtResource("1_qxmu1")
 player_team = true
-hitbox = NodePath("CollisionShape2D")
 character_name = "Archer"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -334,7 +333,7 @@ speed_scale = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
-"": SubResource("AnimationLibrary_lc5g3")
+&"": SubResource("AnimationLibrary_lc5g3")
 }
 speed_scale = 0.35
 
@@ -346,6 +345,7 @@ script = ExtResource("4_ktlyp")
 Sprite = NodePath("../AnimatedSprite2D")
 animation_player = NodePath("../AnimatedSprite2D/AnimationPlayer")
 target_size = 24
+face_right_by_default = true
 target_node = NodePath("..")
 
 [node name="StatComponent" type="Node" parent="." node_paths=PackedStringArray("target_node")]

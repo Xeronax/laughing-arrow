@@ -1,17 +1,17 @@
 [gd_scene load_steps=18 format=4 uid="uid://c2dngih7l0yhr"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_3mysk"]
-[ext_resource type="Script" path="res://layer_holder.gd" id="2_q6s3v"]
-[ext_resource type="PackedScene" uid="uid://k6f6m27c5usi" path="res://ui/spells/spell_slot.tscn" id="3_1hdd8"]
-[ext_resource type="Texture2D" uid="uid://ct5h0b6a8s7b4" path="res://art/swamp_/swamp_.png" id="3_4xohx"]
+[ext_resource type="Script" uid="uid://c6b3qe5m136tf" path="res://main.gd" id="1_3mysk"]
+[ext_resource type="Script" uid="uid://b8t5w0mmaqo58" path="res://layer_holder.gd" id="2_q6s3v"]
+[ext_resource type="Texture2D" uid="uid://ct5h0b6a8s7b4" path="res://assets/swamp_/swamp_.png" id="3_4xohx"]
 [ext_resource type="PackedScene" uid="uid://cu4qfv71c1i70" path="res://ui/character_frame/CharacterFrame.tscn" id="4_ebvww"]
 [ext_resource type="PackedScene" uid="uid://diu8y3vpmuvuf" path="res://utils/battle_manager/BattleManager.tscn" id="4_qbdbn"]
+[ext_resource type="PackedScene" uid="uid://b0wqmiki7cf0c" path="res://ui/spells/SpellBar.tscn" id="5_5vvyt"]
 [ext_resource type="PackedScene" uid="uid://8bl8ppgre6d8" path="res://ui/turn_order/EndTurnButton.tscn" id="5_rhj0d"]
 [ext_resource type="PackedScene" uid="uid://c7c2xwv0ldlh2" path="res://characters/player/Player.tscn" id="5_vb872"]
-[ext_resource type="PackedScene" uid="uid://cuk33b723yb5n" path="res://characters/necromancer/Necromancer.tscn" id="6_yln2q"]
 [ext_resource type="PackedScene" uid="uid://yb10bhp06gq0" path="res://ui/turn_order/TurnList.tscn" id="7_50md7"]
-[ext_resource type="Texture2D" uid="uid://ch3ci1hsicfgu" path="res://art/PixelWoods/Terrain(main)/terrain tiles.png" id="8_7k2ly"]
-[ext_resource type="Texture2D" uid="uid://r52ctyr4wwmi" path="res://art/PixelWoods/Seasons/winter/terrain.png" id="9_ax4eg"]
+[ext_resource type="Texture2D" uid="uid://ch3ci1hsicfgu" path="res://assets/PixelWoods/Terrain(main)/terrain tiles.png" id="8_7k2ly"]
+[ext_resource type="Texture2D" uid="uid://r52ctyr4wwmi" path="res://assets/PixelWoods/Seasons/winter/terrain.png" id="9_ax4eg"]
+[ext_resource type="PackedScene" uid="uid://04ohfek6aug3" path="res://characters/dummy/Dummy.tscn" id="12_5vvyt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tdrj"]
 texture = ExtResource("3_4xohx")
@@ -550,24 +550,6 @@ offset_top = -216.0
 offset_right = -1.0
 offset_bottom = 91.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -302.0
-offset_top = -84.0
-offset_right = 196.0
-offset_bottom = -34.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="SpellSlot" parent="UI/HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("3_1hdd8")]
-layout_mode = 2
-alignment_horizontal = 0
-player = NodePath("../../../Player")
-
 [node name="CharacterFrame" parent="UI" node_paths=PackedStringArray("target") instance=ExtResource("4_ebvww")]
 anchors_preset = 2
 anchor_top = 1.0
@@ -609,6 +591,13 @@ grow_horizontal = 2
 grow_vertical = 0
 target = NodePath("../../Player")
 
+[node name="SpellBar" parent="UI" node_paths=PackedStringArray("player") instance=ExtResource("5_5vvyt")]
+offset_left = -304.0
+offset_top = -88.0
+offset_right = 230.0
+offset_bottom = -32.0
+player = NodePath("../../Player")
+
 [node name="LayerHolder" type="Node2D" parent="."]
 script = ExtResource("2_q6s3v")
 
@@ -622,13 +611,11 @@ tile_set = SubResource("TileSet_wjjuk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(146, 95)
-zoom = Vector2(4.345, 4.345)
+zoom = Vector2(4.05, 4.05)
 
 [node name="BattleManager" parent="." instance=ExtResource("4_qbdbn")]
 
 [node name="Player" parent="." instance=ExtResource("5_vb872")]
 
-[node name="Dummy" parent="." instance=ExtResource("6_yln2q")]
-
-[node name="Dummy2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_yln2q")]
+[node name="Dummy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("12_5vvyt")]
 target = NodePath("../Player")

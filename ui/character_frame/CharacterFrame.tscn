@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=3 uid="uid://cu4qfv71c1i70"]
 
-[ext_resource type="Script" path="res://ui/character_frame/character_frame.gd" id="1_e3w8j"]
-[ext_resource type="Texture2D" uid="uid://dupgo4uao7147" path="res://art/Wenrexa Interface UI KIT #4/PNG/Icons/Circle02.png" id="2_bpfcq"]
-[ext_resource type="Texture2D" uid="uid://b5uatdjbq36ju" path="res://art/Custom Border and Panels Menu All Part/Ram Border All.png" id="2_y2lut"]
-[ext_resource type="FontFile" uid="uid://c66f6mfqcyten" path="res://art/BerkshireSwash-Regular.ttf" id="3_xpfbi"]
-[ext_resource type="Texture2D" uid="uid://cba33wfp7dm44" path="res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_Bar.png" id="5_sbi27"]
-[ext_resource type="Texture2D" uid="uid://bggre8ko1xdhl" path="res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_ProgressBarBorder.png" id="6_ewnwg"]
-[ext_resource type="Texture2D" uid="uid://cd1wwy0h7lp3m" path="res://art/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_ProgressBar.png" id="7_roegc"]
+[ext_resource type="Script" uid="uid://b3toiob0wjmfy" path="res://ui/character_frame/character_frame.gd" id="1_e3w8j"]
+[ext_resource type="Texture2D" uid="uid://dupgo4uao7147" path="res://assets/Wenrexa Interface UI KIT #4/PNG/Icons/Circle02.png" id="2_bpfcq"]
+[ext_resource type="Texture2D" uid="uid://b5uatdjbq36ju" path="res://assets/Custom Border and Panels Menu All Part/Ram Border All.png" id="2_y2lut"]
+[ext_resource type="FontFile" uid="uid://c66f6mfqcyten" path="res://assets/BerkshireSwash-Regular.ttf" id="3_xpfbi"]
+[ext_resource type="Texture2D" uid="uid://cba33wfp7dm44" path="res://assets/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_Bar.png" id="5_sbi27"]
+[ext_resource type="Texture2D" uid="uid://bggre8ko1xdhl" path="res://assets/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_ProgressBarBorder.png" id="6_ewnwg"]
+[ext_resource type="Texture2D" uid="uid://cd1wwy0h7lp3m" path="res://assets/Wenrexa Interface UI KIT #4/PNG/ProgressBar_01/BarV1_ProgressBar.png" id="7_roegc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6lcgl"]
 atlas = ExtResource("2_y2lut")
