@@ -46,6 +46,7 @@ stretch_mode = 5
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
+focus_mode = 0
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yjviy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fp78u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lbqf2")

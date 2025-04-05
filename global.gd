@@ -25,6 +25,7 @@ var current_target: BattleCharacter = null
 signal current_target_changed
 signal all_ready
 signal target_selected(targets)
+signal current_controller_changed(char)
 
 func _ready() -> void:
 	var root = get_tree().get_root()
@@ -42,7 +43,7 @@ func _ready() -> void:
 	teleport_character(current_scene.player, 4, 4)
 	teleport_character(current_scene.dummy, 13, 4)
 	
-	ui.get_node("SpellBar").refresh_spells()
+	ui.get_node("ActionBar").switch_target(current_scene.player)
 	
 	var combatants: Array[BattleCharacter] = [current_scene.player, current_scene.dummy]
 	current_scene.battle_manager.start_battle(combatants)
@@ -52,6 +53,10 @@ func set_ui_children(node: Control):
 	node.mouse_exited.connect(func (): mouse_on_ui = false)
 	for child in node.get_children():
 		set_ui_children(child)
+
+func set_current_controller(t: BattleCharacter) -> void:
+	current_controller = t
+	current_controller_changed.emit(t)
 
 func set_current_target(t: BattleCharacter) -> void:
 	current_target = t

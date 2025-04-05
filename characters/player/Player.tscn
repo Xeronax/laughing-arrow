@@ -350,10 +350,7 @@ target_node = NodePath("..")
 
 [node name="StatComponent" type="Node" parent="." node_paths=PackedStringArray("target_node")]
 script = ExtResource("5_b4ykd")
-base_max_hp = 40
-base_max_ap = 6
-base_max_mp = 3
-initiative = 1
+base_ap = 6
 target_node = NodePath("..")
 
 [node name="Spellbook" type="Node" parent="."]

@@ -46,7 +46,7 @@ func cast() -> bool:
 	if caster.state in [BattleCharacter.States.CASTING, BattleCharacter.States.MOVING, BattleCharacter.States.DEAD]:
 		return false
 	## If the caster doesn't have enough AP to cast the spell, cancel
-	if caster.stats.ap < ap_cost:
+	if caster.stats.ap.current < ap_cost:
 		print("Not enough ap to cast ", spell_name)
 		return false
 	caster.state = BattleCharacter.States.TARGETING
@@ -54,7 +54,7 @@ func cast() -> bool:
 	if not await targeting_method[target_type].call():
 		caster.state = BattleCharacter.States.IDLE
 		return false
-	caster.stats.set_ap(caster.stats.ap - ap_cost)
+	caster.stats.set_ap(caster.stats.ap.current - ap_cost)
 	caster.reversed = caster.grid_position.x > targeted_cells[0].x
 	caster.spell_cells.clear()
 	caster.state = BattleCharacter.States.CASTING

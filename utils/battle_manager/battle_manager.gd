@@ -16,7 +16,7 @@ signal turn_starting
 func set_turn_order() -> void:
 	var temp_array = characters
 	temp_array.sort_custom(func (a: BattleCharacter, b: BattleCharacter): 
-		return a.stats.initiative > b.stats.initiative
+		return a.stats.initiative.current > b.stats.initiative.current
 	)
 	participants_in_turn_order = temp_array
 

@@ -8,8 +8,8 @@ extends Control
 var character: BattleCharacter
 
 func update_hp_bar() -> void:
-	hp_bar.max_value = character.stats.max_hp
-	hp_bar.value = character.stats.hp
+	hp_bar.max_value = character.stats.hp.max
+	hp_bar.value = character.stats.hp.current
 	print("Updating HP for ", character)
 
 func _ready() -> void:

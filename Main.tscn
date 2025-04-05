@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ct5h0b6a8s7b4" path="res://assets/swamp_/swamp_.png" id="3_4xohx"]
 [ext_resource type="PackedScene" uid="uid://cu4qfv71c1i70" path="res://ui/character_frame/CharacterFrame.tscn" id="4_ebvww"]
 [ext_resource type="PackedScene" uid="uid://diu8y3vpmuvuf" path="res://utils/battle_manager/BattleManager.tscn" id="4_qbdbn"]
-[ext_resource type="PackedScene" uid="uid://b0wqmiki7cf0c" path="res://ui/spells/SpellBar.tscn" id="5_5vvyt"]
+[ext_resource type="PackedScene" uid="uid://1ff0gpu3kd73" path="res://ui/spells/ActionBar.tscn" id="5_5vvyt"]
 [ext_resource type="PackedScene" uid="uid://8bl8ppgre6d8" path="res://ui/turn_order/EndTurnButton.tscn" id="5_rhj0d"]
 [ext_resource type="PackedScene" uid="uid://c7c2xwv0ldlh2" path="res://characters/player/Player.tscn" id="5_vb872"]
 [ext_resource type="PackedScene" uid="uid://yb10bhp06gq0" path="res://ui/turn_order/TurnList.tscn" id="7_50md7"]
@@ -550,53 +550,45 @@ offset_top = -216.0
 offset_right = -1.0
 offset_bottom = 91.0
 
-[node name="CharacterFrame" parent="UI" node_paths=PackedStringArray("target") instance=ExtResource("4_ebvww")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 42.0
-offset_top = -173.0
-offset_right = 391.0
-offset_bottom = 130.0
-grow_vertical = 0
-scale = Vector2(0.5, 0.5)
-target = NodePath("../../Player")
-current_controller = true
-
-[node name="CharacterFrame2" parent="UI" instance=ExtResource("4_ebvww")]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -247.0
-offset_top = -173.0
-offset_right = 102.0
-offset_bottom = 130.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.5, 0.5)
-
 [node name="EndTurnButton" parent="UI" node_paths=PackedStringArray("target") instance=ExtResource("5_rhj0d")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 239.0
-offset_top = -84.0
-offset_right = 293.0
-offset_bottom = -34.0
+offset_left = 236.0
+offset_top = -117.0
+offset_right = 290.0
+offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 0
 target = NodePath("../../Player")
 
-[node name="SpellBar" parent="UI" node_paths=PackedStringArray("player") instance=ExtResource("5_5vvyt")]
-offset_left = -304.0
-offset_top = -88.0
-offset_right = 230.0
-offset_bottom = -32.0
-player = NodePath("../../Player")
+[node name="ActionBar" parent="UI" instance=ExtResource("5_5vvyt")]
+
+[node name="Portrait" parent="UI" instance=ExtResource("4_ebvww")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 51.0
+offset_top = -203.0
+offset_right = 158.0
+offset_bottom = -96.0
+grow_vertical = 0
+current_controller = true
+
+[node name="Portrait2" parent="UI" instance=ExtResource("4_ebvww")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -201.0
+offset_right = -69.0
+offset_bottom = -94.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="LayerHolder" type="Node2D" parent="."]
 script = ExtResource("2_q6s3v")
@@ -611,7 +603,7 @@ tile_set = SubResource("TileSet_wjjuk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(146, 95)
-zoom = Vector2(4.05, 4.05)
+zoom = Vector2(3, 3)
 
 [node name="BattleManager" parent="." instance=ExtResource("4_qbdbn")]
 

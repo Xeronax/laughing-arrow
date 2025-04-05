@@ -15,7 +15,7 @@ class_name BattleCharacter extends CharacterBody2D
 @export var grid_position: Vector2i ## Position inside of the game TileMap
 @export var character_name: String
 
-var info_bar_scene: PackedScene = preload("res://ui/floating/info_bar.tscn")
+var info_bar_scene: PackedScene = preload("res://ui/floating/NamePlate.tscn")
 var damage_node: PackedScene = preload("res://ui/damage_popups/DamagePopup.tscn")
 
 signal turn_starting
@@ -38,10 +38,10 @@ func _ready() -> void:
 	info_bar.target = self
 	Global.ui.add_child(info_bar)
 	if not ai_component:
-		Global.current_controller = self
+		Global.set_current_controller(self)
 	for spell: Spell in spellbook:
 		spell.caster = self
-	stats.set_hp(stats.max_hp)
+	stats.set_hp(stats.hp.max)
 	_reset_resources()
 
 func set_grid_position(pos: Vector2i) -> void:
@@ -68,13 +68,13 @@ func end_turn() -> void:
 	turn_ending.emit()
 
 func take_damage(event: DamageEvent) -> void:
-	stats.set_hp(stats.hp - event.final_damage)
+	stats.set_hp(stats.hp.current - event.final_damage)
 	sprite_component.Sprite.play("get_hit")
 	_create_damage_popup(event.final_damage)
 
 func move(cell: Vector2i) -> void:
 	var path: Array[Vector2i] = Global.path_to_cell(self.grid_position, cell)
-	if path.size() > stats.mp:
+	if path.size() > stats.mp.current:
 		return
 	state = States.MOVING
 	sprite_component.face_direction(cell)
@@ -83,7 +83,7 @@ func move(cell: Vector2i) -> void:
 		return
 	sprite_component.animation_player.play("run")
 	for point in path:
-		stats.set_mp(stats.mp - 1)
+		stats.set_mp(stats.mp.current - 1)
 		tween.tween_property(self, "global_position", Global.grid_to_global_position(point), 0.5)
 		set_grid_position(point)
 	tween.tween_callback(func (): 
@@ -95,8 +95,8 @@ func move(cell: Vector2i) -> void:
 		)
 
 func _reset_resources():
-	stats.set_ap(stats.max_ap)
-	stats.set_mp(stats.max_mp)
+	stats.set_ap(stats.ap.max)
+	stats.set_mp(stats.mp.max)
 
 func _create_damage_popup(damage: int) -> void:
 	var damage_popup: Control = damage_node.instantiate()
@@ -115,14 +115,14 @@ func _create_damage_popup(damage: int) -> void:
 	animation.play("popup")
 
 func update_movement_range(pos: Vector2i = grid_position) -> void:
-	if stats.mp <= 0:
+	if stats.mp.current <= 0:
 		movement_cells.clear()
 		return
 	movement_cells.clear()
-	movement_cells = Global.get_range(grid_position, stats.mp).filter(func(cell): 
+	movement_cells = Global.get_range(grid_position, stats.mp.current).filter(func(cell): 
 		if Global.pathfinding_map.is_point_solid(cell):
 			return false
-		if Global.pathfinding_map.get_point_path(grid_position, cell).size() - 1 > stats.mp:
+		if Global.pathfinding_map.get_point_path(grid_position, cell).size() - 1 > stats.mp.current:
 			return false
 		return true)
 
