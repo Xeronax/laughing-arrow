@@ -6,9 +6,11 @@ var final_damage: int ## The value that the BattleCharacter will lose as HP.
 var modifiers: Array[Node]
 var spell: Spell = null ## The spell being cast
 var targets: Array[BattleCharacter] = []
+var source: Variant
 
 ## Constructor for damage events, takes in a spell + a damage calculation function.
 func _init(caller: Spell) -> void:
+	source = caller.caster
 	spell = caller
 	modifiers = spell.get_children()
 	final_damage = caller.damage_calc.call()

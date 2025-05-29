@@ -10,12 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://btl047c1ha3rg" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_283.png" id="5_tvtyj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp521"]
-bg_color = Color(0, 0, 0, 0.454902)
+bg_color = Color(0.114897, 0.114897, 0.114897, 0.788235)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0, 0, 0, 0.768627)
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10

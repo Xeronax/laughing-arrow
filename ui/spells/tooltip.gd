@@ -25,4 +25,4 @@ func set_spell(s: Spell) -> void:
 		"minimum_damage": str(s.minimum_damage),
 		"maximum_damage": str(s.maximum_damage),
 	}
-	description.text = "[color=GOLD][font='res://assets/Lato/Lato-Black.ttf'][font_size=13]" + s.description.format(formatting_dict) 
+	description.text = "[color=WHITE][font='res://assets/Lato/Lato-Black.ttf'][font_size=13]" + s.description.format(formatting_dict) 

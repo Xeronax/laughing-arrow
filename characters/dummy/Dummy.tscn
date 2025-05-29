@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://04ohfek6aug3"]
 
-[ext_resource type="Script" uid="uid://d25u85n7xlvpx" path="res://characters/battle_character.gd" id="1_gnah1"]
+[ext_resource type="Script" uid="uid://dsd0oxt2od34r" path="res://characters/dummy/dummy.gd" id="1_gnah1"]
 [ext_resource type="Texture2D" uid="uid://db6pohcsujv5y" path="res://assets/Training Dummy Sprite Sheet.png" id="2_jwga5"]
 [ext_resource type="Script" uid="uid://bew20kuthhrr5" path="res://utils/components/sprite_component.gd" id="3_rn3sj"]
 [ext_resource type="Script" uid="uid://bd6rnpm4dcnet" path="res://utils/components/stat_component.gd" id="4_23hw7"]
@@ -193,6 +193,7 @@ _data = {
 [node name="Dummy" type="CharacterBody2D" node_paths=PackedStringArray("ai_component")]
 script = ExtResource("1_gnah1")
 ai_component = NodePath("AIController")
+character_name = "Target Dummy"
 metadata/_custom_type_script = "uid://d25u85n7xlvpx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -216,6 +217,7 @@ target_node = NodePath("..")
 
 [node name="StatComponent" type="Node" parent="." node_paths=PackedStringArray("target_node")]
 script = ExtResource("4_23hw7")
+base_hp = 9999
 target_node = NodePath("..")
 
 [node name="AIController" type="Node" parent="." node_paths=PackedStringArray("target_node")]

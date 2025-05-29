@@ -3,7 +3,6 @@ extends Panel
 @onready var level_label: Label = $LevelBG/LevelLabel
 @onready var name_label: Label = $NameBG/NameLabel
 @onready var hp_bar: TextureProgressBar = $Health
-@onready var background: Panel = $Background
 
 var target: BattleCharacter = null
 

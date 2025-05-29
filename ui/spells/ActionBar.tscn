@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://1ff0gpu3kd73"]
+[gd_scene load_steps=17 format=3 uid="uid://1ff0gpu3kd73"]
 
 [ext_resource type="Texture2D" uid="uid://cjmg5kqpletcw" path="res://assets/RPG Icon Pack 2 - UI v1.2/RPG Icon Pack 2 - UI/Windows/window7_154.png" id="1_uoxp7"]
 [ext_resource type="Script" uid="uid://prwqiukjvklc" path="res://ui/spells/spell_bar.gd" id="2_13okf"]
@@ -13,11 +13,16 @@
 [ext_resource type="FontFile" uid="uid://bgdtnu1n0yunb" path="res://assets/Nunito Font/static/Nunito-Black.ttf" id="11_20wkq"]
 [ext_resource type="Texture2D" uid="uid://cjgdobr74cn1u" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/material/material_44.png" id="11_ec0lw"]
 
+[sub_resource type="Theme" id="Theme_20wkq"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_qd7ii"]
 font = ExtResource("11_20wkq")
 font_size = 10
 
-[sub_resource type="Theme" id="Theme_20wkq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20wkq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6njk"]
+bg_color = Color(0.977987, 0.980353, 7.70092e-07, 1)
 
 [node name="ActionBar" type="NinePatchRect"]
 anchors_preset = 7
@@ -26,8 +31,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -576.0
-offset_top = -56.0
+offset_top = -80.0
 offset_right = 576.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
@@ -138,9 +144,9 @@ patch_margin_right = 5
 
 [node name="HPBar" type="TextureProgressBar" parent="ResourceBars"]
 layout_mode = 0
-offset_left = -142.0
+offset_left = -138.0
 offset_top = 16.0
-offset_right = 158.0
+offset_right = 162.0
 offset_bottom = 31.0
 value = 27.0
 nine_patch_stretch = true
@@ -161,59 +167,77 @@ layout_mode = 2
 texture = ExtResource("10_bw1r1")
 expand_mode = 4
 
-[node name="APLabel" type="Label" parent="ResourceBars"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 145.0
-offset_top = -44.5
-offset_right = 169.0
-offset_bottom = -29.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "8/8"
-label_settings = SubResource("LabelSettings_qd7ii")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="APGem2" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
 
-[node name="MPLabel" type="Label" parent="ResourceBars"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 145.0
-offset_top = -25.5
-offset_right = 169.0
-offset_bottom = -8.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "8/8"
-label_settings = SubResource("LabelSettings_qd7ii")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="APGem3" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
 
-[node name="HPLabel" type="Label" parent="ResourceBars"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 145.0
-offset_top = -4.5
-offset_right = 169.0
-offset_bottom = 12.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "8/8"
-label_settings = SubResource("LabelSettings_qd7ii")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="APGem4" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
+
+[node name="APGem5" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
+
+[node name="APGem6" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
+
+[node name="APGem7" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
+
+[node name="APGem8" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
+
+[node name="APGem9" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
+
+[node name="APGem10" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
+
+[node name="APGem11" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
+
+[node name="APGem12" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
+
+[node name="APGem13" type="TextureRect" parent="ResourceBars/APContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10_bw1r1")
+expand_mode = 4
 
 [node name="MPContainer" type="HBoxContainer" parent="ResourceBars"]
 layout_mode = 1
@@ -229,3 +253,169 @@ size_flags_vertical = 0
 theme = SubResource("Theme_20wkq")
 texture = ExtResource("11_ec0lw")
 expand_mode = 4
+
+[node name="MPGem2" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem3" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem4" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem5" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem6" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem7" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem8" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem9" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem10" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem11" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem12" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="MPGem13" type="TextureRect" parent="ResourceBars/MPContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_20wkq")
+texture = ExtResource("11_ec0lw")
+expand_mode = 4
+
+[node name="APLabel" type="Label" parent="ResourceBars"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 151.0
+offset_top = -44.5
+offset_right = 175.0
+offset_bottom = -29.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "8/8"
+label_settings = SubResource("LabelSettings_qd7ii")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MPLabel" type="Label" parent="ResourceBars"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 151.0
+offset_top = -25.5
+offset_right = 175.0
+offset_bottom = -8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "8/8"
+label_settings = SubResource("LabelSettings_qd7ii")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HPLabel" type="Label" parent="ResourceBars"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 151.0
+offset_top = -4.5
+offset_right = 175.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "8/8"
+label_settings = SubResource("LabelSettings_qd7ii")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EXPBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = 1.0
+offset_right = 576.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_20wkq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m6njk")

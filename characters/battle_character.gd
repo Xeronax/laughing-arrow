@@ -8,6 +8,7 @@ class_name BattleCharacter extends CharacterBody2D
 @onready var stats: StatComponent = $StatComponent
 @onready var spellbook: Array = $Spellbook.get_children()
 @onready var hitbox: CollisionShape2D = $CollisionShape2D
+@onready var star: AnimatedSprite2D = $LevelUp
 
 @export var player_team: bool = false
 @export var ai_component: AIComponent
@@ -16,7 +17,7 @@ class_name BattleCharacter extends CharacterBody2D
 @export var character_name: String
 
 var info_bar_scene: PackedScene = preload("res://ui/floating/NamePlate.tscn")
-var damage_node: PackedScene = preload("res://ui/damage_popups/DamagePopup.tscn")
+var combat_text_scene: PackedScene = preload("res://ui/damage_popups/CombatTextPopup.tscn")
 
 signal turn_starting
 signal turn_ending
@@ -30,6 +31,11 @@ var is_turn: bool = false
 var reversed: bool = false ## Orients the character's sprite.
 var movement_cells: Array[Vector2i] = [] ## The cells that the player currently has available to move.
 var spell_cells: Array[Vector2i] = [] ## If the player is in targeting mode, this array will be populated.
+
+var exp_to_next_level: int = 100
+var exp: int = 0
+var level: int = 1
+signal exp_changed
 
 func _ready() -> void:
 	input_pickable = true
@@ -54,7 +60,7 @@ func start_turn() -> void:
 	is_turn = true
 	state = States.IDLE
 	turn_starting.emit()
-	if(ai_component._enabled if ai_component else false):
+	if(ai_component):
 		print("Starting ai behavior")
 		ai_component.turn_behavior()
 	else:
@@ -70,7 +76,11 @@ func end_turn() -> void:
 func take_damage(event: DamageEvent) -> void:
 	stats.set_hp(stats.hp.current - event.final_damage)
 	sprite_component.Sprite.play("get_hit")
-	_create_damage_popup(event.final_damage)
+	var damage_popup: CombatText = combat_text_scene.instantiate()
+	damage_popup.params.push_back(event.final_damage)
+	damage_popup.source = self
+	damage_popup.type = CombatText.TextType.DAMAGE
+	Global.ui.add_child(damage_popup)
 
 func move(cell: Vector2i) -> void:
 	var path: Array[Vector2i] = Global.path_to_cell(self.grid_position, cell)
@@ -97,22 +107,6 @@ func move(cell: Vector2i) -> void:
 func _reset_resources():
 	stats.set_ap(stats.ap.max)
 	stats.set_mp(stats.mp.max)
-
-func _create_damage_popup(damage: int) -> void:
-	var damage_popup: Control = damage_node.instantiate()
-	var loc: Vector2 = Global.grid_to_ui(grid_position)
-	var animation: AnimationPlayer = damage_popup.get_node("AnimationPlayer")
-	var label: Label = damage_popup.get_node("Label")
-	
-	var tween: Tween = get_tree().create_tween()
-	var x_component: float = loc.x + randf_range(-30, 30)
-	var y_component: float = loc.y - randf_range(35, 60)
-	tween.tween_property(damage_popup, "position", Vector2(x_component, y_component), .5).set_ease(Tween.EASE_OUT)
-	
-	Global.ui.add_child(damage_popup)
-	damage_popup.position = loc
-	label.text = str(damage)
-	animation.play("popup")
 
 func update_movement_range(pos: Vector2i = grid_position) -> void:
 	if stats.mp.current <= 0:
@@ -157,3 +151,20 @@ func _set_hovered(h: bool) -> void:
 		info_bar.set_visible(true)
 	else:
 		info_bar.set_visible(h)
+
+func gain_exp(amt: int) -> void:
+	exp += amt
+	exp_changed.emit()
+	if(exp < exp_to_next_level):
+		return
+	exp -= exp_to_next_level
+	exp_to_next_level *= 1.25
+	exp_changed.emit()
+	level_up()
+
+func level_up() -> void:
+	level += 1
+	var level_text: CombatText = combat_text_scene.instantiate()
+	level_text.source = self
+	level_text.type = CombatText.TextType.LEVEL
+	Global.ui.add_child(level_text)
