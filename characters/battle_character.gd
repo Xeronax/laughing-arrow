@@ -6,10 +6,10 @@ class_name BattleCharacter extends CharacterBody2D
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var stats: StatComponent = $StatComponent
-@onready var spellbook: Array = $Spellbook.get_children()
 @onready var hitbox: CollisionShape2D = $CollisionShape2D
-@onready var star: AnimatedSprite2D = $LevelUp
 
+
+@export var spellbook: Array[Resource] = []
 @export var player_team: bool = false
 @export var ai_component: AIComponent
 @export var target: BattleCharacter
@@ -45,10 +45,9 @@ func _ready() -> void:
 	Global.ui.add_child(info_bar)
 	if not ai_component:
 		Global.set_current_controller(self)
-	for spell: Spell in spellbook:
-		spell.caster = self
 	stats.set_hp(stats.hp.max)
 	_reset_resources()
+	Global.ui.get_node("CharacterPanel/SkillTree").refresh()
 
 func set_grid_position(pos: Vector2i) -> void:
 	Global.pathfinding_map.set_point_solid(grid_position, false)
@@ -168,3 +167,9 @@ func level_up() -> void:
 	level_text.source = self
 	level_text.type = CombatText.TextType.LEVEL
 	Global.ui.add_child(level_text)
+
+func add_spell(ability: Resource) -> void:
+	spellbook.append(ability)
+	if ability is Spell:
+		ability.caster = self
+	Global.ui.get_node("SpellBar").refresh_spells()

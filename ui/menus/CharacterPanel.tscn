@@ -1,0 +1,684 @@
+[gd_scene load_steps=30 format=3 uid="uid://nci635pfgvf5"]
+
+[ext_resource type="Texture2D" uid="uid://c7imtjkglfwwm" path="res://assets/RPG Graphics Pack - Icons/Pack 1B-Renamed/glove/glove_10.png" id="2_3y1ry"]
+[ext_resource type="Texture2D" uid="uid://cisvd14yj6ygm" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_39.png" id="2_fxg15"]
+[ext_resource type="Texture2D" uid="uid://br3sx3b83arg1" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/material/material_46.png" id="3_5lcmg"]
+[ext_resource type="Texture2D" uid="uid://c8hjiy6t678o4" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_153.png" id="3_dwl7h"]
+[ext_resource type="Texture2D" uid="uid://cjgdobr74cn1u" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/material/material_44.png" id="4_2y114"]
+[ext_resource type="Texture2D" uid="uid://dtphwru5i7r08" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_154.png" id="4_3dqrc"]
+[ext_resource type="Texture2D" uid="uid://5k81jc55ugqr" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/weapon/weapon_01.png" id="5_0hu31"]
+[ext_resource type="Texture2D" uid="uid://cs6vujui8sjs6" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_152.png" id="5_puwfw"]
+[ext_resource type="Texture2D" uid="uid://c3rn80blv7ci3" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_189.png" id="6_i6v18"]
+[ext_resource type="Texture2D" uid="uid://c36kvvwtysee3" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_84.png" id="6_wql0y"]
+[ext_resource type="Texture2D" uid="uid://caddjlhkmehlv" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_a_01.png" id="7_3y1ry"]
+[ext_resource type="Texture2D" uid="uid://qldqah1v15ao" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_129.png" id="8_dwl7h"]
+[ext_resource type="Texture2D" uid="uid://cpm8wx2tptp2d" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_98.png" id="9_3dqrc"]
+[ext_resource type="Texture2D" uid="uid://dtwb16nsaeqle" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_a_22.png" id="10_puwfw"]
+[ext_resource type="Texture2D" uid="uid://dfop2hw8tjaj" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_a_41.png" id="11_i6v18"]
+[ext_resource type="Texture2D" uid="uid://bw20xyi6o7qmu" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_a_46.png" id="12_5snhq"]
+[ext_resource type="Texture2D" uid="uid://bn6xachx8i0dm" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_241.png" id="18_3dqrc"]
+[ext_resource type="Texture2D" uid="uid://73rjq51v1gvf" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_255.png" id="19_puwfw"]
+[ext_resource type="Texture2D" uid="uid://dr0hj0bn2g22p" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/shield/shield_08.png" id="20_21iht"]
+[ext_resource type="Texture2D" uid="uid://5iv2jneuswiq" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_296.png" id="21_h8jsh"]
+[ext_resource type="Texture2D" uid="uid://xynj216pt1xo" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_75.png" id="22_ffjew"]
+[ext_resource type="Texture2D" uid="uid://cl71b3os57563" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_293.png" id="23_wl6qu"]
+[ext_resource type="Texture2D" uid="uid://bbti07li8sron" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_267.png" id="24_ugjof"]
+[ext_resource type="Texture2D" uid="uid://cp3wx6km7xv8w" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_283.png" id="25_u1fjg"]
+[ext_resource type="PackedScene" uid="uid://b2jrpwt4ejc2n" path="res://ui/menus/skill_trees/Scout.tscn" id="26_gdxk6"]
+[ext_resource type="Texture2D" uid="uid://cf8q7ixt10mr4" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_73.png" id="26_u11xo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6v18"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ui7g0"]
+bg_color = Color(0.197937, 0.197937, 0.197937, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="Theme" id="Theme_40dlp"]
+
+[node name="CharacterPanel" type="TabContainer"]
+anchors_preset = -1
+anchor_left = 0.136
+anchor_top = 0.076
+anchor_right = 0.858
+anchor_bottom = 0.781
+offset_left = 0.327988
+offset_top = -0.248005
+offset_right = -0.416016
+offset_bottom = -0.0880127
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_i6v18")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ui7g0")
+tab_alignment = 1
+current_tab = 1
+
+[node name="Character" type="Control" parent="."]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="NameLabel" type="RichTextLabel" parent="Character"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = 7.0
+offset_right = -114.0
+offset_bottom = -299.0
+bbcode_enabled = true
+text = "[center]Character Name Lv. 1"
+
+[node name="BaseStatContainer" type="VBoxContainer" parent="Character"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 145.0
+offset_right = 296.0
+offset_bottom = 398.0
+theme_override_constants/separation = 15
+
+[node name="SkillPoints" type="Label" parent="Character/BaseStatContainer"]
+layout_mode = 2
+text = "Skill Points: "
+horizontal_alignment = 1
+
+[node name="STRContainer" type="HBoxContainer" parent="Character/BaseStatContainer"]
+layout_mode = 2
+
+[node name="STRIcon" type="TextureRect" parent="Character/BaseStatContainer/STRContainer"]
+layout_mode = 2
+texture = ExtResource("2_3y1ry")
+stretch_mode = 5
+
+[node name="STRLabel" type="Label" parent="Character/BaseStatContainer/STRContainer"]
+layout_mode = 2
+text = "Strength"
+
+[node name="Spacer" type="Control" parent="Character/BaseStatContainer/STRContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="STRValue" type="Label" parent="Character/BaseStatContainer/STRContainer"]
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="Character/BaseStatContainer/STRContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Character/BaseStatContainer/STRContainer"]
+custom_minimum_size = Vector2(31, 0)
+layout_mode = 2
+disabled = true
+text = "+"
+
+[node name="INTContainer" type="HBoxContainer" parent="Character/BaseStatContainer"]
+layout_mode = 2
+
+[node name="INTIcon" type="TextureRect" parent="Character/BaseStatContainer/INTContainer"]
+layout_mode = 2
+texture = ExtResource("3_dwl7h")
+stretch_mode = 5
+
+[node name="INTLabel" type="Label" parent="Character/BaseStatContainer/INTContainer"]
+layout_mode = 2
+text = "Intelligence"
+
+[node name="Spacer" type="Control" parent="Character/BaseStatContainer/INTContainer"]
+custom_minimum_size = Vector2(97, 0)
+layout_mode = 2
+
+[node name="INTValue" type="Label" parent="Character/BaseStatContainer/INTContainer"]
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="Character/BaseStatContainer/INTContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Character/BaseStatContainer/INTContainer"]
+custom_minimum_size = Vector2(31, 0)
+layout_mode = 2
+disabled = true
+text = "+"
+
+[node name="DEXContainer" type="HBoxContainer" parent="Character/BaseStatContainer"]
+layout_mode = 2
+
+[node name="DEXIcon" type="TextureRect" parent="Character/BaseStatContainer/DEXContainer"]
+layout_mode = 2
+texture = ExtResource("4_3dqrc")
+stretch_mode = 5
+
+[node name="DEXLabel" type="Label" parent="Character/BaseStatContainer/DEXContainer"]
+layout_mode = 2
+text = "Dexterity"
+
+[node name="Spacer" type="Control" parent="Character/BaseStatContainer/DEXContainer"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+
+[node name="DEXValue" type="Label" parent="Character/BaseStatContainer/DEXContainer"]
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="Character/BaseStatContainer/DEXContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Character/BaseStatContainer/DEXContainer"]
+custom_minimum_size = Vector2(31, 0)
+layout_mode = 2
+disabled = true
+text = "+"
+
+[node name="CONContainer" type="HBoxContainer" parent="Character/BaseStatContainer"]
+layout_mode = 2
+
+[node name="CONIcon" type="TextureRect" parent="Character/BaseStatContainer/CONContainer"]
+layout_mode = 2
+texture = ExtResource("5_puwfw")
+stretch_mode = 5
+
+[node name="CONLabel" type="Label" parent="Character/BaseStatContainer/CONContainer"]
+layout_mode = 2
+text = "Constitution"
+
+[node name="Spacer" type="Control" parent="Character/BaseStatContainer/CONContainer"]
+custom_minimum_size = Vector2(91, 0)
+layout_mode = 2
+
+[node name="CONValue" type="Label" parent="Character/BaseStatContainer/CONContainer"]
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="Character/BaseStatContainer/CONContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Character/BaseStatContainer/CONContainer"]
+custom_minimum_size = Vector2(31, 0)
+layout_mode = 2
+disabled = true
+text = "+"
+
+[node name="MASContainer" type="HBoxContainer" parent="Character/BaseStatContainer"]
+layout_mode = 2
+
+[node name="MASIcon" type="TextureRect" parent="Character/BaseStatContainer/MASContainer"]
+layout_mode = 2
+texture = ExtResource("6_i6v18")
+stretch_mode = 5
+
+[node name="MASLabel" type="Label" parent="Character/BaseStatContainer/MASContainer"]
+layout_mode = 2
+text = "Mastery"
+
+[node name="Spacer" type="Control" parent="Character/BaseStatContainer/MASContainer"]
+custom_minimum_size = Vector2(133, 0)
+layout_mode = 2
+
+[node name="MASValue" type="Label" parent="Character/BaseStatContainer/MASContainer"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="Character/BaseStatContainer/MASContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Character/BaseStatContainer/MASContainer"]
+custom_minimum_size = Vector2(31, 0)
+layout_mode = 2
+disabled = true
+text = "+"
+
+[node name="HPContainer" type="HBoxContainer" parent="Character"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 45.0
+offset_right = 226.0
+offset_bottom = 73.0
+
+[node name="HPIcon" type="TextureRect" parent="Character/HPContainer"]
+layout_mode = 2
+texture = ExtResource("2_fxg15")
+stretch_mode = 5
+
+[node name="HPLabel" type="Label" parent="Character/HPContainer"]
+layout_mode = 2
+text = "Health"
+
+[node name="APContainer" type="HBoxContainer" parent="Character"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -19.5
+offset_top = 45.0
+offset_right = 90.5
+offset_bottom = 73.0
+grow_horizontal = 2
+
+[node name="APIcon" type="TextureRect" parent="Character/APContainer"]
+layout_mode = 2
+texture = ExtResource("3_5lcmg")
+stretch_mode = 5
+
+[node name="APLabel" type="Label" parent="Character/APContainer"]
+layout_mode = 2
+text = "AP"
+
+[node name="MPContainer" type="HBoxContainer" parent="Character"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -165.0
+offset_top = 45.0
+offset_right = -55.0
+offset_bottom = 73.0
+grow_horizontal = 0
+
+[node name="MPIcon" type="TextureRect" parent="Character/MPContainer"]
+layout_mode = 2
+texture = ExtResource("4_2y114")
+stretch_mode = 5
+
+[node name="MPLabel" type="Label" parent="Character/MPContainer"]
+layout_mode = 2
+text = "MP"
+
+[node name="SecondaryStatContainer" type="TabContainer" parent="Character"]
+layout_mode = 2
+offset_left = 312.0
+offset_top = 103.0
+offset_right = 811.0
+offset_bottom = 405.0
+tab_alignment = 1
+current_tab = 1
+
+[node name="Elements" type="GridContainer" parent="Character/SecondaryStatContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_40dlp")
+theme_override_constants/h_separation = 120
+theme_override_constants/v_separation = 8
+columns = 3
+metadata/_tab_index = 0
+
+[node name="ElementHeader" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "Element"
+horizontal_alignment = 1
+
+[node name="DamageHeader" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResistanceHeader" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "Resistance"
+horizontal_alignment = 1
+
+[node name="PhysicalContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+
+[node name="PhysicalIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Elements/PhysicalContainer"]
+layout_mode = 2
+texture = ExtResource("5_0hu31")
+stretch_mode = 5
+
+[node name="PhysicalLabel" type="Label" parent="Character/SecondaryStatContainer/Elements/PhysicalContainer"]
+layout_mode = 2
+text = "Physical"
+
+[node name="PhsyicalDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="PhsyicalResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="ArcaneContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+
+[node name="ArcaneIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Elements/ArcaneContainer"]
+layout_mode = 2
+texture = ExtResource("6_wql0y")
+stretch_mode = 5
+
+[node name="ArcaneLabel" type="Label" parent="Character/SecondaryStatContainer/Elements/ArcaneContainer"]
+layout_mode = 2
+text = "Arcane"
+
+[node name="ArcaneDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="ArcaneResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="FireContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+
+[node name="FireIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Elements/FireContainer"]
+layout_mode = 2
+texture = ExtResource("7_3y1ry")
+stretch_mode = 5
+
+[node name="FireLabel" type="Label" parent="Character/SecondaryStatContainer/Elements/FireContainer"]
+layout_mode = 2
+text = "Fire"
+
+[node name="FireDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="FireResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="WaterContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+
+[node name="WaterIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Elements/WaterContainer"]
+layout_mode = 2
+texture = ExtResource("8_dwl7h")
+stretch_mode = 5
+
+[node name="WaterLabel" type="Label" parent="Character/SecondaryStatContainer/Elements/WaterContainer"]
+layout_mode = 2
+text = "Water"
+
+[node name="WaterDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="WaterResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="EarthContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+
+[node name="EarthIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Elements/EarthContainer"]
+layout_mode = 2
+texture = ExtResource("9_3dqrc")
+stretch_mode = 5
+
+[node name="EarthLabel" type="Label" parent="Character/SecondaryStatContainer/Elements/EarthContainer"]
+layout_mode = 2
+text = "Earth"
+
+[node name="EarthDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="EarthResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="WindContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+
+[node name="WindIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Elements/WindContainer"]
+layout_mode = 2
+texture = ExtResource("10_puwfw")
+stretch_mode = 5
+
+[node name="WindLabel" type="Label" parent="Character/SecondaryStatContainer/Elements/WindContainer"]
+layout_mode = 2
+text = "Wind"
+
+[node name="WindDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="WindResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="HolyContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+
+[node name="HolyIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Elements/HolyContainer"]
+layout_mode = 2
+texture = ExtResource("11_i6v18")
+stretch_mode = 5
+
+[node name="HolyLabel" type="Label" parent="Character/SecondaryStatContainer/Elements/HolyContainer"]
+layout_mode = 2
+text = "Holy"
+
+[node name="HolyDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="HolyResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="VoidContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+
+[node name="VoidIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Elements/VoidContainer"]
+layout_mode = 2
+texture = ExtResource("12_5snhq")
+stretch_mode = 5
+
+[node name="VoidLabel" type="Label" parent="Character/SecondaryStatContainer/Elements/VoidContainer"]
+layout_mode = 2
+text = "Void"
+
+[node name="VoidDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="VoidResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="Advanced Stats" type="GridContainer" parent="Character/SecondaryStatContainer"]
+layout_mode = 2
+theme = SubResource("Theme_40dlp")
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 8
+columns = 2
+metadata/_tab_index = 1
+
+[node name="CritChanceContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+
+[node name="CritChanceIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/CritChanceContainer"]
+layout_mode = 2
+texture = ExtResource("18_3dqrc")
+stretch_mode = 5
+
+[node name="CritChanceLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/CritChanceContainer"]
+layout_mode = 2
+text = "Critical Strike Chance"
+
+[node name="CritChance" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="CritDamageContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+
+[node name="CritDamageIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/CritDamageContainer"]
+layout_mode = 2
+texture = ExtResource("19_puwfw")
+stretch_mode = 5
+
+[node name="CritDamageLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/CritDamageContainer"]
+layout_mode = 2
+text = "Critical Strike Damage Bonus"
+
+[node name="CritDamage" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="BlockChanceContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+
+[node name="BlockChanceIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/BlockChanceContainer"]
+layout_mode = 2
+texture = ExtResource("20_21iht")
+stretch_mode = 5
+
+[node name="BlockChanceLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/BlockChanceContainer"]
+layout_mode = 2
+text = "Block Chance"
+
+[node name="BlockChance" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="BlockDamageReductionContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+
+[node name="BlockDamageReductionIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/BlockDamageReductionContainer"]
+layout_mode = 2
+texture = ExtResource("21_h8jsh")
+stretch_mode = 5
+
+[node name="BlockDamageReductionLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/BlockDamageReductionContainer"]
+layout_mode = 2
+text = "Block Damage Reduction"
+
+[node name="BlockDamageReductionResistance" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="DodgeChanceContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+
+[node name="DodgeChanceIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/DodgeChanceContainer"]
+layout_mode = 2
+texture = ExtResource("22_ffjew")
+stretch_mode = 5
+
+[node name="DodgeChanceLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/DodgeChanceContainer"]
+layout_mode = 2
+text = "Dodge Chance"
+
+[node name="DodgeChanceResistance" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="PresenceContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+
+[node name="PresenceIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/PresenceContainer"]
+layout_mode = 2
+texture = ExtResource("23_wl6qu")
+stretch_mode = 5
+
+[node name="PresenceLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/PresenceContainer"]
+layout_mode = 2
+text = "Presence"
+
+[node name="Presence" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="InitiativeContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+
+[node name="InitiativeIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/InitiativeContainer"]
+layout_mode = 2
+texture = ExtResource("24_ugjof")
+stretch_mode = 5
+
+[node name="InitiativeLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/InitiativeContainer"]
+layout_mode = 2
+text = "Initiative"
+
+[node name="Initiative" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="RangeBonusContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+
+[node name="RangeBonusIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/RangeBonusContainer"]
+layout_mode = 2
+texture = ExtResource("25_u1fjg")
+stretch_mode = 5
+
+[node name="RangeBonusLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/RangeBonusContainer"]
+layout_mode = 2
+text = "Range Bonus"
+
+[node name="RangeBonus" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="PietyContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+
+[node name="PietyIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/PietyContainer"]
+layout_mode = 2
+texture = ExtResource("26_u11xo")
+stretch_mode = 5
+
+[node name="PietyLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/PietyContainer"]
+layout_mode = 2
+text = "Piety"
+
+[node name="Piety" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+layout_mode = 2
+text = "0%"
+horizontal_alignment = 1
+
+[node name="Inventory" type="Control" parent="."]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="SkillTree" parent="." instance=ExtResource("26_gdxk6")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2

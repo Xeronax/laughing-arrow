@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://go4whkmk5jni"]
+
+[ext_resource type="Script" uid="uid://bfx4romdpm3dq" path="res://ui/menus/skill_trees/skill_tree.gd" id="1_wke8u"]
+
+[node name="SkillTree" type="GraphEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/activity = Color(0, 0.8, 0, 1)
+show_grid = false
+connection_lines_curvature = 0.0
+connection_lines_thickness = 6.0
+zoom_min = 0.5
+zoom_max = 1.2
+minimap_enabled = false
+show_menu = false
+script = ExtResource("1_wke8u")

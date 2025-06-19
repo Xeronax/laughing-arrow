@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cocw72dagig6t"]
+
+[ext_resource type="Script" uid="uid://c52gsqcr35ac4" path="res://spells/scout/dash/dash.gd" id="1_avh5v"]
+[ext_resource type="Texture2D" uid="uid://bdfs2xxqvh3ao" path="res://assets/Hunter_Free/Hunter_10.png" id="2_2pk7k"]
+
+[resource]
+script = ExtResource("1_avh5v")
+spell_icon = ExtResource("2_2pk7k")
+spell_name = "Dash"
+ap_cost = 0
+mp_cost = 1
+minimum_damage = 0
+maximum_damage = 0
+spell_range = 3
+cooldown = 3
+description = "Dash {range} cells in any direction. You are immune to ground effects while casting this spell."
+target_type = 1
+metadata/_custom_type_script = "uid://db2r6aeyp31fa"

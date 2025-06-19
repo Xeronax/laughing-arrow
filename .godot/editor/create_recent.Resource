@@ -1,1 +1,3 @@
+Spell
+Resource
 GDScript

@@ -43,8 +43,6 @@ func _ready() -> void:
 	teleport_character(current_scene.player, 4, 4)
 	teleport_character(current_scene.dummy, 13, 4)
 	
-	ui.get_node("ActionBar").switch_target(current_scene.player)
-	
 	var combatants: Array[BattleCharacter] = [current_scene.player, current_scene.dummy]
 	current_scene.battle_manager.start_battle(combatants)
 

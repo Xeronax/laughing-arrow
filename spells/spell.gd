@@ -1,9 +1,10 @@
-class_name Spell extends Node
+class_name Spell extends Resource
 ## Spell.gd encapsulate the default behavior of spells as an abstract class
 
 @export var spell_icon: Texture
 @export var spell_name: String
-@export var ap_cost: int
+@export var ap_cost: int = 0
+@export var mp_cost: int = 0
 @export var minimum_damage: int
 @export var maximum_damage: int
 @export var spell_range: int
@@ -13,12 +14,13 @@ class_name Spell extends Node
 var caster: BattleCharacter
 
 ## TargetType determines the cells that the spell is allowed to target
-enum TargetType { SELF, ENEMY, ANY, ALL, LINE }
+enum TargetType { SELF, FREE_CELL, ENEMY, ANY, ALL, LINE }
 ## The enums are connected to the targeting method Callables through this Dictionary
 @export var target_type: TargetType
 var targeting_method: Dictionary = {
 	TargetType.ENEMY : target_enemy,
-	TargetType.LINE : target_line
+	TargetType.LINE : target_line,
+	TargetType.FREE_CELL : target_cell,
 }
 
 ## AreaOfEffect determines the geometry of the area that the spell will affect.
@@ -46,15 +48,17 @@ func cast() -> bool:
 	if caster.state in [BattleCharacter.States.CASTING, BattleCharacter.States.MOVING, BattleCharacter.States.DEAD]:
 		return false
 	## If the caster doesn't have enough AP to cast the spell, cancel
-	if caster.stats.ap.current < ap_cost:
-		print("Not enough ap to cast ", spell_name)
+	if caster.stats.ap.current < ap_cost or caster.stats.mp.current < mp_cost:
+		print("Not enough AP or MP to cast ", spell_name)
 		return false
 	caster.state = BattleCharacter.States.TARGETING
 	## If the caster doesn't select appropriate and/or enough targets, cancel
 	if not await targeting_method[target_type].call():
 		caster.state = BattleCharacter.States.IDLE
+		print_debug("Targeted cells array: ", targeted_cells)
 		return false
 	caster.stats.set_ap(caster.stats.ap.current - ap_cost)
+	caster.stats.set_mp(caster.stats.mp.current - mp_cost)
 	caster.reversed = caster.grid_position.x > targeted_cells[0].x
 	caster.spell_cells.clear()
 	caster.state = BattleCharacter.States.CASTING
@@ -93,9 +97,12 @@ func target_enemy() -> bool:
 	caster.spell_cells = Global.get_range(caster.grid_position, spell_range)
 	for cell in caster.spell_cells:
 		Global.highlight_cell(cell, Global.ORANGE)
-	for cell in await Global.target_selected:
+	var temp = await Global.target_selected
+	print_debug("Signal: ", temp)
+	for cell in temp:
 		targeted_cells.append(cell)
 	targeted_characters = get_characters_in_targeted_area(targeted_cells)
+	print_debug("Targeted characters: ", targeted_characters)
 	return not targeted_characters.is_empty()
 
 func target_line() -> bool:
@@ -103,11 +110,21 @@ func target_line() -> bool:
 		return true
 	return false
 
+func target_cell() -> bool:
+	Global.highlight_map.clear()
+	caster.spell_cells = Global.get_range(caster.grid_position, spell_range)
+	for cell in caster.spell_cells:
+		Global.highlight_cell(cell, Global.ORANGE)
+	for cell in await Global.target_selected:
+		targeted_cells.append(cell)
+	return not targeted_cells.is_empty()
+
 func get_characters_in_targeted_area(area: Array[Vector2i]) -> Array[BattleCharacter]:
 	var temp: Array[BattleCharacter] = []
 	var chars: Array[BattleCharacter] = targeted_cells.reduce(func(acc, cell): 
 		var character = Global.get_character(cell)
 		if character != null:
+			print_debug("Got character ", character, " for cell ", cell)
 			acc.append(character)
 		return acc
 	, temp)

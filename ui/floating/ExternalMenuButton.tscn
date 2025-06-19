@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://shjvt8erckr4"]
+
+[ext_resource type="Script" uid="uid://ctwrliuuywx4g" path="res://ui/floating/external_menu_button.gd" id="1_o160g"]
+
+[node name="ExternalMenuButton" type="TextureButton"]
+anchors_preset = -1
+anchor_right = 0.041
+anchor_bottom = 0.073
+offset_right = -0.232002
+offset_bottom = -0.304005
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("1_o160g")

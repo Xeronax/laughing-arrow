@@ -65,4 +65,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		Global.current_controller.move(hovered_tile)
 	if Global.current_controller.state in [Global.current_controller.States.TARGETING]:
 		highlight_map.clear()
+		print_debug("Hovered tile: ", hovered_tile)
 		Global.target_selected.emit([hovered_tile])
