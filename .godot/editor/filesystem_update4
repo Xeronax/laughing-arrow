@@ -25,3 +25,10 @@ res://spells/scout/aimed_shot/aimed_shot.tres
 res://ui/spells/spell_bar.gd
 res://spells/scout/aimed_shot/aimed_shot.gd
 res://layer_holder.gd
+res://utils/components/stat_component.gd
+res://ui/menus/character.gd
+res://global.gd
+res://ui/floating/external_menu_button.gd
+res://ui/floating/name_plate.gd
+res://ui/character_frame/character_frame.gd
+res://ui/floating/NamePlate.tscn

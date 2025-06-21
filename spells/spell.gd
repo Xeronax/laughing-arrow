@@ -43,18 +43,22 @@ var targeted_characters: Array[BattleCharacter] = []
 func cast() -> bool:
 	## If it's not the caster's turn, cancel
 	if not caster.is_turn:
+		_cleanup()
 		return false
 	## If the caster is casting already, moving, or dead, cancel
 	if caster.state in [BattleCharacter.States.CASTING, BattleCharacter.States.MOVING, BattleCharacter.States.DEAD]:
+		_cleanup()
 		return false
 	## If the caster doesn't have enough AP to cast the spell, cancel
 	if caster.stats.ap.current < ap_cost or caster.stats.mp.current < mp_cost:
 		print("Not enough AP or MP to cast ", spell_name)
+		_cleanup()
 		return false
 	caster.state = BattleCharacter.States.TARGETING
 	## If the caster doesn't select appropriate and/or enough targets, cancel
 	if not await targeting_method[target_type].call():
 		caster.state = BattleCharacter.States.IDLE
+		_cleanup()
 		print_debug("Targeted cells array: ", targeted_cells)
 		return false
 	caster.stats.set_ap(caster.stats.ap.current - ap_cost)

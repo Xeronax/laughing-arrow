@@ -1,5 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://nci635pfgvf5"]
+[gd_scene load_steps=31 format=3 uid="uid://nci635pfgvf5"]
 
+[ext_resource type="Script" uid="uid://b1qbcbqtmy0q4" path="res://ui/menus/character.gd" id="1_21iht"]
 [ext_resource type="Texture2D" uid="uid://c7imtjkglfwwm" path="res://assets/RPG Graphics Pack - Icons/Pack 1B-Renamed/glove/glove_10.png" id="2_3y1ry"]
 [ext_resource type="Texture2D" uid="uid://cisvd14yj6ygm" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_39.png" id="2_fxg15"]
 [ext_resource type="Texture2D" uid="uid://br3sx3b83arg1" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/material/material_46.png" id="3_5lcmg"]
@@ -61,11 +62,11 @@ grow_vertical = 2
 theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_i6v18")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ui7g0")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Character" type="Control" parent="."]
-visible = false
 layout_mode = 2
+script = ExtResource("1_21iht")
 metadata/_tab_index = 0
 
 [node name="NameLabel" type="RichTextLabel" parent="Character"]
@@ -108,9 +109,12 @@ text = "Strength"
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 
-[node name="STRValue" type="Label" parent="Character/BaseStatContainer/STRContainer"]
+[node name="STRValue" type="RichTextLabel" parent="Character/BaseStatContainer/STRContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "10"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="Spacer2" type="Control" parent="Character/BaseStatContainer/STRContainer"]
@@ -139,9 +143,12 @@ text = "Intelligence"
 custom_minimum_size = Vector2(97, 0)
 layout_mode = 2
 
-[node name="INTValue" type="Label" parent="Character/BaseStatContainer/INTContainer"]
+[node name="INTValue" type="RichTextLabel" parent="Character/BaseStatContainer/INTContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "10"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="Spacer2" type="Control" parent="Character/BaseStatContainer/INTContainer"]
@@ -170,9 +177,12 @@ text = "Dexterity"
 custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
 
-[node name="DEXValue" type="Label" parent="Character/BaseStatContainer/DEXContainer"]
+[node name="DEXValue" type="RichTextLabel" parent="Character/BaseStatContainer/DEXContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "10"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="Spacer2" type="Control" parent="Character/BaseStatContainer/DEXContainer"]
@@ -201,9 +211,12 @@ text = "Constitution"
 custom_minimum_size = Vector2(91, 0)
 layout_mode = 2
 
-[node name="CONValue" type="Label" parent="Character/BaseStatContainer/CONContainer"]
+[node name="CONValue" type="RichTextLabel" parent="Character/BaseStatContainer/CONContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "10"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="Spacer2" type="Control" parent="Character/BaseStatContainer/CONContainer"]
@@ -232,9 +245,12 @@ text = "Mastery"
 custom_minimum_size = Vector2(133, 0)
 layout_mode = 2
 
-[node name="MASValue" type="Label" parent="Character/BaseStatContainer/MASContainer"]
+[node name="MASValue" type="RichTextLabel" parent="Character/BaseStatContainer/MASContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "0"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="Spacer2" type="Control" parent="Character/BaseStatContainer/MASContainer"]
@@ -259,8 +275,10 @@ layout_mode = 2
 texture = ExtResource("2_fxg15")
 stretch_mode = 5
 
-[node name="HPLabel" type="Label" parent="Character/HPContainer"]
+[node name="HPLabel" type="RichTextLabel" parent="Character/HPContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "Health"
 
 [node name="APContainer" type="HBoxContainer" parent="Character"]
@@ -279,8 +297,10 @@ layout_mode = 2
 texture = ExtResource("3_5lcmg")
 stretch_mode = 5
 
-[node name="APLabel" type="Label" parent="Character/APContainer"]
+[node name="APLabel" type="RichTextLabel" parent="Character/APContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "AP"
 
 [node name="MPContainer" type="HBoxContainer" parent="Character"]
@@ -299,8 +319,9 @@ layout_mode = 2
 texture = ExtResource("4_2y114")
 stretch_mode = 5
 
-[node name="MPLabel" type="Label" parent="Character/MPContainer"]
+[node name="MPLabel" type="RichTextLabel" parent="Character/MPContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "MP"
 
 [node name="SecondaryStatContainer" type="TabContainer" parent="Character"]
@@ -310,10 +331,9 @@ offset_top = 103.0
 offset_right = 811.0
 offset_bottom = 405.0
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Elements" type="GridContainer" parent="Character/SecondaryStatContainer"]
-visible = false
 layout_mode = 2
 theme = SubResource("Theme_40dlp")
 theme_override_constants/h_separation = 120
@@ -349,14 +369,18 @@ stretch_mode = 5
 layout_mode = 2
 text = "Physical"
 
-[node name="PhsyicalDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="PhysicalDamage" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
-[node name="PhsyicalResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="PhysicalResistance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="ArcaneContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
@@ -371,14 +395,18 @@ stretch_mode = 5
 layout_mode = 2
 text = "Arcane"
 
-[node name="ArcaneDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="ArcaneDamage" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
-[node name="ArcaneResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="ArcaneResistance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="FireContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
@@ -393,14 +421,18 @@ stretch_mode = 5
 layout_mode = 2
 text = "Fire"
 
-[node name="FireDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="FireDamage" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
-[node name="FireResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="FireResistance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="WaterContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
@@ -415,14 +447,18 @@ stretch_mode = 5
 layout_mode = 2
 text = "Water"
 
-[node name="WaterDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="WaterDamage" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
-[node name="WaterResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="WaterResistance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="EarthContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
@@ -437,14 +473,18 @@ stretch_mode = 5
 layout_mode = 2
 text = "Earth"
 
-[node name="EarthDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="EarthDamage" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
-[node name="EarthResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="EarthResistance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="WindContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
@@ -459,14 +499,18 @@ stretch_mode = 5
 layout_mode = 2
 text = "Wind"
 
-[node name="WindDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="WindDamage" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
-[node name="WindResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="WindResistance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="HolyContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
@@ -481,14 +525,18 @@ stretch_mode = 5
 layout_mode = 2
 text = "Holy"
 
-[node name="HolyDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="HolyDamage" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
-[node name="HolyResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="HolyResistance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="VoidContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Elements"]
@@ -503,17 +551,22 @@ stretch_mode = 5
 layout_mode = 2
 text = "Void"
 
-[node name="VoidDamage" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="VoidDamage" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
-[node name="VoidResistance" type="Label" parent="Character/SecondaryStatContainer/Elements"]
+[node name="VoidResistance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Elements"]
 layout_mode = 2
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="Advanced Stats" type="GridContainer" parent="Character/SecondaryStatContainer"]
+visible = false
 layout_mode = 2
 theme = SubResource("Theme_40dlp")
 theme_override_constants/h_separation = 200
@@ -533,9 +586,12 @@ stretch_mode = 5
 layout_mode = 2
 text = "Critical Strike Chance"
 
-[node name="CritChance" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="CritChance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="CritDamageContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
@@ -550,9 +606,12 @@ stretch_mode = 5
 layout_mode = 2
 text = "Critical Strike Damage Bonus"
 
-[node name="CritDamage" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="CritDamage" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="BlockChanceContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
@@ -567,9 +626,12 @@ stretch_mode = 5
 layout_mode = 2
 text = "Block Chance"
 
-[node name="BlockChance" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="BlockChance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="BlockDamageReductionContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
@@ -584,9 +646,12 @@ stretch_mode = 5
 layout_mode = 2
 text = "Block Damage Reduction"
 
-[node name="BlockDamageReductionResistance" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="BlockDamageReduction" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="DodgeChanceContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
@@ -601,9 +666,12 @@ stretch_mode = 5
 layout_mode = 2
 text = "Dodge Chance"
 
-[node name="DodgeChanceResistance" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="DodgeChance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="PresenceContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
@@ -618,9 +686,12 @@ stretch_mode = 5
 layout_mode = 2
 text = "Presence"
 
-[node name="Presence" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="Presence" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="InitiativeContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
@@ -635,9 +706,12 @@ stretch_mode = 5
 layout_mode = 2
 text = "Initiative"
 
-[node name="Initiative" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="Initiative" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="RangeBonusContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
@@ -652,9 +726,12 @@ stretch_mode = 5
 layout_mode = 2
 text = "Range Bonus"
 
-[node name="RangeBonus" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="RangeBonus" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "0"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="PietyContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
@@ -669,12 +746,16 @@ stretch_mode = 5
 layout_mode = 2
 text = "Piety"
 
-[node name="Piety" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="Piety" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
 text = "0%"
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="Inventory" type="Control" parent="."]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

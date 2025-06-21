@@ -7,6 +7,8 @@ class Highlight:
 		tilemap_id = id
 		coordinates = coords
 
+enum Element {PHYSICAL, ARCANE, FIRE, WATER, EARTH, WIND, HOLY, VOID}
+
 var GREEN: Highlight = Highlight.new(0, Vector2i(5, 1))
 var ORANGE: Highlight = Highlight.new(0, Vector2i(2, 7))
 var WHITE: Highlight = Highlight.new(1, Vector2i(9, 5))

@@ -23,5 +23,5 @@ func _process(delta: float) -> void:
 func set_target(t: BattleCharacter) -> void:
 	target = t
 	print("Connecting to ", target)
-	target.stats.hp_changed.connect(_update)
+	target.stats.hp.changed.connect(_update)
 	_update()

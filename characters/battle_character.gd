@@ -5,7 +5,7 @@ class_name BattleCharacter extends CharacterBody2D
 ## and acts as the bridge between things that components can't do on their own.
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
-@onready var stats: StatComponent = $StatComponent
+@onready var stats: Stats = $StatComponent
 @onready var hitbox: CollisionShape2D = $CollisionShape2D
 
 
@@ -45,9 +45,8 @@ func _ready() -> void:
 	Global.ui.add_child(info_bar)
 	if not ai_component:
 		Global.set_current_controller(self)
-	stats.set_hp(stats.hp.max)
+	stats.hp.set_current(stats.hp.max)
 	_reset_resources()
-	Global.ui.get_node("CharacterPanel/SkillTree").refresh()
 
 func set_grid_position(pos: Vector2i) -> void:
 	Global.pathfinding_map.set_point_solid(grid_position, false)
@@ -92,7 +91,7 @@ func move(cell: Vector2i) -> void:
 		return
 	sprite_component.animation_player.play("run")
 	for point in path:
-		stats.set_mp(stats.mp.current - 1)
+		stats.mp.set_current(stats.mp.current - 1)
 		tween.tween_property(self, "global_position", Global.grid_to_global_position(point), 0.5)
 		set_grid_position(point)
 	tween.tween_callback(func (): 
@@ -104,8 +103,8 @@ func move(cell: Vector2i) -> void:
 		)
 
 func _reset_resources():
-	stats.set_ap(stats.ap.max)
-	stats.set_mp(stats.mp.max)
+	stats.ap.set_current(stats.ap.max)
+	stats.mp.set_current(stats.mp.max)
 
 func update_movement_range(pos: Vector2i = grid_position) -> void:
 	if stats.mp.current <= 0:

@@ -9,4 +9,10 @@ func _ready() -> void:
 	set_texture_normal(button_texture)
 	if not popup: 
 		return
-	pressed.connect(func(): popup.set_visible(!popup.visible))
+	pressed.connect(func(): 
+		popup.set_visible(!popup.visible)
+		for tab in popup.get_children():
+			if not tab.has_method("update"):
+				continue
+			tab.update()
+		)

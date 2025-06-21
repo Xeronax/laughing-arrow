@@ -12,7 +12,7 @@ func rank_up(s: GraphNode) -> void:
 	s.rank += 1
 	s.update()
 
-func refresh() -> void:
+func update() -> void:
 	for node in get_children():
 		if node is not GraphNode:
 			continue

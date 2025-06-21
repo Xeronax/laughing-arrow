@@ -42,7 +42,7 @@ func _ready() -> void:
 
 func switch_target(character: BattleCharacter = null) -> void:
 	if target:
-		for target_signals: Signal in [target.stats.hp_changed, target.stats.ap_changed, target.stats.mp_changed]:
+		for target_signals: Signal in [target.stats.hp.changed, target.stats.ap.changed, target.stats.mp.changed]:
 			if(target_signals.is_connected(_update)):
 				target_signals.disconnect(_update)
 	if not current_controller:
@@ -50,7 +50,7 @@ func switch_target(character: BattleCharacter = null) -> void:
 	else:
 		target = Global.current_controller
 	portrait.texture = target.sprite_component.portrait
-	var character_signals: Array[Signal] = [character.stats.hp_changed, character.stats.ap_changed, character.stats.mp_changed]
+	var character_signals: Array[Signal] = [character.stats.hp.changed, character.stats.ap.changed, character.stats.mp.changed]
 	for character_signal: Signal in character_signals:
 		character_signal.connect(_update)
 	_update()

@@ -1,3 +1,4 @@
+RichTextLabel
 VBoxContainer
 TabContainer
 Button
@@ -8,8 +9,6 @@ Label
 TextureRect
 GridContainer
 HBoxContainer
-RichTextLabel
 TabBar
 Panel
 PanelContainer
-TextureButton
