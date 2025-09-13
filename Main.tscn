@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c2dngih7l0yhr"]
+[gd_scene load_steps=21 format=4 uid="uid://c2dngih7l0yhr"]
 
 [ext_resource type="Script" uid="uid://c6b3qe5m136tf" path="res://main.gd" id="1_3mysk"]
 [ext_resource type="Script" uid="uid://b8t5w0mmaqo58" path="res://layer_holder.gd" id="2_q6s3v"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bwnxeanveptah" path="res://assets/Free - Raven Fantasy Icons/Separated Files/64x64/fc5.png" id="6_c2ibq"]
 [ext_resource type="PackedScene" uid="uid://nci635pfgvf5" path="res://ui/menus/CharacterPanel.tscn" id="7_c2ibq"]
 [ext_resource type="Texture2D" uid="uid://ch3ci1hsicfgu" path="res://assets/PixelWoods/Terrain(main)/terrain tiles.png" id="8_7k2ly"]
+[ext_resource type="PackedScene" uid="uid://dam1wfc3ebgpm" path="res://ui/popups/ExpBar.tscn" id="8_j4qnp"]
 [ext_resource type="Texture2D" uid="uid://r52ctyr4wwmi" path="res://assets/PixelWoods/Seasons/winter/terrain.png" id="9_ax4eg"]
 [ext_resource type="PackedScene" uid="uid://04ohfek6aug3" path="res://characters/dummy/Dummy.tscn" id="12_5vvyt"]
 
@@ -594,6 +595,9 @@ layout_mode = 2
 size_flags_vertical = 1
 button_texture = ExtResource("6_c2ibq")
 popup = NodePath("../../CharacterPanel")
+
+[node name="ExpBar" parent="UI" instance=ExtResource("8_j4qnp")]
+scale = Vector2(0.685, 0.685)
 
 [node name="LayerHolder" type="Node2D" parent="."]
 script = ExtResource("2_q6s3v")

@@ -61,8 +61,8 @@ func cast() -> bool:
 		_cleanup()
 		print_debug("Targeted cells array: ", targeted_cells)
 		return false
-	caster.stats.set_ap(caster.stats.ap.current - ap_cost)
-	caster.stats.set_mp(caster.stats.mp.current - mp_cost)
+	caster.stats.ap.set_current(caster.stats.ap.current - ap_cost)
+	caster.stats.mp.set_current(caster.stats.mp.current - mp_cost)
 	caster.reversed = caster.grid_position.x > targeted_cells[0].x
 	caster.spell_cells.clear()
 	caster.state = BattleCharacter.States.CASTING
@@ -120,6 +120,8 @@ func target_cell() -> bool:
 	for cell in caster.spell_cells:
 		Global.highlight_cell(cell, Global.ORANGE)
 	for cell in await Global.target_selected:
+		if not caster.spell_cells.has(cell):
+			continue
 		targeted_cells.append(cell)
 	return not targeted_cells.is_empty()
 

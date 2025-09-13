@@ -1,14 +1,14 @@
+Label
 RichTextLabel
+TextureProgressBar
+Control
 VBoxContainer
 TabContainer
 Button
-Control
 GraphNode
 GraphEdit
-Label
 TextureRect
 GridContainer
 HBoxContainer
 TabBar
 Panel
-PanelContainer

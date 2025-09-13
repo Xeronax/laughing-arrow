@@ -7,6 +7,8 @@ class_name SpriteComponent extends Component
 
 @onready var portrait: Texture2D = Sprite.sprite_frames.get_frame_texture('idle', 0)
 
+signal hit_frame
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(target_size == 0):
@@ -35,3 +37,6 @@ func face_direction(cell: Vector2i) -> void:
 
 func idle() -> void:
 	animation_player.play("idle")
+
+func hit() -> void:
+	hit_frame.emit()

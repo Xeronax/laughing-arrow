@@ -47,3 +47,4 @@ grow_horizontal = 1
 grow_vertical = 1
 position_offset = Vector2(175, 299)
 ability = ExtResource("4_y4vt6")
+rank = 1

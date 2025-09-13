@@ -84,4 +84,4 @@ func color_format(attribute: Stats.Stat) -> String:
 		return "[color=white][center]"
 
 func _ready() -> void:
-	get_parent().tab_changed.connect(update)
+	get_parent().tab_changed.connect(func (tab: int): update())

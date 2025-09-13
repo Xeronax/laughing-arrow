@@ -12,6 +12,6 @@ var source: Variant
 func _init(caller: Spell) -> void:
 	source = caller.caster
 	spell = caller
-	modifiers = spell.get_children()
+	#modifiers = spell.get_children()
 	final_damage = caller.damage_calc.call()
 	targets = spell.targeted_characters.duplicate()

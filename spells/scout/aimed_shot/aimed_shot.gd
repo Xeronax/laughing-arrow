@@ -5,6 +5,12 @@ func cast() -> bool:
 		return false
 	caster.state = BattleCharacter.States.CASTING
 	caster.sprite_component.animation_player.play("attack")
+	#var damage_delay: Timer = Timer.new()
+	#caster.add_child(damage_delay)
+	#damage_delay.start(1)
+	await(caster.sprite_component.hit_frame)
+	deal_damage()
+	#damage_delay.queue_free()
 	return true
 
 func deal_damage() -> void:

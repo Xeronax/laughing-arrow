@@ -17,7 +17,7 @@ class_name BattleCharacter extends CharacterBody2D
 @export var character_name: String
 
 var info_bar_scene: PackedScene = preload("res://ui/floating/NamePlate.tscn")
-var combat_text_scene: PackedScene = preload("res://ui/damage_popups/CombatTextPopup.tscn")
+var combat_text_scene: PackedScene = preload("res://ui/popups/CombatTextPopup.tscn")
 
 signal turn_starting
 signal turn_ending
@@ -35,7 +35,7 @@ var spell_cells: Array[Vector2i] = [] ## If the player is in targeting mode, thi
 var exp_to_next_level: int = 100
 var exp: int = 0
 var level: int = 1
-signal exp_changed
+signal exp_changed(exp_gained)
 
 func _ready() -> void:
 	input_pickable = true
@@ -47,6 +47,9 @@ func _ready() -> void:
 		Global.set_current_controller(self)
 	stats.hp.set_current(stats.hp.max)
 	_reset_resources()
+	if player_team:
+		exp_changed.connect(Global.ui.get_node("ExpBar").display_gain)
+
 
 func set_grid_position(pos: Vector2i) -> void:
 	Global.pathfinding_map.set_point_solid(grid_position, false)
@@ -72,7 +75,7 @@ func end_turn() -> void:
 	turn_ending.emit()
 
 func take_damage(event: DamageEvent) -> void:
-	stats.set_hp(stats.hp.current - event.final_damage)
+	stats.hp.set_current(stats.hp.current - event.final_damage)
 	sprite_component.Sprite.play("get_hit")
 	var damage_popup: CombatText = combat_text_scene.instantiate()
 	damage_popup.params.push_back(event.final_damage)
@@ -152,7 +155,7 @@ func _set_hovered(h: bool) -> void:
 
 func gain_exp(amt: int) -> void:
 	exp += amt
-	exp_changed.emit()
+	exp_changed.emit(amt)
 	if(exp < exp_to_next_level):
 		return
 	exp -= exp_to_next_level

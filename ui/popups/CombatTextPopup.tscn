@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://7phr4v6qjxta"]
 
-[ext_resource type="Script" uid="uid://y0dxycf1m7w4" path="res://ui/damage_popups/combat_text_popup.gd" id="1_4j47p"]
+[ext_resource type="Script" uid="uid://y0dxycf1m7w4" path="res://ui/popups/combat_text_popup.gd" id="1_4j47p"]
 
 [sub_resource type="Animation" id="Animation_fnfjt"]
 length = 0.001

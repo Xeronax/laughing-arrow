@@ -48,6 +48,7 @@ corner_radius_bottom_left = 1
 [sub_resource type="Theme" id="Theme_40dlp"]
 
 [node name="CharacterPanel" type="TabContainer"]
+z_index = 2
 anchors_preset = -1
 anchor_left = 0.136
 anchor_top = 0.076

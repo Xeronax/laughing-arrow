@@ -119,3 +119,6 @@ func get_range(grid_position: Vector2i, range: int, _minimum_range: int = 0) -> 
 
 func get_dist(from: Vector2i, to: Vector2i) -> int:
 	return pathfinding_map.get_point_path(from, to).size()
+
+func wait(time: float) -> void:
+	await get_tree().create_timer(time).timeout

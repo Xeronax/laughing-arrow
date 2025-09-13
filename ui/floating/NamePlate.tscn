@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwwwb62f1o11r"]
+[gd_scene load_steps=9 format=3 uid="uid://cwwwb62f1o11r"]
 
 [ext_resource type="Script" uid="uid://brhdalnqii0vr" path="res://ui/floating/name_plate.gd" id="1_ypi3l"]
 [ext_resource type="Texture2D" uid="uid://bipur35feflj7" path="res://assets/Wenrexa Interface UI KIT #4/PNG/ProgressBar_06/BarV6_Bar.png" id="2_77olu"]
@@ -7,22 +7,25 @@
 [ext_resource type="Texture2D" uid="uid://dupgo4uao7147" path="res://assets/Wenrexa Interface UI KIT #4/PNG/Icons/Circle02.png" id="5_6pvrs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f22a0"]
-font_size = 32
+font_size = 30
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_w6i3i"]
 font_size = 66
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_dyiin"]
+font_size = 30
+
 [node name="Background" type="Panel"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -56.0
-offset_right = 541.0
+offset_left = -78.0
+offset_right = 519.0
 offset_bottom = 200.0
 grow_horizontal = 2
-scale = Vector2(0.19, 0.19)
+scale = Vector2(0.26, 0.26)
 script = ExtResource("1_ypi3l")
 
 [node name="Health" type="TextureProgressBar" parent="."]
@@ -80,5 +83,16 @@ offset_right = 120.5
 offset_bottom = 128.625
 text = "100"
 label_settings = SubResource("LabelSettings_w6i3i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.5264
+offset_top = 147.0
+offset_right = 587.526
+offset_bottom = 187.0
+text = "100/100"
+label_settings = SubResource("LabelSettings_dyiin")
 horizontal_alignment = 1
 vertical_alignment = 1
