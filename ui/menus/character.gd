@@ -39,7 +39,7 @@ var Element = Global.Element
 
 func update() -> void:
 	var char: BattleCharacter = Global.current_controller
-	name_label.text = "[center]" + str(char.character_name) + "[color=yellow] Lv. " + str(char.level)
+	name_label.text = "[center]" + str(char.character_name) + "[color=yellow] Lv. " + str(Global.group_level)
 	hp.text = "%d/%d" % [char.stats.hp.current, char.stats.hp.max]
 	mp.text = "%d/%d" % [char.stats.mp.current, char.stats.mp.max]
 	ap.text = "%d/%d" % [char.stats.ap.current, char.stats.ap.max]

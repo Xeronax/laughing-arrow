@@ -32,11 +32,6 @@ var reversed: bool = false ## Orients the character's sprite.
 var movement_cells: Array[Vector2i] = [] ## The cells that the player currently has available to move.
 var spell_cells: Array[Vector2i] = [] ## If the player is in targeting mode, this array will be populated.
 
-var exp_to_next_level: int = 100
-var exp: int = 0
-var level: int = 1
-signal exp_changed(exp_gained)
-
 func _ready() -> void:
 	input_pickable = true
 	await(Global.all_ready)
@@ -47,9 +42,6 @@ func _ready() -> void:
 		Global.set_current_controller(self)
 	stats.hp.set_current(stats.hp.max)
 	_reset_resources()
-	if player_team:
-		exp_changed.connect(Global.ui.get_node("ExpBar").display_gain)
-
 
 func set_grid_position(pos: Vector2i) -> void:
 	Global.pathfinding_map.set_point_solid(grid_position, false)
@@ -152,23 +144,6 @@ func _set_hovered(h: bool) -> void:
 		info_bar.set_visible(true)
 	else:
 		info_bar.set_visible(h)
-
-func gain_exp(amt: int) -> void:
-	exp += amt
-	exp_changed.emit(amt)
-	if(exp < exp_to_next_level):
-		return
-	exp -= exp_to_next_level
-	exp_to_next_level *= 1.25
-	exp_changed.emit()
-	level_up()
-
-func level_up() -> void:
-	level += 1
-	var level_text: CombatText = combat_text_scene.instantiate()
-	level_text.source = self
-	level_text.type = CombatText.TextType.LEVEL
-	Global.ui.add_child(level_text)
 
 func add_spell(ability: Resource) -> void:
 	spellbook.append(ability)

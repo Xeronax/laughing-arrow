@@ -24,10 +24,15 @@ var mouse_on_ui: bool = false
 var current_controller: BattleCharacter = null
 var current_target: BattleCharacter = null
 
+var group_level: int = 1
+var current_exp: int = 0
+var exp_to_next_level: int = 100
+
 signal current_target_changed
 signal all_ready
 signal target_selected(targets)
 signal current_controller_changed(char)
+signal exp_changed(exp_gained)
 
 func _ready() -> void:
 	var root = get_tree().get_root()
@@ -122,3 +127,21 @@ func get_dist(from: Vector2i, to: Vector2i) -> int:
 
 func wait(time: float) -> void:
 	await get_tree().create_timer(time).timeout
+
+func gain_exp(amt: int) -> void:
+	print_debug("Adding ", amt, " EXP")
+	while amt > 0:
+		if current_exp + amt < exp_to_next_level:
+			current_exp += amt
+			exp_changed.emit(amt)
+			break
+		var next_level_exp: int = exp_to_next_level - current_exp
+		print_debug("Adding ", next_level_exp, " EXP as portion of ", amt)
+		amt -= next_level_exp
+		current_exp = 0
+		exp_to_next_level = int(ceil(exp_to_next_level * 1.25))
+		level_up()
+		exp_changed.emit(next_level_exp)
+
+func level_up() -> void:
+	group_level += 1

@@ -12,7 +12,7 @@ func _ready() -> void:
 	set_visible(false)
 
 func _update() -> void:
-	level_label.text = str(target.level)
+	level_label.text = str(Global.group_level)
 	hp_text.text = str(int(target.stats.hp.current)) + '/' + str(int(target.stats.hp.max))
 	name_label.text = target.character_name
 	hp_bar.max_value = target.stats.hp.max

@@ -17,7 +17,7 @@ func _ready() -> void:
 			var x_component: float = global_position.x + randf_range(-30, 30)
 			var y_component: float = global_position.y - randf_range(35, 60)
 			tween.tween_property(self, "position", Vector2(x_component, y_component), .5).set_ease(Tween.EASE_OUT)
-			label.text = "[shake rate=20.0 level=5 connected=1][color=ORANGE][font='res://assets/BebasNeue-Regular.ttf'][font_size=32]" + str(params[0])
+			label.text = "[shake rate=20.0 level=5 connected=1][color=WHITE][font='res://assets/BebasNeue-Regular.ttf'][font_size=32]" + str(params[0])
 			animation.play("popup")
 		TextType.LEVEL:
 			var view_size: Vector2 = get_viewport_rect().size 

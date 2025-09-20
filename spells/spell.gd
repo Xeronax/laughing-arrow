@@ -59,7 +59,7 @@ func cast() -> bool:
 	if not await targeting_method[target_type].call():
 		caster.state = BattleCharacter.States.IDLE
 		_cleanup()
-		print_debug("Targeted cells array: ", targeted_cells)
+		# print_debug("Targeted cells array: ", targeted_cells)
 		return false
 	caster.stats.ap.set_current(caster.stats.ap.current - ap_cost)
 	caster.stats.mp.set_current(caster.stats.mp.current - mp_cost)
@@ -102,11 +102,11 @@ func target_enemy() -> bool:
 	for cell in caster.spell_cells:
 		Global.highlight_cell(cell, Global.ORANGE)
 	var temp = await Global.target_selected
-	print_debug("Signal: ", temp)
+	# print_debug("Signal: ", temp)
 	for cell in temp:
 		targeted_cells.append(cell)
 	targeted_characters = get_characters_in_targeted_area(targeted_cells)
-	print_debug("Targeted characters: ", targeted_characters)
+	# print_debug("Targeted characters: ", targeted_characters)
 	return not targeted_characters.is_empty()
 
 func target_line() -> bool:
@@ -130,7 +130,7 @@ func get_characters_in_targeted_area(area: Array[Vector2i]) -> Array[BattleChara
 	var chars: Array[BattleCharacter] = targeted_cells.reduce(func(acc, cell): 
 		var character = Global.get_character(cell)
 		if character != null:
-			print_debug("Got character ", character, " for cell ", cell)
+			# print_debug("Got character ", character, " for cell ", cell)
 			acc.append(character)
 		return acc
 	, temp)
