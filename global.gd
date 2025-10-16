@@ -33,6 +33,7 @@ signal all_ready
 signal target_selected(targets)
 signal current_controller_changed(char)
 signal exp_changed(exp_gained)
+signal level_changed
 
 func _ready() -> void:
 	var root = get_tree().get_root()
@@ -145,3 +146,4 @@ func gain_exp(amt: int) -> void:
 
 func level_up() -> void:
 	group_level += 1
+	level_changed.emit()

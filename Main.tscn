@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c2dngih7l0yhr"]
+[gd_scene load_steps=22 format=4 uid="uid://c2dngih7l0yhr"]
 
 [ext_resource type="Script" uid="uid://c6b3qe5m136tf" path="res://main.gd" id="1_3mysk"]
 [ext_resource type="Script" uid="uid://b8t5w0mmaqo58" path="res://layer_holder.gd" id="2_q6s3v"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ch3ci1hsicfgu" path="res://assets/PixelWoods/Terrain(main)/terrain tiles.png" id="8_7k2ly"]
 [ext_resource type="PackedScene" uid="uid://dam1wfc3ebgpm" path="res://ui/popups/ExpBar.tscn" id="8_j4qnp"]
 [ext_resource type="Texture2D" uid="uid://r52ctyr4wwmi" path="res://assets/PixelWoods/Seasons/winter/terrain.png" id="9_ax4eg"]
+[ext_resource type="PackedScene" uid="uid://yb10bhp06gq0" path="res://ui/turn_order/TurnList.tscn" id="9_fpfj3"]
 [ext_resource type="PackedScene" uid="uid://04ohfek6aug3" path="res://characters/dummy/Dummy.tscn" id="12_5vvyt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tdrj"]
@@ -598,6 +599,8 @@ popup = NodePath("../../CharacterPanel")
 
 [node name="ExpBar" parent="UI" instance=ExtResource("8_j4qnp")]
 scale = Vector2(0.685, 0.685)
+
+[node name="Control" parent="UI" instance=ExtResource("9_fpfj3")]
 
 [node name="LayerHolder" type="Node2D" parent="."]
 script = ExtResource("2_q6s3v")

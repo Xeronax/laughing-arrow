@@ -1,15 +1,20 @@
-extends Control
+extends AspectRatioContainer
 
-@onready var character_icon: TextureRect = $ARContainer/CharacterImage
-@onready var focus_button: Button = $ARContainer/Button
-@onready var border: TextureRect = $ARContainer/Border
+@onready var character_icon: TextureRect = $CharacterImage
+@onready var focus_button: Button = $Button
+@onready var border: TextureRect = $Border
+@onready var enemy_border: TextureRect = $EnemyBorder
 @onready var hp_bar: TextureProgressBar = $HealthBar
 
 var character: BattleCharacter
 
 func update_hp_bar() -> void:
 	hp_bar.max_value = character.stats.hp.max
-	hp_bar.value = character.stats.hp.current
+	hp_bar.value = character.stats.hp.max - character.stats.hp.current
+	if character.ai_component:
+		border.set_visible(false)
+	else:
+		enemy_border.set_visible(false)
 	print("Updating HP for ", character)
 
 func _ready() -> void:

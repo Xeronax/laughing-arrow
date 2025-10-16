@@ -35,6 +35,7 @@ func _create_character_box(character: BattleCharacter) -> void:
 	container.add_child(instance)
 	instance.character_icon.texture = character.sprite_component.portrait
 	instance.character = character
-	character.stats.hp_changed.connect(instance.update_hp_bar)
+	character.stats.hp.changed.connect(instance.update_hp_bar)
 	instance.update_hp_bar()
+	print(instance)
 	Global.set_ui_children(instance)

@@ -10,6 +10,7 @@ var target: BattleCharacter = null
 func _ready() -> void:
 	set_target(target)
 	set_visible(false)
+	Global.level_changed.connect(_update)
 
 func _update() -> void:
 	level_label.text = str(Global.group_level)

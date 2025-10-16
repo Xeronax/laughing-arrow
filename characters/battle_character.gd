@@ -70,9 +70,8 @@ func take_damage(event: DamageEvent) -> void:
 	stats.hp.set_current(stats.hp.current - event.final_damage)
 	sprite_component.Sprite.play("get_hit")
 	var damage_popup: CombatText = combat_text_scene.instantiate()
-	damage_popup.params.push_back(event.final_damage)
+	damage_popup.event = event
 	damage_popup.source = self
-	damage_popup.type = CombatText.TextType.DAMAGE
 	Global.ui.add_child(damage_popup)
 
 func move(cell: Vector2i) -> void:

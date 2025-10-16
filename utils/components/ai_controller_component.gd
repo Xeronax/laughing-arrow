@@ -49,6 +49,8 @@ var possible_actions: Array[Action] = []
 
 ## Abstract function that holds the actual behavior for the unit
 func turn_behavior() -> void:
+	await Global.wait(2)
+	print("Waiting a few seconds for AI turn")
 	character.end_turn()
 	#character.update_movement_range()
 	#_update_actions()
