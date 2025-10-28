@@ -1,8 +1,8 @@
+ColorRect
 VBoxContainer
 GridContainer
 AspectRatioContainer
 TextureProgressBar
-ColorRect
 TextureRect
 Label
 RichTextLabel

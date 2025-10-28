@@ -13,6 +13,11 @@ class_name Spell extends Resource
 
 var caster: BattleCharacter
 
+var current_cooldown: int = 0
+
+signal casted
+signal cooldown_ticked
+
 ## TargetType determines the cells that the spell is allowed to target
 enum TargetType { SELF, FREE_CELL, ENEMY, ANY, ALL, LINE }
 ## The enums are connected to the targeting method Callables through this Dictionary
@@ -38,6 +43,15 @@ var damage_calc: Callable = func():
 var targeted_cells: Array[Vector2i] = []
 var targeted_characters: Array[BattleCharacter] = []
 
+func _init() -> void:
+	await Global.all_ready
+	Global.battle_manager.turn_starting.connect(func(character: BattleCharacter):
+		if character != caster:
+			return
+		if current_cooldown <= 0:
+			return
+		tick_cooldown())
+
 ## Default behavior for spells, each spell calls this as super() before going through with custom behavior.
 ## Should be called as a conditional and cancel custom behavior if super() returns false
 func cast() -> bool:
@@ -54,6 +68,10 @@ func cast() -> bool:
 		print("Not enough AP or MP to cast ", spell_name)
 		_cleanup()
 		return false
+	if current_cooldown > 0:
+		print("Spell is on cooldown")
+		_cleanup()
+		return false
 	caster.state = BattleCharacter.States.TARGETING
 	## If the caster doesn't select appropriate and/or enough targets, cancel
 	if not await targeting_method[target_type].call():
@@ -66,6 +84,8 @@ func cast() -> bool:
 	caster.reversed = caster.grid_position.x > targeted_cells[0].x
 	caster.spell_cells.clear()
 	caster.state = BattleCharacter.States.CASTING
+	casted.emit()
+	tick_cooldown()
 	return true ## Approve the spell cast and proceed with custom behavior
 
 ## Creates a damage event and sends it to the target.
@@ -125,7 +145,7 @@ func target_cell() -> bool:
 		targeted_cells.append(cell)
 	return not targeted_cells.is_empty()
 
-func get_characters_in_targeted_area(area: Array[Vector2i]) -> Array[BattleCharacter]:
+func get_characters_in_targeted_area(_area: Array[Vector2i]) -> Array[BattleCharacter]:
 	var temp: Array[BattleCharacter] = []
 	var chars: Array[BattleCharacter] = targeted_cells.reduce(func(acc, cell): 
 		var character = Global.get_character(cell)
@@ -135,6 +155,13 @@ func get_characters_in_targeted_area(area: Array[Vector2i]) -> Array[BattleChara
 		return acc
 	, temp)
 	return chars
+
+func tick_cooldown() -> void:
+	if current_cooldown <= 0:
+		current_cooldown = cooldown
+	else:
+		current_cooldown -= 1
+	cooldown_ticked.emit()
 
 func _cleanup() -> void:
 	targeted_cells.clear()

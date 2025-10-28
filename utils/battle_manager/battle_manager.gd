@@ -9,8 +9,9 @@ var enemy_team: Array[BattleCharacter] = [] ## Enemy team, including dead
 var current_turn_idx: int = 0 ## The index of the participants_in_turn_order array for the BattleCharacter whose turn it is
 var current_round: int = 1 ## A round consists of a full cycle of turns for each BattleCharacter
 
-signal participants_populated(participants) ## Emitted when participants_in_turn_order array is initialized
-signal turn_starting
+signal participants_populated(participants: Array[BattleCharacter]) ## Emitted when participants_in_turn_order array is initialized
+signal turn_starting(character: BattleCharacter)
+signal round_end
 
 ## Sorts the participants_in_turn_order array by initiative
 func set_turn_order() -> void:

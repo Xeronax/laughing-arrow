@@ -20,7 +20,6 @@ func enqueue(gain: int) -> void:
 
 func display_gain(exp_gained: int) -> void:
 	busy = true
-	var underleveled: bool = current_level_label.text.to_int() < Global.group_level
 	exp_label.text = "EXP +" + str(exp_gained)
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.5) 

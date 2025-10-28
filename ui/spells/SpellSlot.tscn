@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b17l52u1kxlwn"]
+[gd_scene load_steps=11 format=3 uid="uid://b17l52u1kxlwn"]
 
 [ext_resource type="Texture2D" uid="uid://codyompr0070o" path="res://assets/Custom Border and Panels Menu All Part/Border All 1.png" id="1_4th1y"]
 [ext_resource type="Script" uid="uid://cdc4l68eedtmq" path="res://ui/spells/spell_slot.gd" id="1_an1d1"]
@@ -18,6 +18,9 @@ bg_color = Color(1, 1, 1, 0.643137)
 bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.603922)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6o2u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ki1n0"]
+font_color = Color(0.886275, 0.109804, 0.0784314, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_87whd"]
 
@@ -44,13 +47,39 @@ size_flags_stretch_ratio = 0.5
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="."]
+[node name="CooldownShade" type="ColorRect" parent="SpellIcon"]
 layout_mode = 2
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 46.0
+offset_bottom = 46.0
+color = Color(0.109804, 0.109804, 0.109804, 0.776471)
+
+[node name="Button" type="Button" parent="SpellIcon"]
+layout_mode = 2
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 46.0
+offset_bottom = 46.0
 focus_mode = 0
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yjviy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fp78u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lbqf2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_e6o2u")
+
+[node name="CooldownText" type="Label" parent="SpellIcon"]
+custom_minimum_size = Vector2(2.71, 4.385)
+layout_mode = 2
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 26.0
+offset_bottom = 30.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "1 "
+label_settings = SubResource("LabelSettings_ki1n0")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Keybind" type="Label" parent="."]
 custom_minimum_size = Vector2(2.71, 4.385)

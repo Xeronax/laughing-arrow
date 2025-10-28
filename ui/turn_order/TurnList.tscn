@@ -3,7 +3,11 @@
 [ext_resource type="Script" uid="uid://dpc28pncvxv1v" path="res://ui/turn_order/turn_list.gd" id="1_kiutt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sew4a"]
-bg_color = Color(0.6, 0.6, 0.6, 0.584314)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [node name="TurnList" type="ScrollContainer"]
 anchors_preset = 6

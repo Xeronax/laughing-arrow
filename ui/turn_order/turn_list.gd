@@ -11,7 +11,7 @@ func _ready() -> void:
 	Global.battle_manager.turn_starting.connect(_next_turn)
 	Global.set_ui_children(self)
 
-func _next_turn() -> void:
+func _next_turn(_current_turn_character: BattleCharacter = null) -> void:
 	var child = container.get_children()[0]
 	print("Popping ", container.get_children()[0].character)
 	container.remove_child(child)

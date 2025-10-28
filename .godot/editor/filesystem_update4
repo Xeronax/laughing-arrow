@@ -14,5 +14,6 @@ res://ui/popups/CombatTextPopup.tscn
 res://ui/popups/ExpBar.tscn
 res://ui/turn_order/TurnList.tscn
 res://ui/turn_order/CharacterBox.tscn
-res://ui/turn_order/turn_list.gd
-res://ui/turn_order/character_box.gd
+res://spells/spell.gd
+res://characters/battle_character.gd
+res://ui/spells/spell_slot.gd

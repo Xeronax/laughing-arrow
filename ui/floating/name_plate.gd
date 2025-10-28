@@ -19,7 +19,7 @@ func _update() -> void:
 	hp_bar.max_value = target.stats.hp.max
 	hp_bar.value = target.stats.hp.current
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var offset: Vector2 = Vector2(-(get_global_rect().size.y / 2), -(target.hitbox.shape.get_rect().size.y * 1.75))
 	global_position = Global.global_to_ui(target.global_position + offset)
 

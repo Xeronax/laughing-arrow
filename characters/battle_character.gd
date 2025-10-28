@@ -52,7 +52,7 @@ func start_turn() -> void:
 	_reset_resources()
 	is_turn = true
 	state = States.IDLE
-	turn_starting.emit()
+	Global.battle_manager.turn_starting.emit(self)
 	if(ai_component):
 		print("Starting ai behavior")
 		ai_component.turn_behavior()
@@ -100,7 +100,7 @@ func _reset_resources():
 	stats.ap.set_current(stats.ap.max)
 	stats.mp.set_current(stats.mp.max)
 
-func update_movement_range(pos: Vector2i = grid_position) -> void:
+func update_movement_range(_pos: Vector2i = grid_position) -> void:
 	if stats.mp.current <= 0:
 		movement_cells.clear()
 		return
@@ -148,4 +148,5 @@ func add_spell(ability: Resource) -> void:
 	spellbook.append(ability)
 	if ability is Spell:
 		ability.caster = self
+		turn_starting.connect(ability.tick_cooldown)
 	Global.ui.get_node("SpellBar").refresh_spells()
