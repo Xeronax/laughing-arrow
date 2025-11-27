@@ -555,7 +555,7 @@ offset_top = -31.248
 offset_right = 1.83197
 offset_bottom = -31.48
 
-[node name="EndTurnButton" parent="UI" node_paths=PackedStringArray("target") instance=ExtResource("5_rhj0d")]
+[node name="EndTurnButton" parent="UI" instance=ExtResource("5_rhj0d")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -567,7 +567,6 @@ offset_right = 308.0
 offset_bottom = -102.0
 grow_horizontal = 2
 grow_vertical = 0
-target = NodePath("../../Player")
 
 [node name="SpellBar" parent="UI" instance=ExtResource("3_20pc6")]
 offset_left = -313.0

@@ -38,8 +38,6 @@ func _ready() -> void:
 	info_bar = info_bar_scene.instantiate()
 	info_bar.target = self
 	Global.ui.add_child(info_bar)
-	if not ai_component:
-		Global.set_current_controller(self)
 	stats.hp.set_current(stats.hp.max)
 	_reset_resources()
 

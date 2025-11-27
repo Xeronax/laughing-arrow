@@ -7,7 +7,10 @@ var current_turn: Control = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await(Global.all_ready)
-	Global.battle_manager.participants_populated.connect(_create_list)
+	var temp: Array[BattleCharacter] = Global.battle_manager.participants_in_turn_order.duplicate()
+	temp.reverse()
+	for character in temp:
+		_create_character_box(character)
 	Global.battle_manager.turn_starting.connect(_next_turn)
 	Global.set_ui_children(self)
 
@@ -23,12 +26,6 @@ func _get_box(character: BattleCharacter) -> Variant:
 		if box.character == character:
 			return box
 	return null
-
-func _create_list(characters: Array) -> void:
-	var temp = characters.duplicate()
-	temp.reverse()
-	for character in temp:
-		_create_character_box(character)
 
 func _create_character_box(character: BattleCharacter) -> void:
 	var instance = _character_box.instantiate()

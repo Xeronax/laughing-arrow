@@ -85,7 +85,6 @@ func _setup(target: BattleCharacter) -> void:
 
 func _target_node_ready() -> void:
 	await(Global.all_ready)
-	await(Global.battle_manager.participants_populated)
 	_setup(target_node)
 
 func create_threat(c: BattleCharacter) -> void:

@@ -15,6 +15,10 @@ func set_spell(new_spell: Spell) -> void:
 	if new_spell == null:
 		return
 	
+	if current_spell == new_spell:
+		return
+	
+	# Disconnect from prior signals
 	for current_signal in button.pressed.get_connections():
 		button.pressed.disconnect(current_signal.callable)
 	
@@ -22,6 +26,7 @@ func set_spell(new_spell: Spell) -> void:
 	
 	icon.set_texture(new_spell.spell_icon)
 	
+	# Connect casting
 	button.pressed.connect(func(): 
 		new_spell.cast())
 	

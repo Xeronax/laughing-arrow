@@ -46,13 +46,15 @@ func _ready() -> void:
 	pathfinding_map = current_scene.layer_holder.map_astar
 	battle_manager = current_scene.battle_manager
 	
-	all_ready.emit()
-	
 	teleport_character(current_scene.player, 4, 4)
 	teleport_character(current_scene.dummy, 13, 4)
 	
 	var combatants: Array[BattleCharacter] = [current_scene.player, current_scene.dummy]
 	current_scene.battle_manager.start_battle(combatants)
+	
+	set_current_controller(current_scene.player)
+	
+	all_ready.emit()
 
 func set_ui_children(node: Control):
 	node.mouse_entered.connect(func (): mouse_on_ui = true)
