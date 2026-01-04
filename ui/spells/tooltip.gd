@@ -59,7 +59,9 @@ func display_talent(t: Talent) -> void:
 	cooldown.set_visible(false)
 	var formatting_dict: Dictionary[String, String] = {
 		"name": t.talent_name,
-		"minimum_damage": str(t.minimum_damage),
-		"maximum_damage": str(t.maximum_damage),
 	}
+	var custom_format: Dictionary[String, String] = t.format()
+	if(custom_format):
+		for key in custom_format:
+			formatting_dict[key] = custom_format[key]
 	description.text = "[color=WHITE][font='res://assets/Lato/Lato-Black.ttf'][font_size=13]" + t.description.format(formatting_dict)

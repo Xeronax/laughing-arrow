@@ -1,3 +1,4 @@
+Talent
 Spell
 Resource
 GDScript

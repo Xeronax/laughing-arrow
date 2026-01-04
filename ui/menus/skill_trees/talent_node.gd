@@ -35,5 +35,5 @@ func update() -> void:
 		return
 	if Global.current_controller == null:
 		return
-	if not Global.current_controller.spellbook.has(ability):
+	if not Global.current_controller.spellbook.has(ability) and ability is Spell:
 		Global.current_controller.add_spell(ability)

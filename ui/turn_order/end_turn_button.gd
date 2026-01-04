@@ -10,7 +10,6 @@ func _ready() -> void:
 	Global.battle_manager.turn_starting.connect(_enable)
 	button.pressed.connect(end_turn)
 
-
 func _enable(current_turn_character: BattleCharacter) -> void:
 	if(current_turn_character != Global.current_controller): 
 		return

@@ -1,7 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dtjo17x2awg0m"]
+[gd_resource type="Resource" script_class="Talent" load_steps=2 format=3 uid="uid://dtjo17x2awg0m"]
 
 [ext_resource type="Script" uid="uid://bkg8yi55utjhy" path="res://talents/talent.gd" id="1_3elc0"]
 
 [resource]
 script = ExtResource("1_3elc0")
-description = ""

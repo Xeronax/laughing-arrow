@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c0u7o1js6de12"]
+
+[ext_resource type="Texture2D" uid="uid://b80xxnw2hbnxj" path="res://assets/Free - Raven Fantasy Icons/Separated Files/64x64/fc1301.png" id="1_5pv4p"]
+[ext_resource type="Script" uid="uid://bxbvjvoau3r1e" path="res://talents/scout/pinned/pinned.gd" id="2_5pv4p"]
+
+[resource]
+script = ExtResource("2_5pv4p")
+description = "Dealing ranged damage to an enemy three times applies a stack of Pinned."
+icon = ExtResource("1_5pv4p")
+talent_name = "Pinned"
+metadata/_custom_type_script = "uid://bkg8yi55utjhy"

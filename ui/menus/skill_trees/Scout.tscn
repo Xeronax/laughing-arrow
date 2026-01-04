@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2jrpwt4ejc2n"]
+[gd_scene load_steps=6 format=3 uid="uid://b2jrpwt4ejc2n"]
 
 [ext_resource type="PackedScene" uid="uid://go4whkmk5jni" path="res://ui/menus/skill_trees/SkillTree.tscn" id="1_dv021"]
 [ext_resource type="PackedScene" uid="uid://8wwm2pow3dhm" path="res://ui/menus/skill_trees/TalentNode.tscn" id="2_ds012"]
 [ext_resource type="Resource" uid="uid://dhmxuowu8xxdi" path="res://spells/scout/aimed_shot/aimed_shot.tres" id="3_vstca"]
 [ext_resource type="Resource" uid="uid://cocw72dagig6t" path="res://spells/scout/dash/dash.tres" id="4_y4vt6"]
+[ext_resource type="Resource" uid="uid://c0u7o1js6de12" path="res://talents/scout/pinned/pinned.tres" id="5_ds012"]
 
 [node name="SkillTree" instance=ExtResource("1_dv021")]
 connections = Array[Dictionary]([{
-"from_node": &"AimedShot",
+"from_node": &"Pinned",
+"from_port": 0,
+"keep_alive": true,
+"to_node": &"AimedShot",
+"to_port": 0
+}, {
+"from_node": &"Pinned",
 "from_port": 0,
 "keep_alive": true,
 "to_node": &"Dash",
@@ -21,14 +28,13 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 25.0
-offset_top = 299.0
-offset_right = 85.0
-offset_bottom = 390.0
+offset_left = 256.0
+offset_top = 406.0
+offset_right = 316.0
+offset_bottom = 497.0
 grow_horizontal = 1
 grow_vertical = 1
-position_offset = Vector2(25, 299)
-slot/0/left_enabled = false
+position_offset = Vector2(256, 406)
 ability = ExtResource("3_vstca")
 rank = 1
 
@@ -39,12 +45,29 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 175.0
-offset_top = 299.0
-offset_right = 235.0
-offset_bottom = 390.0
+offset_left = 257.0
+offset_top = 205.0
+offset_right = 317.0
+offset_bottom = 296.0
 grow_horizontal = 1
 grow_vertical = 1
-position_offset = Vector2(175, 299)
+position_offset = Vector2(257, 205)
 ability = ExtResource("4_y4vt6")
+rank = 1
+
+[node name="Pinned" parent="." index="3" instance=ExtResource("2_ds012")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 39.0
+offset_top = 282.0
+offset_right = 99.0
+offset_bottom = 373.0
+grow_horizontal = 1
+grow_vertical = 1
+position_offset = Vector2(39, 282)
+ability = ExtResource("5_ds012")
 rank = 1
