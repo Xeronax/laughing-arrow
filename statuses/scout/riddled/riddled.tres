@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://t8dmat1g6d17"]
+
+[ext_resource type="Texture2D" uid="uid://8dtc2lb4ocix" path="res://assets/RPG Icon Pack - 400+ Skills and Spells - Clockwork Raven Studios/64x64/tile289.png" id="1_f1xbt"]
+[ext_resource type="Script" uid="uid://dvghhbtsdp4h0" path="res://statuses/scout/riddled/riddled.gd" id="2_f1xbt"]
+
+[resource]
+script = ExtResource("2_f1xbt")
+icon = ExtResource("1_f1xbt")
+status_name = "Riddled"
+description = "Being barraged by arrows.
+-{dodge_reduction} Dodge
+-{physical_resistance_reduction} Physical Resist
+At 3 stacks, the target becomes Pinned."
+turns = 2
+max_stacks = 3
+metadata/_custom_type_script = "uid://brpjg3n2ejoh1"

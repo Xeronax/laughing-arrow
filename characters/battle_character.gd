@@ -21,9 +21,12 @@ var combat_text_scene: PackedScene = preload("res://ui/popups/CombatTextPopup.ts
 
 signal turn_starting
 signal turn_ending
+signal status_applied(status: Status)
+signal status_removed(status: Status)
 
 enum States {IDLE, CASTING, MOVING, TARGETING, DEAD}
 
+var statuses: Array[Status] = []
 var hovered: bool = false
 var info_bar: Control = null
 var state: States = States.IDLE
@@ -51,6 +54,8 @@ func start_turn() -> void:
 	is_turn = true
 	state = States.IDLE
 	Global.battle_manager.turn_starting.emit(self)
+	for status in statuses:
+		status.on_turn_start()
 	if(ai_component):
 		print("Starting ai behavior")
 		ai_component.turn_behavior()
@@ -63,6 +68,8 @@ func end_turn() -> void:
 	state = States.IDLE
 	Global.highlight_map.clear()
 	turn_ending.emit()
+	for status in statuses:
+		status.on_turn_end()
 
 func take_damage(event: DamageEvent) -> void:
 	stats.hp.set_current(stats.hp.current - event.final_damage)
@@ -148,3 +155,9 @@ func add_spell(ability: Resource) -> void:
 		ability.caster = self
 		turn_starting.connect(ability.tick_cooldown)
 	Global.ui.get_node("SpellBar").refresh_spells()
+
+func apply_status(status: Status) -> void:
+	statuses.append(status)
+	status.target = self
+	status.on_apply()
+	status_applied.emit(status)

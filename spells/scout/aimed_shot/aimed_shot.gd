@@ -1,5 +1,6 @@
 extends Spell
 
+var riddled_status: Status = preload("res://statuses/scout/riddled/riddled.tres")
 func cast() -> bool:
 	if not await(super()):
 		return false
@@ -17,7 +18,10 @@ func deal_damage() -> void:
 	super()
 	caster.state = BattleCharacter.States.IDLE
 	caster.sprite_component.animation_player.play("idle")
-	print("Targeted chars: ", targeted_characters)
+	print_debug("Targeted chars: ", targeted_characters)
 	for target: BattleCharacter in targeted_characters:
 		target.sprite_component.animation_player.play("get_hit")
+		var riddled = riddled_status.duplicate()
+		riddled.source = caster
+		target.apply_status(riddled)
 	_cleanup()

@@ -37,3 +37,5 @@ func update() -> void:
 		return
 	if not Global.current_controller.spellbook.has(ability) and ability is Spell:
 		Global.current_controller.add_spell(ability)
+	if ability is Talent:
+		ability.character = Global.current_controller

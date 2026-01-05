@@ -1,3 +1,4 @@
+Status
 Talent
 Spell
 Resource

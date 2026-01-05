@@ -21,9 +21,11 @@ func set_ability(ability: Resource) -> void:
 	if ability == null:
 		return
 	if ability is Spell:
-			display_spell(ability)
+		display_spell(ability)
 	elif ability is Talent:
-			display_talent(ability)
+		display_talent(ability)
+	elif ability is Status:
+		display_status(ability)
 
 func display_spell(s: Spell) -> void:
 	icon_texture.texture = s.spell_icon
@@ -65,3 +67,20 @@ func display_talent(t: Talent) -> void:
 		for key in custom_format:
 			formatting_dict[key] = custom_format[key]
 	description.text = "[color=WHITE][font='res://assets/Lato/Lato-Black.ttf'][font_size=13]" + t.description.format(formatting_dict)
+
+func display_status(s: Status) -> void:
+	if s == null:
+		return
+	icon_texture.texture = s.icon
+	name_label.text = s.status_name
+	type_label.text = "Status"
+	range.set_visible(false)
+	cooldown.set_visible(false)
+	var formatting_dict: Dictionary[String, String] = {
+		"name": s.status_name
+	}
+	var custom_format: Dictionary[String, String] = s.format()
+	if(custom_format):
+		for key in custom_format:
+			formatting_dict[key] = custom_format[key]
+	description.text = "[color=WHITE][font='res://assets/Lato/Lato-Black.ttf'][font_size=13]" + s.description.format(formatting_dict)

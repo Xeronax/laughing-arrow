@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://8wwm2pow3dhm" path="res://ui/menus/skill_trees/TalentNode.tscn" id="2_ds012"]
 [ext_resource type="Resource" uid="uid://dhmxuowu8xxdi" path="res://spells/scout/aimed_shot/aimed_shot.tres" id="3_vstca"]
 [ext_resource type="Resource" uid="uid://cocw72dagig6t" path="res://spells/scout/dash/dash.tres" id="4_y4vt6"]
-[ext_resource type="Resource" uid="uid://c0u7o1js6de12" path="res://talents/scout/pinned/pinned.tres" id="5_ds012"]
+[ext_resource type="Resource" uid="uid://c0u7o1js6de12" path="res://talents/scout/pinned/pin.tres" id="5_ds012"]
 
 [node name="SkillTree" instance=ExtResource("1_dv021")]
 connections = Array[Dictionary]([{

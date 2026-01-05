@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c0u7o1js6de12"]
+
+[ext_resource type="Texture2D" uid="uid://b80xxnw2hbnxj" path="res://assets/Free - Raven Fantasy Icons/Separated Files/64x64/fc1301.png" id="1_1of6h"]
+[ext_resource type="Script" uid="uid://bxbvjvoau3r1e" path="res://talents/scout/pinned/pin.gd" id="2_oowsj"]
+
+[resource]
+script = ExtResource("2_oowsj")
+description = "Dealing ranged damage to an enemy applies Riddled, reducing their Dodge by {dodge_reduction} and Physical Resistance by {physical_resistance_reduction}.
+When an enemy gains 3 stacks of Riddled, it becomes Pinned, additionally reducing their MP by {mp_reduction}."
+icon = ExtResource("1_1of6h")
+talent_name = "Pin"
+metadata/_custom_type_script = "uid://bkg8yi55utjhy"

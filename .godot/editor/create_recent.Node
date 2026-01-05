@@ -1,9 +1,10 @@
+TextureRect
+HBoxContainer
 ColorRect
 VBoxContainer
 GridContainer
 AspectRatioContainer
 TextureProgressBar
-TextureRect
 Label
 RichTextLabel
 Control
@@ -11,4 +12,3 @@ TabContainer
 Button
 GraphNode
 GraphEdit
-HBoxContainer

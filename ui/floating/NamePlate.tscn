@@ -96,3 +96,10 @@ text = "100/100"
 label_settings = SubResource("LabelSettings_dyiin")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Statuses" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 146.15385
+offset_top = 65.38462
+offset_right = 588.4615
+offset_bottom = 107.692314
