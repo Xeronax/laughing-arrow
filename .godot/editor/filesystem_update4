@@ -15,3 +15,6 @@ res://talents/scout/pinned/pin.gd
 res://ui/floating/ExternalMenuButton.tscn
 res://ui/spells/Tooltip.tscn
 res://ui/menus/skill_trees/talent_node.gd
+res://ui/floating/StatusIcon.tscn
+res://ui/floating/status_icon.gd
+res://spells/scout/aimed_shot/aimed_shot.tres

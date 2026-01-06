@@ -1,11 +1,11 @@
+Label
 TextureRect
+AspectRatioContainer
 HBoxContainer
 ColorRect
 VBoxContainer
 GridContainer
-AspectRatioContainer
 TextureProgressBar
-Label
 RichTextLabel
 Control
 TabContainer

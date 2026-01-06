@@ -21,7 +21,7 @@ var combat_text_scene: PackedScene = preload("res://ui/popups/CombatTextPopup.ts
 
 signal turn_starting
 signal turn_ending
-signal status_applied(status: Status)
+signal status_applied(status: Status, stack: bool)
 signal status_removed(status: Status)
 
 enum States {IDLE, CASTING, MOVING, TARGETING, DEAD}
@@ -157,7 +157,10 @@ func add_spell(ability: Resource) -> void:
 	Global.ui.get_node("SpellBar").refresh_spells()
 
 func apply_status(status: Status) -> void:
-	statuses.append(status)
 	status.target = self
-	status.on_apply()
-	status_applied.emit(status)
+	status.stack()
+
+func remove_status(status: Status) -> void:
+	statuses.erase(status)
+	status.on_remove()
+	status_removed.emit(status)

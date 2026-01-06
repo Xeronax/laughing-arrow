@@ -50,19 +50,36 @@ var turns_left: int = 1
 var current_stacks: int = 1
 
 func format() -> Dictionary[String, String]: 
-	return {}
- 
-func on_apply() -> void:
-	var duplicates: Array[Status] = target.statuses.filter(func(status): status.status_name == status_name)
+	return {} 
+
+func stack() -> void:
+	var duplicates: Array[Status] = target.statuses.filter(func(status): 
+		return (status.status_name == status_name) && status != self)
+	print(target.statuses)
+	print_debug(duplicates)
 	if duplicates.is_empty(): 
 		turns_left = turns
+		target.statuses.append(self)
+		target.status_applied.emit(self, false)
+		on_apply()
+	elif duplicates[0].current_stacks >= max_stacks:
+		return
 	else:
 		duplicates[0].current_stacks += 1
 		duplicates[0].turns_left = turns
+		target.status_applied.emit(duplicates[0], true)
+		duplicates[0].on_apply()
+		return
+
+func on_apply() -> void:
+	pass
 
 func on_turn_end() -> void:
 	turns_left -= 1
 	pass
 
 func on_turn_start() -> void:
+	pass
+
+func on_remove() -> void:
 	pass

@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0jbix4fg7k8r"]
+
+[ext_resource type="Script" uid="uid://dnfcgthoblama" path="res://ui/floating/status_icon.gd" id="1_5tige"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mwao6"]
+font_size = 24
+
+[node name="StatusIcon" type="AspectRatioContainer"]
+offset_right = 145.0
+offset_bottom = 155.0
+script = ExtResource("1_5tige")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Stacks" type="Label" parent="Icon"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.521744
+offset_top = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "2"
+label_settings = SubResource("LabelSettings_mwao6")
+horizontal_alignment = 1
+vertical_alignment = 1
