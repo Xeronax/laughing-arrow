@@ -76,7 +76,10 @@ func on_apply() -> void:
 
 func on_turn_end() -> void:
 	turns_left -= 1
-	pass
+	if turns_left <= 0:
+		target.statuses.erase(self)
+		target.status_removed.emit(self)
+		on_remove()
 
 func on_turn_start() -> void:
 	pass

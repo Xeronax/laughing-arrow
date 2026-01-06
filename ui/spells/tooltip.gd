@@ -2,6 +2,7 @@ extends Panel
 
 @export var ap_gem: Texture2D
 @export var mp_gem: Texture2D
+@export var tooltip_description_font_size: int = 8
 
 @onready var icon_texture: TextureRect = $TextureRect
 @onready var name_label: Label = $Name
@@ -10,6 +11,7 @@ extends Panel
 @onready var cooldown_label: Label = $CooldownContainer/Cooldown
 @onready var cost: HBoxContainer = $CostContainer 
 @onready var description: RichTextLabel = $Description
+@onready var status_duration_label: Label = $StatusDurationContainer/StatusDuration
 
 @onready var range: HBoxContainer = $RangeContainer
 @onready var cooldown: HBoxContainer = $CooldownContainer
@@ -28,6 +30,7 @@ func set_ability(ability: Resource) -> void:
 		display_status(ability)
 
 func display_spell(s: Spell) -> void:
+	status_duration_label.set_visible(false)
 	icon_texture.texture = s.spell_icon
 	name_label.text = s.spell_name
 	type_label.text = "Spell"
@@ -49,11 +52,12 @@ func display_spell(s: Spell) -> void:
 		"maximum_damage": str(s.maximum_damage),
 		"range": str(s.spell_range)
 	}
-	description.text = "[color=WHITE][font='res://assets/Lato/Lato-Black.ttf'][font_size=13]" + s.description.format(formatting_dict)
+	description.text = "[color=WHITE][font='res://assets/Lato/Lato-Black.ttf'][font_size=" + str(tooltip_description_font_size) + "]" + s.description.format(formatting_dict)
 
 func display_talent(t: Talent) -> void:
 	if t == null:
 		return
+	status_duration_label.set_visible(false)
 	icon_texture.texture = t.icon
 	name_label.text = t.talent_name
 	type_label.text = "Talent"
@@ -66,14 +70,16 @@ func display_talent(t: Talent) -> void:
 	if(custom_format):
 		for key in custom_format:
 			formatting_dict[key] = custom_format[key]
-	description.text = "[color=WHITE][font='res://assets/Lato/Lato-Black.ttf'][font_size=13]" + t.description.format(formatting_dict)
+	description.text = "[color=WHITE][font='res://assets/Lato/Lato-Black.ttf'][font_size=" + str(tooltip_description_font_size - 1) + "]" + t.description.format(formatting_dict)
 
 func display_status(s: Status) -> void:
 	if s == null:
 		return
+	status_duration_label.set_visible(true)
 	icon_texture.texture = s.icon
 	name_label.text = s.status_name
 	type_label.text = "Status"
+	status_duration_label.text = str(s.turns_left) + " turn" + ("s" if s.turns_left > 1 else "")
 	range.set_visible(false)
 	cooldown.set_visible(false)
 	var formatting_dict: Dictionary[String, String] = {
@@ -83,4 +89,4 @@ func display_status(s: Status) -> void:
 	if(custom_format):
 		for key in custom_format:
 			formatting_dict[key] = custom_format[key]
-	description.text = "[color=WHITE][font='res://assets/Lato/Lato-Black.ttf'][font_size=13]" + s.description.format(formatting_dict)
+	description.text = "[color=WHITE][font='res://assets/Lato/Lato-Black.ttf'][font_size=" + str(tooltip_description_font_size) + "]" + s.description.format(formatting_dict)

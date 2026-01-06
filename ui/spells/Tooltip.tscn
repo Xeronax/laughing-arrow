@@ -1,14 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://70ouceanihss"]
+[gd_scene load_steps=15 format=3 uid="uid://70ouceanihss"]
 
 [ext_resource type="Script" uid="uid://b5h6plvlr8nau" path="res://ui/spells/tooltip.gd" id="2_hp521"]
 [ext_resource type="Texture2D" uid="uid://br3sx3b83arg1" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/material/material_46.png" id="2_tvtyj"]
 [ext_resource type="Texture2D" uid="uid://cjgdobr74cn1u" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/material/material_44.png" id="3_6r84m"]
 [ext_resource type="Texture2D" uid="uid://b42qwf1yt61mx" path="res://assets/Hunter_Free/Hunter_24.png" id="3_xxwsx"]
 [ext_resource type="Texture2D" uid="uid://bncg6fjd1jowp" path="res://assets/RPG Icon Pack 2 - UI v1.2/RPG Icon Pack 2 - UI/Windows/window6_149.png" id="4_3guy2"]
-[ext_resource type="Texture2D" uid="uid://5fiq6buwvfjg" path="res://assets/RPG Icon Pack 2 - UI v1.2/RPG Icon Pack 2 - UI/Dividers/divider_12.png" id="4_417s6"]
 [ext_resource type="FontFile" uid="uid://ce4p1yirug2x6" path="res://assets/Nunito Font/static/Nunito-Bold.ttf" id="4_meu6d"]
 [ext_resource type="Texture2D" uid="uid://bdw6rredsx3yk" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_248.png" id="5_ggue5"]
 [ext_resource type="Texture2D" uid="uid://btl047c1ha3rg" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_283.png" id="5_tvtyj"]
+[ext_resource type="FontFile" uid="uid://c47k3mmwb6ioc" path="res://assets/Pixel Magic Sprite Sheets/Font/Planes_ValMore.ttf" id="9_ggue5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp521"]
 bg_color = Color(0.113725, 0.113725, 0.113725, 0.905882)
@@ -28,40 +28,46 @@ shadow_offset = Vector2(3, 3)
 
 [sub_resource type="LabelSettings" id="LabelSettings_meu6d"]
 font = ExtResource("4_meu6d")
-font_size = 18
+font_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_ggue5"]
 font = ExtResource("4_meu6d")
-font_size = 14
+font_size = 8
 font_color = Color(0.552956, 0.552956, 0.552956, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_tvtyj"]
 font = ExtResource("4_meu6d")
-font_size = 14
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_6r84m"]
+font = ExtResource("9_ggue5")
+font_size = 8
 
 [node name="Tooltip" type="Panel"]
 top_level = true
 z_index = 2
-custom_minimum_size = Vector2(300, 184)
+custom_minimum_size = Vector2(216.87, 110.18)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 49.0
 offset_top = -239.0
-offset_right = 352.0
+offset_right = 265.87
+offset_bottom = -79.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hp521")
 script = ExtResource("2_hp521")
 ap_gem = ExtResource("2_tvtyj")
 mp_gem = ExtResource("3_6r84m")
+tooltip_description_font_size = 9
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-offset_left = -45.0
+offset_left = -24.06
 offset_top = 4.0
-offset_right = -12.0
+offset_right = 8.940001
 offset_bottom = 37.0
-scale = Vector2(1.23, 1.23)
+scale = Vector2(0.685, 0.685)
 texture = ExtResource("3_xxwsx")
 expand_mode = 1
 
@@ -69,9 +75,9 @@ expand_mode = 1
 layout_mode = 0
 offset_left = -3.0
 offset_top = -3.0
-offset_right = 29.0
-offset_bottom = 29.0
-scale = Vector2(1.23, 1.23)
+offset_right = 52.527725
+offset_bottom = 52.527725
+scale = Vector2(0.685, 0.685)
 texture = ExtResource("4_3guy2")
 draw_center = false
 patch_margin_left = 3
@@ -84,7 +90,7 @@ layout_mode = 0
 offset_left = 16.0
 offset_top = 10.0
 offset_right = 121.0
-offset_bottom = 36.0
+offset_bottom = 29.0
 text = "Arcane Shot"
 label_settings = SubResource("LabelSettings_meu6d")
 
@@ -108,10 +114,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -110.0
-offset_top = 33.0
+offset_left = -113.0
+offset_top = 28.0
 offset_right = -22.0
-offset_bottom = 53.0
+offset_bottom = 43.0
 grow_horizontal = 0
 alignment = 2
 
@@ -132,10 +138,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -110.0
-offset_top = 54.0
+offset_left = -135.0
+offset_top = 42.0
 offset_right = -22.0
-offset_bottom = 74.0
+offset_bottom = 58.0
 grow_horizontal = 0
 alignment = 2
 
@@ -150,28 +156,42 @@ vertical_alignment = 1
 layout_mode = 2
 texture = ExtResource("5_ggue5")
 
+[node name="StatusDurationContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -201.87
+offset_top = 149.0
+offset_right = -158.87
+offset_bottom = 156.0
+grow_horizontal = 0
+
+[node name="StatusDuration" type="Label" parent="StatusDurationContainer"]
+layout_mode = 2
+text = "2 turns"
+label_settings = SubResource("LabelSettings_6r84m")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DurationIcon" type="TextureRect" parent="StatusDurationContainer"]
+layout_mode = 2
+expand_mode = 2
+
 [node name="CostContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 54.0
-offset_right = 94.0
-offset_bottom = 75.0
+offset_left = 15.0
+offset_top = 29.0
+offset_right = 114.0
+offset_bottom = 40.0
 
 [node name="Description" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 93.0
-offset_right = 280.0
-offset_bottom = 228.0
+offset_top = 59.0
+offset_right = 205.0
+offset_bottom = 143.0
 bbcode_enabled = true
-text = "AP Cost"
+text = "[font_size=6]AP Cost"
+fit_content = true
 scroll_active = false
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-modulate = Color(1, 1, 1, 0.498039)
-layout_mode = 0
-offset_left = 31.0
-offset_top = 76.0
-offset_right = 284.0
-offset_bottom = 93.0
-texture = ExtResource("4_417s6")
