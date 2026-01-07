@@ -9,13 +9,16 @@ var grid_width: float = 0.35
 var map_width: int = 20
 var map_height: int = 15
 var map_astar: AStarGrid2D = AStarGrid2D.new()
-var hovered_tile: Vector2i 
+var hovered_tile: Vector2i
+var target_panel: Panel
 
 func _ready() -> void:
 	map_astar.set_cell_size(Vector2i(16, 16))
 	map_astar.set_region(map.get_used_rect())
 	map_astar.set_diagonal_mode(AStarGrid2D.DIAGONAL_MODE_NEVER)
 	map_astar.update()
+	await(Global.all_ready)
+	target_panel = Global.ui.get_node("TargetPanel")
 
 func _draw() -> void:
 	for x in range(map_width + 1):
@@ -50,14 +53,20 @@ func _current_controller_highlighting() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton:
 		return
-	if not Global.current_controller.is_turn:
-		return
+	event = event as InputEventMouseButton
 	if not event.is_pressed():
+		return
+	print_debug("Getting interacion from button ", event.button_index)
+	var character_on_cell = Global.get_character(hovered_tile)
+	if event.button_index == 2:
+		if character_on_cell:
+			target_panel.set_visible(true)
+			return
+	if not Global.current_controller.is_turn:
 		return
 	if Global.current_controller.state in [Global.current_controller.States.IDLE]:
 		if not Global.current_controller.movement_cells.has(hovered_tile):
 			return
-		var character_on_cell = Global.get_character(hovered_tile)
 		if character_on_cell:
 			Global.current_controller.target = character_on_cell
 			return

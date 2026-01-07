@@ -28,7 +28,7 @@ var group_level: int = 1
 var current_exp: int = 0
 var exp_to_next_level: int = 100
 
-signal current_target_changed
+signal current_target_changed(target)
 signal all_ready
 signal target_selected(targets)
 signal current_controller_changed(char)
@@ -68,7 +68,7 @@ func set_current_controller(t: BattleCharacter) -> void:
 
 func set_current_target(t: BattleCharacter) -> void:
 	current_target = t
-	current_target_changed.emit()
+	current_target_changed.emit(t)
 
 func get_character(cell: Vector2i) -> BattleCharacter:
 	for character: BattleCharacter in battle_manager.characters:

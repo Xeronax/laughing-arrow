@@ -8,9 +8,10 @@ script = ExtResource("2_f1xbt")
 icon = ExtResource("1_f1xbt")
 status_name = "Riddled"
 description = "Being barraged by arrows.
--{dodge_reduction} Dodge
+-{evasion_reduction} Evasion
 -{physical_resistance_reduction} Physical Resist
 At 3 stacks, the target becomes Pinned."
 turns = 2
 max_stacks = 3
+status_type = 1
 metadata/_custom_type_script = "uid://brpjg3n2ejoh1"

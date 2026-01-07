@@ -1,0 +1,706 @@
+[gd_scene load_steps=32 format=3 uid="uid://bcfejf2d8q8wf"]
+
+[ext_resource type="Script" uid="uid://61re2xbeoagj" path="res://ui/menus/target_panel.gd" id="1_0pdx8"]
+[ext_resource type="Texture2D" uid="uid://2v3gkraatidq" path="res://assets/Free - Raven Fantasy Icons/Separated Files/64x64/fc641.png" id="1_8q6h2"]
+[ext_resource type="Texture2D" uid="uid://dmexot1pbhu5r" path="res://assets/Free - Raven Fantasy Icons/Separated Files/64x64/fc857.png" id="2_df5eu"]
+[ext_resource type="Texture2D" uid="uid://5k81jc55ugqr" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/weapon/weapon_01.png" id="3_ymlih"]
+[ext_resource type="Texture2D" uid="uid://c36kvvwtysee3" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_84.png" id="4_6xw3i"]
+[ext_resource type="Texture2D" uid="uid://c7imtjkglfwwm" path="res://assets/RPG Graphics Pack - Icons/Pack 1B-Renamed/glove/glove_10.png" id="5_acbo4"]
+[ext_resource type="Texture2D" uid="uid://caddjlhkmehlv" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_a_01.png" id="5_ddb6p"]
+[ext_resource type="Texture2D" uid="uid://qldqah1v15ao" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_129.png" id="6_4r0hp"]
+[ext_resource type="Texture2D" uid="uid://c8hjiy6t678o4" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_153.png" id="6_vsvt2"]
+[ext_resource type="Texture2D" uid="uid://dtphwru5i7r08" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_154.png" id="7_bdvd8"]
+[ext_resource type="Texture2D" uid="uid://cpm8wx2tptp2d" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_98.png" id="7_wo2p3"]
+[ext_resource type="Texture2D" uid="uid://dtwb16nsaeqle" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_a_22.png" id="8_1g5vi"]
+[ext_resource type="Texture2D" uid="uid://cs6vujui8sjs6" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_alt_152.png" id="8_v4ii0"]
+[ext_resource type="Texture2D" uid="uid://dfop2hw8tjaj" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_a_41.png" id="9_cgfpl"]
+[ext_resource type="Texture2D" uid="uid://c3rn80blv7ci3" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_189.png" id="9_vdah2"]
+[ext_resource type="Texture2D" uid="uid://bw20xyi6o7qmu" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_a_46.png" id="10_3nuro"]
+[ext_resource type="Texture2D" uid="uid://cisvd14yj6ygm" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_39.png" id="11_mxqkb"]
+[ext_resource type="Texture2D" uid="uid://br3sx3b83arg1" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/material/material_46.png" id="12_gh8tr"]
+[ext_resource type="Texture2D" uid="uid://cjgdobr74cn1u" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/material/material_44.png" id="13_o30gf"]
+[ext_resource type="Texture2D" uid="uid://bn6xachx8i0dm" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_241.png" id="20_jna5g"]
+[ext_resource type="Texture2D" uid="uid://73rjq51v1gvf" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_255.png" id="21_www0l"]
+[ext_resource type="Texture2D" uid="uid://dr0hj0bn2g22p" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/shield/shield_08.png" id="22_legmt"]
+[ext_resource type="Texture2D" uid="uid://5iv2jneuswiq" path="res://assets/RPG Graphics Pack - Icons/Pack 1B/skill/skill_296.png" id="23_dobvr"]
+[ext_resource type="Texture2D" uid="uid://xynj216pt1xo" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_75.png" id="24_whntg"]
+[ext_resource type="Texture2D" uid="uid://cl71b3os57563" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_293.png" id="25_2iar3"]
+[ext_resource type="Texture2D" uid="uid://bbti07li8sron" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_267.png" id="26_k18ko"]
+[ext_resource type="Texture2D" uid="uid://cp3wx6km7xv8w" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_283.png" id="27_1vmfk"]
+[ext_resource type="Texture2D" uid="uid://cf8q7ixt10mr4" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_73.png" id="28_b161p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk1ec"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_4s1ls"]
+
+[sub_resource type="Theme" id="Theme_invqx"]
+
+[node name="TargetPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 820.0
+offset_top = 275.0
+offset_right = -29.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pk1ec")
+script = ExtResource("1_0pdx8")
+header_stats_font_size = 13
+elements_font_size = 14
+attributes_font_size = 13
+advanced_stats_font_size = 12
+
+[node name="Name" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_top = 10.0
+offset_right = 94.0
+offset_bottom = 33.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "Name Lv 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HPContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = 117.10498
+offset_bottom = 71.7
+
+[node name="HPIcon" type="TextureRect" parent="HPContainer"]
+layout_mode = 2
+texture = ExtResource("11_mxqkb")
+stretch_mode = 5
+
+[node name="HPLabel" type="RichTextLabel" parent="HPContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Health"
+vertical_alignment = 1
+
+[node name="APContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 40.0
+offset_right = 48.0
+offset_bottom = 68.0
+grow_horizontal = 2
+
+[node name="APIcon" type="TextureRect" parent="APContainer"]
+layout_mode = 2
+texture = ExtResource("12_gh8tr")
+stretch_mode = 5
+
+[node name="APLabel" type="RichTextLabel" parent="APContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "AP"
+vertical_alignment = 1
+
+[node name="MPContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 40.0
+offset_right = -7.0
+offset_bottom = 68.0
+grow_horizontal = 0
+
+[node name="MPIcon" type="TextureRect" parent="MPContainer"]
+layout_mode = 2
+texture = ExtResource("13_o30gf")
+stretch_mode = 5
+
+[node name="MPLabel" type="RichTextLabel" parent="MPContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "MP"
+vertical_alignment = 1
+
+[node name="STRContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 200.0
+offset_right = 110.0
+offset_bottom = 231.0
+
+[node name="STRIcon" type="TextureRect" parent="STRContainer"]
+layout_mode = 2
+texture = ExtResource("5_acbo4")
+stretch_mode = 5
+
+[node name="STRLabel" type="Label" parent="STRContainer"]
+layout_mode = 2
+text = "STR"
+
+[node name="STRValue" type="RichTextLabel" parent="STRContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "10"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="INTContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 230.0
+offset_right = 110.0
+offset_bottom = 253.0
+
+[node name="INTIcon" type="TextureRect" parent="INTContainer"]
+layout_mode = 2
+texture = ExtResource("6_vsvt2")
+stretch_mode = 5
+
+[node name="INTLabel" type="Label" parent="INTContainer"]
+layout_mode = 2
+text = "INT"
+
+[node name="INTValue" type="RichTextLabel" parent="INTContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "10"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DEXContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 260.0
+offset_right = 110.0
+offset_bottom = 283.0
+
+[node name="DEXIcon" type="TextureRect" parent="DEXContainer"]
+layout_mode = 2
+texture = ExtResource("7_bdvd8")
+stretch_mode = 5
+
+[node name="DEXLabel" type="Label" parent="DEXContainer"]
+layout_mode = 2
+text = "DEX"
+
+[node name="Spacer" type="Control" parent="DEXContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="DEXValue" type="RichTextLabel" parent="DEXContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "10"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CONContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 290.0
+offset_right = 110.0
+offset_bottom = 313.0
+
+[node name="CONIcon" type="TextureRect" parent="CONContainer"]
+layout_mode = 2
+texture = ExtResource("8_v4ii0")
+stretch_mode = 5
+
+[node name="CONLabel" type="Label" parent="CONContainer"]
+layout_mode = 2
+text = "CON"
+
+[node name="CONValue" type="RichTextLabel" parent="CONContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "10"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MASContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 320.0
+offset_right = 110.0
+offset_bottom = 343.0
+
+[node name="MASIcon" type="TextureRect" parent="MASContainer"]
+layout_mode = 2
+texture = ExtResource("9_vdah2")
+stretch_mode = 5
+
+[node name="MASLabel" type="Label" parent="MASContainer"]
+layout_mode = 2
+text = "MAS"
+
+[node name="Spacer" type="Control" parent="MASContainer"]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+
+[node name="MASValue" type="RichTextLabel" parent="MASContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BuffContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 76.0
+offset_right = 120.0
+offset_bottom = 139.0
+columns = 6
+
+[node name="DebuffContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 146.0
+offset_right = 121.0
+offset_bottom = 205.0
+columns = 6
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 67.0
+offset_right = 293.0
+offset_bottom = 377.0
+tab_alignment = 2
+current_tab = 0
+
+[node name="Elements" type="GridContainer" parent="TabContainer"]
+layout_mode = 2
+theme = SubResource("Theme_4s1ls")
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 9
+columns = 3
+metadata/_tab_index = 0
+
+[node name="Spacer" type="Label" parent="TabContainer/Elements"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="DamageIcon" type="TextureRect" parent="TabContainer/Elements"]
+layout_mode = 2
+texture = ExtResource("1_8q6h2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ResistanceIcon" type="TextureRect" parent="TabContainer/Elements"]
+layout_mode = 2
+texture = ExtResource("2_df5eu")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="PhysicalIcon" type="TextureRect" parent="TabContainer/Elements"]
+layout_mode = 2
+texture = ExtResource("3_ymlih")
+stretch_mode = 5
+
+[node name="PhysicalDamage" type="RichTextLabel" parent="TabContainer/Elements"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="PhysicalResistance" type="RichTextLabel" parent="TabContainer/Elements"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArcaneIcon" type="TextureRect" parent="TabContainer/Elements"]
+layout_mode = 2
+texture = ExtResource("4_6xw3i")
+stretch_mode = 5
+
+[node name="ArcaneDamage" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="ArcaneResistance" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="FireIcon" type="TextureRect" parent="TabContainer/Elements"]
+layout_mode = 2
+texture = ExtResource("5_ddb6p")
+stretch_mode = 5
+
+[node name="FireDamage" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="FireResistance" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="WaterIcon" type="TextureRect" parent="TabContainer/Elements"]
+layout_mode = 2
+texture = ExtResource("6_4r0hp")
+stretch_mode = 5
+
+[node name="WaterDamage" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="WaterResistance" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="EarthIcon" type="TextureRect" parent="TabContainer/Elements"]
+layout_mode = 2
+texture = ExtResource("7_wo2p3")
+stretch_mode = 5
+
+[node name="EarthDamage" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="EarthResistance" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="WindIcon" type="TextureRect" parent="TabContainer/Elements"]
+layout_mode = 2
+texture = ExtResource("8_1g5vi")
+stretch_mode = 5
+
+[node name="WindDamage" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="WindResistance" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="HolyIcon" type="TextureRect" parent="TabContainer/Elements"]
+layout_mode = 2
+texture = ExtResource("9_cgfpl")
+stretch_mode = 5
+
+[node name="HolyDamage" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="HolyResistance" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VoidIcon" type="TextureRect" parent="TabContainer/Elements"]
+layout_mode = 2
+texture = ExtResource("10_3nuro")
+stretch_mode = 5
+
+[node name="VoidDamage" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VoidResistance" type="RichTextLabel" parent="TabContainer/Elements"]
+layout_mode = 2
+bbcode_enabled = true
+text = "0%"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Stats" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_invqx")
+metadata/_tab_index = 1
+
+[node name="CritChanceContainer" type="HBoxContainer" parent="TabContainer/Stats"]
+layout_mode = 2
+
+[node name="CritChanceIcon" type="TextureRect" parent="TabContainer/Stats/CritChanceContainer"]
+layout_mode = 2
+texture = ExtResource("20_jna5g")
+stretch_mode = 5
+
+[node name="CritChanceLabel" type="Label" parent="TabContainer/Stats/CritChanceContainer"]
+layout_mode = 2
+text = "CRIT"
+
+[node name="CritChance" type="RichTextLabel" parent="TabContainer/Stats/CritChanceContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CritDamageContainer" type="HBoxContainer" parent="TabContainer/Stats"]
+layout_mode = 2
+
+[node name="CritDamageIcon" type="TextureRect" parent="TabContainer/Stats/CritDamageContainer"]
+layout_mode = 2
+texture = ExtResource("21_www0l")
+stretch_mode = 5
+
+[node name="CritDamageLabel" type="Label" parent="TabContainer/Stats/CritDamageContainer"]
+layout_mode = 2
+text = "CRIT DMG"
+
+[node name="CritDamage" type="RichTextLabel" parent="TabContainer/Stats/CritDamageContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BlockChanceContainer" type="HBoxContainer" parent="TabContainer/Stats"]
+layout_mode = 2
+
+[node name="BlockChanceIcon" type="TextureRect" parent="TabContainer/Stats/BlockChanceContainer"]
+layout_mode = 2
+texture = ExtResource("22_legmt")
+stretch_mode = 5
+
+[node name="BlockChanceLabel" type="Label" parent="TabContainer/Stats/BlockChanceContainer"]
+layout_mode = 2
+text = "BLK"
+
+[node name="BlockChance" type="RichTextLabel" parent="TabContainer/Stats/BlockChanceContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BlockDamageReductionContainer" type="HBoxContainer" parent="TabContainer/Stats"]
+layout_mode = 2
+
+[node name="BlockDamageReductionIcon" type="TextureRect" parent="TabContainer/Stats/BlockDamageReductionContainer"]
+layout_mode = 2
+texture = ExtResource("23_dobvr")
+stretch_mode = 5
+
+[node name="BlockDamageReductionLabel" type="Label" parent="TabContainer/Stats/BlockDamageReductionContainer"]
+layout_mode = 2
+text = "BLK DMG"
+
+[node name="BlockDamageReduction" type="RichTextLabel" parent="TabContainer/Stats/BlockDamageReductionContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="EvasionChanceContainer" type="HBoxContainer" parent="TabContainer/Stats"]
+layout_mode = 2
+
+[node name="EvasionChanceIcon" type="TextureRect" parent="TabContainer/Stats/EvasionChanceContainer"]
+layout_mode = 2
+texture = ExtResource("24_whntg")
+stretch_mode = 5
+
+[node name="EvasionChanceLabel" type="Label" parent="TabContainer/Stats/EvasionChanceContainer"]
+layout_mode = 2
+text = "EVA"
+
+[node name="EvasionChance" type="RichTextLabel" parent="TabContainer/Stats/EvasionChanceContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PresenceContainer" type="HBoxContainer" parent="TabContainer/Stats"]
+layout_mode = 2
+
+[node name="PresenceIcon" type="TextureRect" parent="TabContainer/Stats/PresenceContainer"]
+layout_mode = 2
+texture = ExtResource("25_2iar3")
+stretch_mode = 5
+
+[node name="PresenceLabel" type="Label" parent="TabContainer/Stats/PresenceContainer"]
+layout_mode = 2
+text = "PRC"
+
+[node name="Presence" type="RichTextLabel" parent="TabContainer/Stats/PresenceContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="InitiativeContainer" type="HBoxContainer" parent="TabContainer/Stats"]
+layout_mode = 2
+
+[node name="InitiativeIcon" type="TextureRect" parent="TabContainer/Stats/InitiativeContainer"]
+layout_mode = 2
+texture = ExtResource("26_k18ko")
+stretch_mode = 5
+
+[node name="InitiativeLabel" type="Label" parent="TabContainer/Stats/InitiativeContainer"]
+layout_mode = 2
+text = "INI"
+
+[node name="Initiative" type="RichTextLabel" parent="TabContainer/Stats/InitiativeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RangeBonusContainer" type="HBoxContainer" parent="TabContainer/Stats"]
+layout_mode = 2
+
+[node name="RangeBonusIcon" type="TextureRect" parent="TabContainer/Stats/RangeBonusContainer"]
+layout_mode = 2
+texture = ExtResource("27_1vmfk")
+stretch_mode = 5
+
+[node name="RangeBonusLabel" type="Label" parent="TabContainer/Stats/RangeBonusContainer"]
+layout_mode = 2
+text = "RNG"
+
+[node name="RangeBonus" type="RichTextLabel" parent="TabContainer/Stats/RangeBonusContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PietyContainer" type="HBoxContainer" parent="TabContainer/Stats"]
+layout_mode = 2
+
+[node name="PietyIcon" type="TextureRect" parent="TabContainer/Stats/PietyContainer"]
+layout_mode = 2
+texture = ExtResource("28_b161p")
+stretch_mode = 5
+
+[node name="PietyLabel" type="Label" parent="TabContainer/Stats/PietyContainer"]
+layout_mode = 2
+text = "PTY"
+
+[node name="Piety" type="RichTextLabel" parent="TabContainer/Stats/PietyContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "0%"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -31.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 33.0
+grow_horizontal = 0
+text = "X"

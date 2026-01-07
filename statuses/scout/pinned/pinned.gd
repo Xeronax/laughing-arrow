@@ -1,6 +1,6 @@
 extends Status
 
-func dodge_reduction() -> int:
+func evasion_reduction() -> int:
 	return current_stacks * (3 * (2 + round(source.stats.mastery.final() * 0.3)))
 
 func physical_resistance_reduction() -> int:
@@ -11,12 +11,12 @@ func mp_reduction() -> int:
 
 func format() -> Dictionary[String, String]:
 	return {
-		"dodge_reduction": str(dodge_reduction()),
+		"evasion_reduction": str(evasion_reduction()),
 		"physical_resistance_reduction": str(physical_resistance_reduction()),
 		"mp_reduction": str(mp_reduction())
 	}
 
 func on_apply() -> void:
 	super()
-	resistance_changes.physical = -physical_resistance_reduction()
-	skill_changes.dodge = -dodge_reduction()
+	resistance_changes[Global.Element.PHYSICAL] = -physical_resistance_reduction()
+	skill_changes["evasion"] = -evasion_reduction()

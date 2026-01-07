@@ -8,7 +8,8 @@ script = ExtResource("2_4m5ic")
 icon = ExtResource("1_idnk2")
 status_name = "Pinned"
 description = "Target is Pinned by arrows, making it more difficult to move.
--{dodge_reduction} Dodge
+-{evasion_reduction} Evasion
 -{physical_resistance_reduction} Physical Resist
 -{mp_reduction} MP"
+status_type = 1
 metadata/_custom_type_script = "uid://brpjg3n2ejoh1"

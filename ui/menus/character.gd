@@ -29,7 +29,7 @@ extends Control
 @onready var critical_strike_damage: RichTextLabel = $"SecondaryStatContainer/Advanced Stats/CritDamage"
 @onready var block_chance: RichTextLabel = $"SecondaryStatContainer/Advanced Stats/BlockChance"
 @onready var block_damage_reduction: RichTextLabel = $"SecondaryStatContainer/Advanced Stats/BlockDamageReduction"
-@onready var dodge_chance: RichTextLabel = $"SecondaryStatContainer/Advanced Stats/DodgeChance"
+@onready var evasion: RichTextLabel = $"SecondaryStatContainer/Advanced Stats/Evasion"
 @onready var presence: RichTextLabel = $"SecondaryStatContainer/Advanced Stats/Presence"
 @onready var initiative: RichTextLabel = $"SecondaryStatContainer/Advanced Stats/Initiative"
 @onready var range: RichTextLabel = $"SecondaryStatContainer/Advanced Stats/RangeBonus"
@@ -52,7 +52,7 @@ func update() -> void:
 	critical_strike_damage.text = color_format(char.stats.critical_strike_damage) + ("%d" % round(char.stats.critical_strike_damage.final() * 100)) + '%'
 	block_chance.text = color_format(char.stats.block_chance) + ("%d" % round(char.stats.block_chance.final() * 100)) + '%'
 	block_damage_reduction.text = color_format(char.stats.block_damage_reduction) + ("%d" % round(char.stats.block_damage_reduction.final() * 100)) + '%'
-	dodge_chance.text = color_format(char.stats.dodge_chance) + ("%d" % round(char.stats.dodge_chance.final() * 100)) + '%'
+	evasion.text = color_format(char.stats.evasion) + ("%d" % round(char.stats.evasion.final() * 100)) + '%'
 	presence.text = color_format(char.stats.presence) + ("%d" % char.stats.presence.final())
 	initiative.text = color_format(char.stats.initiative) + ("%d" % char.stats.initiative.final())
 	range.text = color_format(char.stats.range) + ("%d" % char.stats.range.final())

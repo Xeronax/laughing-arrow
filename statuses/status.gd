@@ -13,36 +13,40 @@ class_name Status extends Resource
 	"critical_strike_damage": 0,
 	"block_chance": 0,
 	"block_damage_reduction": 0,
-	"dodge": 0,
+	"evasion": 0,
 	"presence": 0,
 	"range": 0,
 	"piety": 0,
 	"initiative": 0,
 	"mp": 0,
 	"ap": 0,
+	"max_hp": 0
 }
-@export var resistance_changes: Dictionary[String, float] = {
-	"physical": 0,
-	"arcane": 0,
-	"fire": 0,
-	"water": 0,
-	"earth": 0,
-	"wind": 0,
-	"holy": 0,
-	"void": 0,
+@export var resistance_changes: Dictionary[int, float] = {
+	Global.Element.PHYSICAL: 0,
+	Global.Element.ARCANE: 0,
+	Global.Element.FIRE: 0,
+	Global.Element.WATER: 0,
+	Global.Element.EARTH: 0,
+	Global.Element.WIND: 0,
+	Global.Element.HOLY: 0,
+	Global.Element.VOID: 0,
 }
-@export var damage_changes: Dictionary[String, float] = {
-	"physical": 0,
-	"arcane": 0,
-	"fire": 0,
-	"water": 0,
-	"earth": 0,
-	"wind": 0,
-	"holy": 0,
-	"void": 0,
+@export var damage_changes: Dictionary[int, float] = {
+	Global.Element.PHYSICAL: 0,
+	Global.Element.ARCANE: 0,
+	Global.Element.FIRE: 0,
+	Global.Element.WATER: 0,
+	Global.Element.EARTH: 0,
+	Global.Element.WIND: 0,
+	Global.Element.HOLY: 0,
+	Global.Element.VOID: 0,
 }
 @export var turns: int = 1
 @export var max_stacks: int = 1
+@export var status_type: StatusType = StatusType.PRIVATE
+
+enum StatusType {BUFF, DEBUFF, PRIVATE}
 
 var target: BattleCharacter
 var source: BattleCharacter = null

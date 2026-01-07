@@ -28,14 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://b2jrpwt4ejc2n" path="res://ui/menus/skill_trees/Scout.tscn" id="26_gdxk6"]
 [ext_resource type="Texture2D" uid="uid://cf8q7ixt10mr4" path="res://assets/RPG Graphics Pack - Icons/Pack 1A/skill/skill_73.png" id="26_u11xo"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6v18"]
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_blend = true
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ui7g0"]
 bg_color = Color(0.197937, 0.197937, 0.197937, 1)
 border_width_left = 1
@@ -44,6 +36,14 @@ border_width_bottom = 1
 border_blend = true
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6v18"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
 
 [sub_resource type="Theme" id="Theme_40dlp"]
 
@@ -60,8 +60,8 @@ offset_right = -0.416016
 offset_bottom = -0.0880127
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_i6v18")
 theme_override_styles/panel = SubResource("StyleBoxFlat_ui7g0")
+theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_i6v18")
 tab_alignment = 1
 current_tab = 0
 
@@ -71,7 +71,7 @@ script = ExtResource("1_21iht")
 metadata/_tab_index = 0
 
 [node name="NameLabel" type="RichTextLabel" parent="Character"]
-layout_mode = 2
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 128.0
@@ -326,7 +326,7 @@ size_flags_horizontal = 3
 text = "MP"
 
 [node name="SecondaryStatContainer" type="TabContainer" parent="Character"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 312.0
 offset_top = 103.0
 offset_right = 811.0
@@ -655,19 +655,19 @@ text = "0%"
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="DodgeChanceContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="EvasionContainer" type="HBoxContainer" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
 
-[node name="DodgeChanceIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/DodgeChanceContainer"]
+[node name="EvasionIcon" type="TextureRect" parent="Character/SecondaryStatContainer/Advanced Stats/EvasionContainer"]
 layout_mode = 2
 texture = ExtResource("22_ffjew")
 stretch_mode = 5
 
-[node name="DodgeChanceLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/DodgeChanceContainer"]
+[node name="EvasionLabel" type="Label" parent="Character/SecondaryStatContainer/Advanced Stats/EvasionContainer"]
 layout_mode = 2
 text = "Dodge Chance"
 
-[node name="DodgeChance" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
+[node name="Evasion" type="RichTextLabel" parent="Character/SecondaryStatContainer/Advanced Stats"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
